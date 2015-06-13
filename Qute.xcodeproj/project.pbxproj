@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		011E40E11B2C520100727A74 /* CreateQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011E40E01B2C520100727A74 /* CreateQuestionViewController.m */; };
 		011E40E31B2C56E400727A74 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 011E40E21B2C56E400727A74 /* MapKit.framework */; };
-		0142F0851B2C83AB00D881B2 /* Berlin.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 0142F0841B2C83AB00D881B2 /* Berlin.gpx */; };
 		0142F0901B2C9A8D00D881B2 /* QUTAnswer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0142F0871B2C9A8D00D881B2 /* QUTAnswer.m */; };
-		0142F0911B2C9A8D00D881B2 /* QUTBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0142F0891B2C9A8D00D881B2 /* QUTBaseModel.m */; };
-		0142F0921B2C9A8D00D881B2 /* QUTQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 0142F08B1B2C9A8D00D881B2 /* QUTQuestion.m */; };
-		0142F0931B2C9A8D00D881B2 /* SFAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 0142F08D1B2C9A8D00D881B2 /* SFAPIClient.m */; };
-		0142F0941B2C9A8D00D881B2 /* SFRestRequest+QUTAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0142F08F1B2C9A8D00D881B2 /* SFRestRequest+QUTAdditions.m */; };
-		49FFF6D61B2B9C2400B0EAD8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FFF6D51B2B9C2400B0EAD8 /* main.m */; };
+		49B20FAF1B2CB29B001B249C /* NSDictionary+QUTADDITIONS.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B20FAE1B2CB29B001B249C /* NSDictionary+QUTADDITIONS.m */; };
+		49B20FB21B2CB5CB001B249C /* NSDate+QUTAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B20FB11B2CB5CB001B249C /* NSDate+QUTAdditions.m */; };
+		49B20FB51B2CC60F001B249C /* SFAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B20FB41B2CC60F001B249C /* SFAPIClient.m */; };
+		49B20FB61B2CC64F001B249C /* SFRestRequest+QUTAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0142F08F1B2C9A8D00D881B2 /* SFRestRequest+QUTAdditions.m */; };
+		49B20FB71B2CC6C2001B249C /* QUTQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 0142F08B1B2C9A8D00D881B2 /* QUTQuestion.m */; };
+		49B20FB81B2CC6FB001B249C /* QUTBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0142F0891B2C9A8D00D881B2 /* QUTBaseModel.m */; };
+		49B20FB91B2CC71D001B249C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FFF6D51B2B9C2400B0EAD8 /* main.m */; };
 		49FFF6D91B2B9C2400B0EAD8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FFF6D81B2B9C2400B0EAD8 /* AppDelegate.m */; };
 		49FFF6DC1B2B9C2400B0EAD8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FFF6DB1B2B9C2400B0EAD8 /* ViewController.m */; };
 		49FFF6DF1B2B9C2400B0EAD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49FFF6DD1B2B9C2400B0EAD8 /* Main.storyboard */; };
@@ -40,17 +41,26 @@
 		011E40E01B2C520100727A74 /* CreateQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateQuestionViewController.m; sourceTree = "<group>"; };
 		011E40E21B2C56E400727A74 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		011E40E41B2C58CD00727A74 /* Macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
-		0142F0841B2C83AB00D881B2 /* Berlin.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Berlin.gpx; path = ../../../Downloads/Berlin.gpx; sourceTree = "<group>"; };
 		0142F0861B2C9A8D00D881B2 /* QUTAnswer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QUTAnswer.h; sourceTree = "<group>"; };
 		0142F0871B2C9A8D00D881B2 /* QUTAnswer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QUTAnswer.m; sourceTree = "<group>"; };
 		0142F0881B2C9A8D00D881B2 /* QUTBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QUTBaseModel.h; sourceTree = "<group>"; };
 		0142F0891B2C9A8D00D881B2 /* QUTBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QUTBaseModel.m; sourceTree = "<group>"; };
 		0142F08A1B2C9A8D00D881B2 /* QUTQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QUTQuestion.h; sourceTree = "<group>"; };
 		0142F08B1B2C9A8D00D881B2 /* QUTQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QUTQuestion.m; sourceTree = "<group>"; };
-		0142F08C1B2C9A8D00D881B2 /* SFAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFAPIClient.h; sourceTree = "<group>"; };
-		0142F08D1B2C9A8D00D881B2 /* SFAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFAPIClient.m; sourceTree = "<group>"; };
 		0142F08E1B2C9A8D00D881B2 /* SFRestRequest+QUTAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SFRestRequest+QUTAdditions.h"; sourceTree = "<group>"; };
 		0142F08F1B2C9A8D00D881B2 /* SFRestRequest+QUTAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SFRestRequest+QUTAdditions.m"; sourceTree = "<group>"; };
+		49B20FA31B2C886D001B249C /* QUTAnswer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QUTAnswer.h; sourceTree = "<group>"; };
+		49B20FA41B2C886D001B249C /* QUTAnswer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QUTAnswer.m; sourceTree = "<group>"; };
+		49B20FA61B2C887E001B249C /* QUTQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QUTQuestion.h; sourceTree = "<group>"; };
+		49B20FA71B2C887E001B249C /* QUTQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QUTQuestion.m; sourceTree = "<group>"; };
+		49B20FA91B2C8895001B249C /* QUTBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QUTBaseModel.h; sourceTree = "<group>"; };
+		49B20FAA1B2C8895001B249C /* QUTBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QUTBaseModel.m; sourceTree = "<group>"; };
+		49B20FAD1B2CB29B001B249C /* NSDictionary+QUTADDITIONS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+QUTADDITIONS.h"; sourceTree = "<group>"; };
+		49B20FAE1B2CB29B001B249C /* NSDictionary+QUTADDITIONS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+QUTADDITIONS.m"; sourceTree = "<group>"; };
+		49B20FB01B2CB5CB001B249C /* NSDate+QUTAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+QUTAdditions.h"; sourceTree = "<group>"; };
+		49B20FB11B2CB5CB001B249C /* NSDate+QUTAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+QUTAdditions.m"; sourceTree = "<group>"; };
+		49B20FB31B2CC60F001B249C /* SFAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFAPIClient.h; sourceTree = "<group>"; };
+		49B20FB41B2CC60F001B249C /* SFAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFAPIClient.m; sourceTree = "<group>"; };
 		49FFF6D01B2B9C2400B0EAD8 /* Qute.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Qute.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49FFF6D41B2B9C2400B0EAD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49FFF6D51B2B9C2400B0EAD8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -89,6 +99,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		49B20FA21B2C8848001B249C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				49B20FA31B2C886D001B249C /* QUTAnswer.h */,
+				49B20FA41B2C886D001B249C /* QUTAnswer.m */,
+				49B20FA61B2C887E001B249C /* QUTQuestion.h */,
+				49B20FA71B2C887E001B249C /* QUTQuestion.m */,
+				49B20FA91B2C8895001B249C /* QUTBaseModel.h */,
+				49B20FAA1B2C8895001B249C /* QUTBaseModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		49B20FAC1B2CB276001B249C /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				49B20FAD1B2CB29B001B249C /* NSDictionary+QUTADDITIONS.h */,
+				49B20FAE1B2CB29B001B249C /* NSDictionary+QUTADDITIONS.m */,
+				49B20FB01B2CB5CB001B249C /* NSDate+QUTAdditions.h */,
+				49B20FB11B2CB5CB001B249C /* NSDate+QUTAdditions.m */,
+			);
+			name = Category;
+			sourceTree = "<group>";
+		};
 		49FFF6C71B2B9C2400B0EAD8 = {
 			isa = PBXGroup;
 			children = (
@@ -112,18 +146,20 @@
 		49FFF6D21B2B9C2400B0EAD8 /* Qute */ = {
 			isa = PBXGroup;
 			children = (
+				49B20FB31B2CC60F001B249C /* SFAPIClient.h */,
+				49B20FB41B2CC60F001B249C /* SFAPIClient.m */,
 				0142F0861B2C9A8D00D881B2 /* QUTAnswer.h */,
 				0142F0871B2C9A8D00D881B2 /* QUTAnswer.m */,
 				0142F0881B2C9A8D00D881B2 /* QUTBaseModel.h */,
 				0142F0891B2C9A8D00D881B2 /* QUTBaseModel.m */,
 				0142F08A1B2C9A8D00D881B2 /* QUTQuestion.h */,
 				0142F08B1B2C9A8D00D881B2 /* QUTQuestion.m */,
-				0142F08C1B2C9A8D00D881B2 /* SFAPIClient.h */,
-				0142F08D1B2C9A8D00D881B2 /* SFAPIClient.m */,
 				0142F08E1B2C9A8D00D881B2 /* SFRestRequest+QUTAdditions.h */,
 				0142F08F1B2C9A8D00D881B2 /* SFRestRequest+QUTAdditions.m */,
 				49FFF6D71B2B9C2400B0EAD8 /* AppDelegate.h */,
 				49FFF6D81B2B9C2400B0EAD8 /* AppDelegate.m */,
+				49B20FAC1B2CB276001B249C /* Category */,
+				49B20FA21B2C8848001B249C /* Model */,
 				49FFF6DA1B2B9C2400B0EAD8 /* ViewController.h */,
 				49FFF6DB1B2B9C2400B0EAD8 /* ViewController.m */,
 				49FFF6DD1B2B9C2400B0EAD8 /* Main.storyboard */,
@@ -140,7 +176,6 @@
 		49FFF6D31B2B9C2400B0EAD8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				0142F0841B2C83AB00D881B2 /* Berlin.gpx */,
 				49FFF6D41B2B9C2400B0EAD8 /* Info.plist */,
 				49FFF6D51B2B9C2400B0EAD8 /* main.m */,
 			);
@@ -267,7 +302,6 @@
 				49FFF6DF1B2B9C2400B0EAD8 /* Main.storyboard in Resources */,
 				49FFF6E41B2B9C2400B0EAD8 /* LaunchScreen.xib in Resources */,
 				49FFF6E11B2B9C2400B0EAD8 /* Images.xcassets in Resources */,
-				0142F0851B2C83AB00D881B2 /* Berlin.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,15 +352,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49B20FB51B2CC60F001B249C /* SFAPIClient.m in Sources */,
+				49B20FB21B2CB5CB001B249C /* NSDate+QUTAdditions.m in Sources */,
+				49B20FB81B2CC6FB001B249C /* QUTBaseModel.m in Sources */,
+				49B20FB61B2CC64F001B249C /* SFRestRequest+QUTAdditions.m in Sources */,
+				49B20FAF1B2CB29B001B249C /* NSDictionary+QUTADDITIONS.m in Sources */,
 				011E40E11B2C520100727A74 /* CreateQuestionViewController.m in Sources */,
 				49FFF6DC1B2B9C2400B0EAD8 /* ViewController.m in Sources */,
-				0142F0931B2C9A8D00D881B2 /* SFAPIClient.m in Sources */,
+				49B20FB91B2CC71D001B249C /* main.m in Sources */,
 				0142F0901B2C9A8D00D881B2 /* QUTAnswer.m in Sources */,
-				0142F0921B2C9A8D00D881B2 /* QUTQuestion.m in Sources */,
-				0142F0941B2C9A8D00D881B2 /* SFRestRequest+QUTAdditions.m in Sources */,
-				0142F0911B2C9A8D00D881B2 /* QUTBaseModel.m in Sources */,
+				49B20FB71B2CC6C2001B249C /* QUTQuestion.m in Sources */,
 				49FFF6D91B2B9C2400B0EAD8 /* AppDelegate.m in Sources */,
-				49FFF6D61B2B9C2400B0EAD8 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

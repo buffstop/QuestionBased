@@ -11,8 +11,9 @@
 #import "QUTBaseModel.h"
 
 @interface QUTQuestion : QUTBaseModel
-@property (strong, nonatomic) NSDate *expiredate;
 @property (strong, nonatomic) NSNumber *latitude;
 @property (strong, nonatomic) NSNumber *longitude;
 @property (strong, nonatomic) NSString *question;
+@property (strong, nonatomic) NSString *OwnerId;
+@property (strong, nonatomic) NSDate *expiredate;
 @end
