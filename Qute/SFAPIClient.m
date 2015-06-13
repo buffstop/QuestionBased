@@ -16,6 +16,7 @@
 #import <SalesforceSDKCore/SFSecurityLockout.h>
 #import <SalesforceSDKCore/SFAuthenticationManager.h>
 #import <SalesforceSDKCore/SFDefaultUserManagementViewController.h>
+#import <SalesforceSDKCore/SFUserAccountManager.h>
 
 @interface SFAPIClient () <SFRestDelegate>
 @property (strong, nonatomic) NSMutableDictionary *successHandlerForRequest;
@@ -94,6 +95,13 @@
 {
     NSString *path = [NSString stringWithFormat:@"/v33.0/sobjects/%@", type];
     [self sendQueryWithSFRestMethod:SFRestMethodPOST path:path params:params onSuccess:successBlock onError:errorBlock];
+}
+
+#pragma mark User
+
+- (NSString *)getUserName
+{
+    return [SFAuthenticationManager sharedManager].idCoordinator.idData.username;
 }
 
 #pragma mark Answer
