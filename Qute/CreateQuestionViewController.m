@@ -11,6 +11,7 @@
 #import <S2MToolbox/S2MCalloutAnnotation.h>
 #import <AutoLayoutTextViews/ALAutoResizingTextView.h>
 #import "QUTQuestion.h"
+#import "SFAPIClient.h"
 
 @import MapKit;
 
@@ -70,11 +71,13 @@
     question.question = self.questionTextView.text;
     question.latitude = @(52.50591);
     question.longitude = @(13.29872);
-
-    // TODO: send question
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    
+    [[SFAPIClient sharedApiClient] createQuestionWithParams:[question jsonDict] onSuccess:^(NSDictionary *responsDict) {
         [[[UIAlertView alloc] initWithTitle:@"uQu" message:@"Your question has been submitted!" delegate:self  cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
-    });
+    } onError:^(NSError *error) {
+        [NSString stringWithFormat:@"%@", error];
+        [[[UIAlertView alloc] initWithTitle:@"Error" message:@"An Error Occured." delegate:self  cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
+    }];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
