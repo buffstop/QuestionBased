@@ -14,6 +14,18 @@
 		0127A98F1B2CD0B60037BF4C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0127A98E1B2CD0B60037BF4C /* Images.xcassets */; };
 		0127A9921B2CD0B60037BF4C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0127A9901B2CD0B60037BF4C /* LaunchScreen.xib */; };
 		0127A99E1B2CD0B60037BF4C /* uQuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0127A99D1B2CD0B60037BF4C /* uQuTests.m */; };
+		0127A9B11B2CD0D10037BF4C /* uQuKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 0127A9B01B2CD0D10037BF4C /* uQuKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0127A9B71B2CD0D20037BF4C /* uQuKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0127A9AC1B2CD0D10037BF4C /* uQuKit.framework */; };
+		0127A9C01B2CD0D20037BF4C /* uQuKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0127A9BF1B2CD0D20037BF4C /* uQuKitTests.m */; };
+		0127A9C31B2CD0D20037BF4C /* uQuKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0127A9AC1B2CD0D10037BF4C /* uQuKit.framework */; };
+		0127A9C41B2CD0D20037BF4C /* uQuKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0127A9AC1B2CD0D10037BF4C /* uQuKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0127A9D61B2CD0F10037BF4C /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0127A9D51B2CD0F10037BF4C /* InterfaceController.m */; };
+		0127A9D81B2CD0F10037BF4C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0127A9D71B2CD0F10037BF4C /* Images.xcassets */; };
+		0127A9DC1B2CD0F10037BF4C /* uQu WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 0127A9DB1B2CD0F10037BF4C /* uQu WatchKit App.app */; };
+		0127A9E41B2CD0F10037BF4C /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0127A9E21B2CD0F10037BF4C /* Interface.storyboard */; };
+		0127A9E61B2CD0F10037BF4C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0127A9E51B2CD0F10037BF4C /* Images.xcassets */; };
+		0127A9E91B2CD0F10037BF4C /* uQu WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0127A9D01B2CD0F10037BF4C /* uQu WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0127A9F11B2CD1050037BF4C /* uQuKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0127A9AC1B2CD0D10037BF4C /* uQuKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,7 +36,67 @@
 			remoteGlobalIDString = 0127A97D1B2CD0B60037BF4C;
 			remoteInfo = uQu;
 		};
+		0127A9B81B2CD0D20037BF4C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0127A9761B2CD0B60037BF4C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0127A9AB1B2CD0D10037BF4C;
+			remoteInfo = uQuKit;
+		};
+		0127A9BA1B2CD0D20037BF4C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0127A9761B2CD0B60037BF4C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0127A97D1B2CD0B60037BF4C;
+			remoteInfo = uQu;
+		};
+		0127A9C11B2CD0D20037BF4C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0127A9761B2CD0B60037BF4C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0127A9AB1B2CD0D10037BF4C;
+			remoteInfo = uQuKit;
+		};
+		0127A9DD1B2CD0F10037BF4C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0127A9761B2CD0B60037BF4C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0127A9DA1B2CD0F10037BF4C;
+			remoteInfo = "uQu WatchKit App";
+		};
+		0127A9E71B2CD0F10037BF4C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0127A9761B2CD0B60037BF4C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0127A9CF1B2CD0F10037BF4C;
+			remoteInfo = "uQu WatchKit Extension";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0127A9C81B2CD0D20037BF4C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0127A9C41B2CD0D20037BF4C /* uQuKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0127A9F01B2CD0F10037BF4C /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				0127A9E91B2CD0F10037BF4C /* uQu WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0127A97E1B2CD0B60037BF4C /* uQu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uQu.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,6 +112,21 @@
 		0127A9971B2CD0B60037BF4C /* uQuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = uQuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0127A99C1B2CD0B60037BF4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0127A99D1B2CD0B60037BF4C /* uQuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = uQuTests.m; sourceTree = "<group>"; };
+		0127A9AC1B2CD0D10037BF4C /* uQuKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = uQuKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0127A9AF1B2CD0D10037BF4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0127A9B01B2CD0D10037BF4C /* uQuKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = uQuKit.h; sourceTree = "<group>"; };
+		0127A9B61B2CD0D20037BF4C /* uQuKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = uQuKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0127A9BE1B2CD0D20037BF4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0127A9BF1B2CD0D20037BF4C /* uQuKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = uQuKitTests.m; sourceTree = "<group>"; };
+		0127A9D01B2CD0F10037BF4C /* uQu WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "uQu WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0127A9D31B2CD0F10037BF4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0127A9D41B2CD0F10037BF4C /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
+		0127A9D51B2CD0F10037BF4C /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
+		0127A9D71B2CD0F10037BF4C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		0127A9DB1B2CD0F10037BF4C /* uQu WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "uQu WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0127A9E11B2CD0F10037BF4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0127A9E31B2CD0F10037BF4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		0127A9E51B2CD0F10037BF4C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0127A9C31B2CD0D20037BF4C /* uQuKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +142,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0127A9A81B2CD0D10037BF4C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0127A9B31B2CD0D20037BF4C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0127A9B71B2CD0D20037BF4C /* uQuKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0127A9CD1B2CD0F10037BF4C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0127A9F11B2CD1050037BF4C /* uQuKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +176,10 @@
 			children = (
 				0127A9801B2CD0B60037BF4C /* uQu */,
 				0127A99A1B2CD0B60037BF4C /* uQuTests */,
+				0127A9AD1B2CD0D10037BF4C /* uQuKit */,
+				0127A9BC1B2CD0D20037BF4C /* uQuKitTests */,
+				0127A9D11B2CD0F10037BF4C /* uQu WatchKit Extension */,
+				0127A9DF1B2CD0F10037BF4C /* uQu WatchKit App */,
 				0127A97F1B2CD0B60037BF4C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -74,6 +189,10 @@
 			children = (
 				0127A97E1B2CD0B60037BF4C /* uQu.app */,
 				0127A9971B2CD0B60037BF4C /* uQuTests.xctest */,
+				0127A9AC1B2CD0D10037BF4C /* uQuKit.framework */,
+				0127A9B61B2CD0D20037BF4C /* uQuKitTests.xctest */,
+				0127A9D01B2CD0F10037BF4C /* uQu WatchKit Extension.appex */,
+				0127A9DB1B2CD0F10037BF4C /* uQu WatchKit App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -119,7 +238,89 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		0127A9AD1B2CD0D10037BF4C /* uQuKit */ = {
+			isa = PBXGroup;
+			children = (
+				0127A9B01B2CD0D10037BF4C /* uQuKit.h */,
+				0127A9AE1B2CD0D10037BF4C /* Supporting Files */,
+			);
+			path = uQuKit;
+			sourceTree = "<group>";
+		};
+		0127A9AE1B2CD0D10037BF4C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0127A9AF1B2CD0D10037BF4C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0127A9BC1B2CD0D20037BF4C /* uQuKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				0127A9BF1B2CD0D20037BF4C /* uQuKitTests.m */,
+				0127A9BD1B2CD0D20037BF4C /* Supporting Files */,
+			);
+			path = uQuKitTests;
+			sourceTree = "<group>";
+		};
+		0127A9BD1B2CD0D20037BF4C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0127A9BE1B2CD0D20037BF4C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0127A9D11B2CD0F10037BF4C /* uQu WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				0127A9D41B2CD0F10037BF4C /* InterfaceController.h */,
+				0127A9D51B2CD0F10037BF4C /* InterfaceController.m */,
+				0127A9D71B2CD0F10037BF4C /* Images.xcassets */,
+				0127A9D21B2CD0F10037BF4C /* Supporting Files */,
+			);
+			path = "uQu WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		0127A9D21B2CD0F10037BF4C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0127A9D31B2CD0F10037BF4C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0127A9DF1B2CD0F10037BF4C /* uQu WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				0127A9E21B2CD0F10037BF4C /* Interface.storyboard */,
+				0127A9E51B2CD0F10037BF4C /* Images.xcassets */,
+				0127A9E01B2CD0F10037BF4C /* Supporting Files */,
+			);
+			path = "uQu WatchKit App";
+			sourceTree = "<group>";
+		};
+		0127A9E01B2CD0F10037BF4C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0127A9E11B2CD0F10037BF4C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		0127A9A91B2CD0D10037BF4C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0127A9B11B2CD0D10037BF4C /* uQuKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		0127A97D1B2CD0B60037BF4C /* uQu */ = {
@@ -129,10 +330,14 @@
 				0127A97A1B2CD0B60037BF4C /* Sources */,
 				0127A97B1B2CD0B60037BF4C /* Frameworks */,
 				0127A97C1B2CD0B60037BF4C /* Resources */,
+				0127A9C81B2CD0D20037BF4C /* Embed Frameworks */,
+				0127A9F01B2CD0F10037BF4C /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				0127A9C21B2CD0D20037BF4C /* PBXTargetDependency */,
+				0127A9E81B2CD0F10037BF4C /* PBXTargetDependency */,
 			);
 			name = uQu;
 			productName = uQu;
@@ -157,6 +362,76 @@
 			productReference = 0127A9971B2CD0B60037BF4C /* uQuTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		0127A9AB1B2CD0D10037BF4C /* uQuKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0127A9C51B2CD0D20037BF4C /* Build configuration list for PBXNativeTarget "uQuKit" */;
+			buildPhases = (
+				0127A9A71B2CD0D10037BF4C /* Sources */,
+				0127A9A81B2CD0D10037BF4C /* Frameworks */,
+				0127A9A91B2CD0D10037BF4C /* Headers */,
+				0127A9AA1B2CD0D10037BF4C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = uQuKit;
+			productName = uQuKit;
+			productReference = 0127A9AC1B2CD0D10037BF4C /* uQuKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		0127A9B51B2CD0D20037BF4C /* uQuKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0127A9C91B2CD0D20037BF4C /* Build configuration list for PBXNativeTarget "uQuKitTests" */;
+			buildPhases = (
+				0127A9B21B2CD0D20037BF4C /* Sources */,
+				0127A9B31B2CD0D20037BF4C /* Frameworks */,
+				0127A9B41B2CD0D20037BF4C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0127A9B91B2CD0D20037BF4C /* PBXTargetDependency */,
+				0127A9BB1B2CD0D20037BF4C /* PBXTargetDependency */,
+			);
+			name = uQuKitTests;
+			productName = uQuKitTests;
+			productReference = 0127A9B61B2CD0D20037BF4C /* uQuKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0127A9CF1B2CD0F10037BF4C /* uQu WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0127A9ED1B2CD0F10037BF4C /* Build configuration list for PBXNativeTarget "uQu WatchKit Extension" */;
+			buildPhases = (
+				0127A9CC1B2CD0F10037BF4C /* Sources */,
+				0127A9CD1B2CD0F10037BF4C /* Frameworks */,
+				0127A9CE1B2CD0F10037BF4C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0127A9DE1B2CD0F10037BF4C /* PBXTargetDependency */,
+			);
+			name = "uQu WatchKit Extension";
+			productName = "uQu WatchKit Extension";
+			productReference = 0127A9D01B2CD0F10037BF4C /* uQu WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		0127A9DA1B2CD0F10037BF4C /* uQu WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0127A9EA1B2CD0F10037BF4C /* Build configuration list for PBXNativeTarget "uQu WatchKit App" */;
+			buildPhases = (
+				0127A9D91B2CD0F10037BF4C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "uQu WatchKit App";
+			productName = "uQu WatchKit App";
+			productReference = 0127A9DB1B2CD0F10037BF4C /* uQu WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -172,6 +447,19 @@
 					0127A9961B2CD0B60037BF4C = {
 						CreatedOnToolsVersion = 6.3.2;
 						TestTargetID = 0127A97D1B2CD0B60037BF4C;
+					};
+					0127A9AB1B2CD0D10037BF4C = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+					0127A9B51B2CD0D20037BF4C = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = 0127A97D1B2CD0B60037BF4C;
+					};
+					0127A9CF1B2CD0F10037BF4C = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+					0127A9DA1B2CD0F10037BF4C = {
+						CreatedOnToolsVersion = 6.3.2;
 					};
 				};
 			};
@@ -190,6 +478,10 @@
 			targets = (
 				0127A97D1B2CD0B60037BF4C /* uQu */,
 				0127A9961B2CD0B60037BF4C /* uQuTests */,
+				0127A9AB1B2CD0D10037BF4C /* uQuKit */,
+				0127A9B51B2CD0D20037BF4C /* uQuKitTests */,
+				0127A9CF1B2CD0F10037BF4C /* uQu WatchKit Extension */,
+				0127A9DA1B2CD0F10037BF4C /* uQu WatchKit App */,
 			);
 		};
 /* End PBXProject section */
@@ -209,6 +501,38 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0127A9AA1B2CD0D10037BF4C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0127A9B41B2CD0D20037BF4C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0127A9CE1B2CD0F10037BF4C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0127A9DC1B2CD0F10037BF4C /* uQu WatchKit App.app in Resources */,
+				0127A9D81B2CD0F10037BF4C /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0127A9D91B2CD0F10037BF4C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0127A9E41B2CD0F10037BF4C /* Interface.storyboard in Resources */,
+				0127A9E61B2CD0F10037BF4C /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +557,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0127A9A71B2CD0D10037BF4C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0127A9B21B2CD0D20037BF4C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0127A9C01B2CD0D20037BF4C /* uQuKitTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0127A9CC1B2CD0F10037BF4C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0127A9D61B2CD0F10037BF4C /* InterfaceController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -240,6 +587,31 @@
 			isa = PBXTargetDependency;
 			target = 0127A97D1B2CD0B60037BF4C /* uQu */;
 			targetProxy = 0127A9981B2CD0B60037BF4C /* PBXContainerItemProxy */;
+		};
+		0127A9B91B2CD0D20037BF4C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0127A9AB1B2CD0D10037BF4C /* uQuKit */;
+			targetProxy = 0127A9B81B2CD0D20037BF4C /* PBXContainerItemProxy */;
+		};
+		0127A9BB1B2CD0D20037BF4C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0127A97D1B2CD0B60037BF4C /* uQu */;
+			targetProxy = 0127A9BA1B2CD0D20037BF4C /* PBXContainerItemProxy */;
+		};
+		0127A9C21B2CD0D20037BF4C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0127A9AB1B2CD0D10037BF4C /* uQuKit */;
+			targetProxy = 0127A9C11B2CD0D20037BF4C /* PBXContainerItemProxy */;
+		};
+		0127A9DE1B2CD0F10037BF4C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0127A9DA1B2CD0F10037BF4C /* uQu WatchKit App */;
+			targetProxy = 0127A9DD1B2CD0F10037BF4C /* PBXContainerItemProxy */;
+		};
+		0127A9E81B2CD0F10037BF4C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0127A9CF1B2CD0F10037BF4C /* uQu WatchKit Extension */;
+			targetProxy = 0127A9E71B2CD0F10037BF4C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -258,6 +630,14 @@
 				0127A9911B2CD0B60037BF4C /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		0127A9E21B2CD0F10037BF4C /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0127A9E31B2CD0F10037BF4C /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -397,6 +777,136 @@
 			};
 			name = Release;
 		};
+		0127A9C61B2CD0D20037BF4C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = uQuKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		0127A9C71B2CD0D20037BF4C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = uQuKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		0127A9CA1B2CD0D20037BF4C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = uQuKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/uQu.app/uQu";
+			};
+			name = Debug;
+		};
+		0127A9CB1B2CD0D20037BF4C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = uQuKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/uQu.app/uQu";
+			};
+			name = Release;
+		};
+		0127A9EB1B2CD0F10037BF4C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IBSC_MODULE = uQu_WatchKit_Extension;
+				INFOPLIST_FILE = "uQu WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		0127A9EC1B2CD0F10037BF4C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				IBSC_MODULE = uQu_WatchKit_Extension;
+				INFOPLIST_FILE = "uQu WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Release;
+		};
+		0127A9EE1B2CD0F10037BF4C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "uQu WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		0127A9EF1B2CD0F10037BF4C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "uQu WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -422,6 +932,38 @@
 			buildConfigurations = (
 				0127A9A51B2CD0B60037BF4C /* Debug */,
 				0127A9A61B2CD0B60037BF4C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		0127A9C51B2CD0D20037BF4C /* Build configuration list for PBXNativeTarget "uQuKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0127A9C61B2CD0D20037BF4C /* Debug */,
+				0127A9C71B2CD0D20037BF4C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		0127A9C91B2CD0D20037BF4C /* Build configuration list for PBXNativeTarget "uQuKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0127A9CA1B2CD0D20037BF4C /* Debug */,
+				0127A9CB1B2CD0D20037BF4C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		0127A9EA1B2CD0F10037BF4C /* Build configuration list for PBXNativeTarget "uQu WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0127A9EB1B2CD0F10037BF4C /* Debug */,
+				0127A9EC1B2CD0F10037BF4C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		0127A9ED1B2CD0F10037BF4C /* Build configuration list for PBXNativeTarget "uQu WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0127A9EE1B2CD0F10037BF4C /* Debug */,
+				0127A9EF1B2CD0F10037BF4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
