@@ -33,7 +33,7 @@ static NSString * const OAuthRedirectURI        = @"testsfdc:///mobilesdk/detect
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 //    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
 //    [self initializeAppViewState];
-    [[SalesforceSDKManager sharedManager] launch];
+//    [[SalesforceSDKManager sharedManager] launch];
     
     return YES;
 }
