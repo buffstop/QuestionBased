@@ -29,9 +29,6 @@
 //    jsonDict[@"OwnerId"] = self.ownerId;
 //    jsonDict[@"Name"] = self.name;
     jsonDict[@"text__c"] = self.text;
-    if (!self.questionid) {
-        self.questionid = @"a012000001nu4uvAAA";
-    }
     jsonDict[@"questionid__c"] = self.questionid;
     
     return jsonDict;

@@ -76,7 +76,8 @@
 {
     QUTAnswer *testQ = [QUTAnswer new];
     testQ.text = @"Yes";
-    testQ.uid = qId;
+//    testQ.uid = qId;
+    testQ.questionid = qId;
     [[SFAPIClient sharedApiClient] createAnswerWithParams:[testQ jsonDict] onSuccess:^(NSDictionary *responsDict) {
         NSLog(@"%@", responsDict);
     } onError:^(NSError *error) {
