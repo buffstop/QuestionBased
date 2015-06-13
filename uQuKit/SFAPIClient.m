@@ -99,9 +99,9 @@
 
 #pragma mark User
 
-- (NSString *)getUserName
+- (NSString *)getUserID
 {
-    return [SFAuthenticationManager sharedManager].idCoordinator.idData.username;
+    return [SFAuthenticationManager sharedManager].idCoordinator.idData.userId;
 }
 
 #pragma mark Answer
@@ -136,9 +136,20 @@
 #pragma mark Questions
 
 - (void)getAllQuestionsOnSuccess:(void(^)(NSArray *result))successBlock
-                       onError:(void(^)(NSError *error))errorBlock;
+                         onError:(void(^)(NSError *error))errorBlock;
 {
     NSString *select = @"SELECT Id,latitude__c,longitude__c,OwnerId,question__c FROM Question__c";
+    [self GETQueryWithSelectString:select onSuccess:^(NSDictionary *responsDict) {
+        NSArray *records = [QUTQuestion objectsFromRepsonseJsonDict:responsDict];
+        if (successBlock) {  successBlock(records); }
+    } onError:errorBlock];
+}
+
+- (void)getAllQuestionsOfUserWithID:(NSString *)userId
+                          onSuccess:(void(^)(NSArray *result))successBlock
+                            onError:(void(^)(NSError *error))errorBlock;
+{
+    NSString *select = [NSString stringWithFormat:@"SELECT Id,latitude__c,longitude__c,OwnerId,question__c FROM Question__c where OwnerId==%@", userId];
     [self GETQueryWithSelectString:select onSuccess:^(NSDictionary *responsDict) {
         NSArray *records = [QUTQuestion objectsFromRepsonseJsonDict:responsDict];
         if (successBlock) {  successBlock(records); }

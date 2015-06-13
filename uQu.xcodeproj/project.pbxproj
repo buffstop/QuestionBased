@@ -42,7 +42,6 @@
 		016CC6E11B2CD48A008CC6C4 /* SFRestRequest+QUTAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 016CC6D31B2CD48A008CC6C4 /* SFRestRequest+QUTAdditions.m */; };
 		016CC6E31B2CDF59008CC6C4 /* Macros.h in Headers */ = {isa = PBXBuildFile; fileRef = 016CC6E21B2CDF59008CC6C4 /* Macros.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		016CC6E61B2CE015008CC6C4 /* CreateQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 016CC6E51B2CE015008CC6C4 /* CreateQuestionViewController.m */; };
-		339E18063A3F2AFA7A792A2F /* libPods-uQu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27570755734974408AC24305 /* libPods-uQu.a */; };
 		9680E2EB791EE9BC3CAC27A6 /* libPods-uQuKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56E402030CC8E2A5A02B9A7D /* libPods-uQuKit.a */; };
 /* End PBXBuildFile section */
 
@@ -177,7 +176,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0127A9C31B2CD0D20037BF4C /* uQuKit.framework in Frameworks */,
-				339E18063A3F2AFA7A792A2F /* libPods-uQu.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
