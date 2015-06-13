@@ -15,4 +15,5 @@
 @property (strong, nonatomic) NSNumber *latitude;
 @property (strong, nonatomic) NSNumber *longitude;
 @property (strong, nonatomic) NSString *question;
+@property (strong, nonatomic) NSString *OwnerId;
 @end

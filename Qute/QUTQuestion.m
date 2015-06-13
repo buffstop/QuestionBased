@@ -10,4 +10,16 @@
 
 @implementation QUTQuestion
 
++ (instancetype)fromJsonDict:(NSDictionary *)jsonDict
+{
+    QUTQuestion *createe = [QUTQuestion new];
+    createe.uid = jsonDict[@"id"];
+    createe.OwnerId = jsonDict[@"OwnerId"];
+    createe.name = jsonDict[@"Name"];
+    createe.latitude = jsonDict[@"latitude__c"];
+    createe.longitude = jsonDict[@"longitude__c"];
+    createe.question = jsonDict[@"question__c"];
+        
+    return createe;
+}
 @end

@@ -19,8 +19,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [[SFAPIClient sharedApiClient] testGetParams];
-    [[SFAPIClient sharedApiClient] testGetSelect];
+    [[SFAPIClient sharedApiClient] test];    
 }
 
 - (void)viewDidLoad {

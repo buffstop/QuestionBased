@@ -10,4 +10,15 @@
 
 @implementation QUTAnswer
 
++ (instancetype)fromJsonDict:(NSDictionary *)jsonDict
+{
+    QUTAnswer *createe = [QUTAnswer new];
+    createe.uid = jsonDict[@"id"];
+    createe.name = jsonDict[@"Name"];
+    createe.questionid = jsonDict[@"questionid__c"];
+    createe.text = jsonDict[@"text__c"];
+    
+    return createe;
+}
+
 @end

@@ -12,4 +12,9 @@
 @property (strong, nonatomic) NSString *createdBy;
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *uid;
+
++ (NSArray *)objectsFromRepsonseJsonDict:(NSDictionary *)jsonDict;
+
++ (instancetype)fromJsonDict:(NSDictionary *)jsonDict;
+
 @end

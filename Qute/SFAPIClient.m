@@ -26,6 +26,15 @@
 
 #pragma mark - Test
 
+- (void)test
+{
+    [self getAllQuestionsOnSuccess:^(NSArray *result) {
+        NSLog(@"Success: %@", result);
+    } onError:^(NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+}
+
 - (void)testGetSelect
 {
     NSDictionary *params = [self selectParamsForQueryWithSelectString:@"select id, name from Answer__c"];
@@ -50,36 +59,48 @@
 
 #pragma mark Answers
 
-- (void)getAllAnswersOnSuccess:(void(^)(NSDictionary * responsDict))successBlock
+- (void)getAllAnswersOnSuccess:(void(^)(NSArray *result))successBlock
                        onError:(void(^)(NSError *error))errorBlock;
 {
     NSString *select = @"SELECT Id,OwnerId,questionid__c,text__c FROM Answer__c";
-    [self GETQueryWithSelectString:select onSuccess:successBlock onError:errorBlock];
+    [self GETQueryWithSelectString:select onSuccess:^(NSDictionary *responsDict) {
+        NSArray *records = [QUTAnswer objectsFromRepsonseJsonDict:responsDict];
+        if (successBlock) {  successBlock(records); }
+    } onError:errorBlock];
 }
 
 - (void)getAnswerWithQuestionId:(NSString *)questionId
-              onSuccess:(void(^)(NSDictionary * responsDict))successBlock
+              onSuccess:(void(^)(QUTAnswer * result))successBlock
                 onError:(void(^)(NSError *error))errorBlock;
 {
     NSString *select = [NSString stringWithFormat:@"SELECT Id,OwnerId,questionid__c,text__c FROM Answer__c WHERE questionid__c = %@", questionId];
-    [self GETQueryWithSelectString:select onSuccess:successBlock onError:errorBlock];
+    [self GETQueryWithSelectString:select onSuccess:^(NSDictionary *responsDict) {
+        QUTAnswer *result = [[QUTAnswer objectsFromRepsonseJsonDict:responsDict] firstObject];
+        if (successBlock) { successBlock(result); }
+    } onError:errorBlock];
 }
 
 #pragma mark Questions
 
-- (void)getAllQuestionsOnSuccess:(void(^)(NSDictionary * responsDict))successBlock
+- (void)getAllQuestionsOnSuccess:(void(^)(NSArray *result))successBlock
                        onError:(void(^)(NSError *error))errorBlock;
 {
     NSString *select = @"SELECT Id,latitude__c,longitude__c,OwnerId,question__c FROM Question__c";
-    [self GETQueryWithSelectString:select onSuccess:successBlock onError:errorBlock];
+    [self GETQueryWithSelectString:select onSuccess:^(NSDictionary *responsDict) {
+        NSArray *records = [QUTQuestion objectsFromRepsonseJsonDict:responsDict];
+        if (successBlock) {  successBlock(records); }
+    } onError:errorBlock];
 }
 
 - (void)getQuestioWithId:(NSString *)answerId
-                      onSuccess:(void(^)(NSDictionary * responsDict))successBlock
+                      onSuccess:(void(^)(QUTQuestion * result))successBlock
                         onError:(void(^)(NSError *error))errorBlock;
 {
     NSString *select = [NSString stringWithFormat:@"SELECT Id,latitude__c,longitude__c,Name,OwnerId,question__c FROM Question__c WHERE Id = %@", answerId];
-    [self GETQueryWithSelectString:select onSuccess:successBlock onError:errorBlock];
+    [self GETQueryWithSelectString:select onSuccess:^(NSDictionary *responsDict) {
+        QUTQuestion *result = [[QUTQuestion objectsFromRepsonseJsonDict:responsDict] firstObject];
+        if (successBlock) { successBlock(result); }
+    } onError:errorBlock];
 }
 
 //TODO: get non expired answers

@@ -8,13 +8,38 @@
 
 #import <Foundation/Foundation.h>
 
+#import "QUTAnswer.h"
+#import "QUTQuestion.h"
+
 #import <SalesforceRestAPI/SFRestAPI.h>
 
 @interface SFAPIClient : NSObject
 
+- (void)test;
+
 - (void)testGetSelect;
 
 - (void)testGetParams;
+
+#pragma mark - Convenience
+
+#pragma mark Answers
+
+- (void)getAllAnswersOnSuccess:(void(^)(NSArray *result))successBlock
+                       onError:(void(^)(NSError *error))errorBlock;
+
+- (void)getAnswerWithQuestionId:(NSString *)questionId
+                      onSuccess:(void(^)(QUTAnswer * result))successBlock
+                        onError:(void(^)(NSError *error))errorBlock;
+
+#pragma mark Questions
+
+- (void)getAllQuestionsOnSuccess:(void(^)(NSArray *result))successBlock
+                         onError:(void(^)(NSError *error))errorBlock;
+
+- (void)getQuestioWithId:(NSString *)answerId
+               onSuccess:(void(^)(QUTQuestion * result))successBlock
+                 onError:(void(^)(NSError *error))errorBlock;
 
 #pragma mark - Seletcts
 
