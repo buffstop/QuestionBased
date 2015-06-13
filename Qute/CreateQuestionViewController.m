@@ -8,6 +8,7 @@
 
 #import "CreateQuestionViewController.h"
 #import <S2MToolbox/S2MShopFinderController.h>
+#import <S2MToolbox/S2MCalloutAnnotation.h>
 #import <AutoLayoutTextViews/ALAutoResizingTextView.h>
 @import MapKit;
 
@@ -147,20 +148,21 @@
  *  @return View for Callout Annotation
  */
 
--(MKAnnotationView *)mapView:(MKMapView *)mapView calloutViewForAnnotation:(id<MKAnnotation>)annotation
-{
-    static NSString *identifier = @"uQu";
-    MKAnnotationView* view = [mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
-    if (!view) {
-        view = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
-        view.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-        view.enabled = YES;
-        view.canShowCallout = YES;
-
-    }
-
-    return view;
-}
+//-(MKAnnotationView *)mapView:(MKMapView *)mapView calloutViewForAnnotation:(id<MKAnnotation>)annotation
+//{
+//    static NSString *identifier = @"uQu";
+//    MKAnnotationView* view = [mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
+//    if (!view) {
+//        S2MCalloutAnnotation* customAnnotation = [[S2MCalloutAnnotation alloc] initWithAnnotation:annotation];
+//        view = [[MKAnnotationView alloc] initWithAnnotation:customAnnotation reuseIdentifier:identifier];
+//        view.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+//        view.enabled = YES;
+//        view.canShowCallout = YES;
+//
+//    }
+//
+//    return view;
+//}
 /**
  *  called when the special callout was tapped
  *

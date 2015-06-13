@@ -8,11 +8,20 @@
 
 #import "ViewController.h"
 
+#import "SFAPIClient.h"
+
 @interface ViewController ()
 
 @end
 
 @implementation ViewController
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+//    [[SFAPIClient sharedApiClient] testGetParams];
+//    [[SFAPIClient sharedApiClient] testGetSelect];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
