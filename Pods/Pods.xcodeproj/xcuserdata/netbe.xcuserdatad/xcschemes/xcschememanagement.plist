@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Pods-uQuKit-SQLCipher.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-uQuKit-SalesforceMobileSDK-iOS-SalesforceSDKResources.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-uQuKit-SalesforceMobileSDK-iOS-Settings.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-uQuKit-SalesforceMobileSDK-iOS.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-uQuKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>58A132E2ECB69023C3961D46</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>58AFAFFEF51FE99806C67248</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8067C34900A0C0F4DD4C3967</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>85671946FD99F99CADC1B5AF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>903A1D56384FA292716ABC70</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

@@ -26,6 +26,7 @@
 		0127A9E61B2CD0F10037BF4C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0127A9E51B2CD0F10037BF4C /* Images.xcassets */; };
 		0127A9E91B2CD0F10037BF4C /* uQu WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0127A9D01B2CD0F10037BF4C /* uQu WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0127A9F11B2CD1050037BF4C /* uQuKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0127A9AC1B2CD0D10037BF4C /* uQuKit.framework */; };
+		9680E2EB791EE9BC3CAC27A6 /* libPods-uQuKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56E402030CC8E2A5A02B9A7D /* libPods-uQuKit.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +128,9 @@
 		0127A9E11B2CD0F10037BF4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0127A9E31B2CD0F10037BF4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		0127A9E51B2CD0F10037BF4C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		56E402030CC8E2A5A02B9A7D /* libPods-uQuKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-uQuKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7C95EEB3CF052A1CE79DA40 /* Pods-uQuKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uQuKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-uQuKit/Pods-uQuKit.release.xcconfig"; sourceTree = "<group>"; };
+		ED919E9DE2823DB27A7B98C0 /* Pods-uQuKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uQuKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-uQuKit/Pods-uQuKit.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +153,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9680E2EB791EE9BC3CAC27A6 /* libPods-uQuKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +186,8 @@
 				0127A9D11B2CD0F10037BF4C /* uQu WatchKit Extension */,
 				0127A9DF1B2CD0F10037BF4C /* uQu WatchKit App */,
 				0127A97F1B2CD0B60037BF4C /* Products */,
+				4E7A2DD9EDE523E006B01B5B /* Pods */,
+				78CB807D4E1AF17182300AEA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -309,6 +316,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		4E7A2DD9EDE523E006B01B5B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ED919E9DE2823DB27A7B98C0 /* Pods-uQuKit.debug.xcconfig */,
+				C7C95EEB3CF052A1CE79DA40 /* Pods-uQuKit.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		78CB807D4E1AF17182300AEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				56E402030CC8E2A5A02B9A7D /* libPods-uQuKit.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -366,10 +390,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0127A9C51B2CD0D20037BF4C /* Build configuration list for PBXNativeTarget "uQuKit" */;
 			buildPhases = (
+				2172F358634591DCAA68C516 /* Check Pods Manifest.lock */,
 				0127A9A71B2CD0D10037BF4C /* Sources */,
 				0127A9A81B2CD0D10037BF4C /* Frameworks */,
 				0127A9A91B2CD0D10037BF4C /* Headers */,
 				0127A9AA1B2CD0D10037BF4C /* Resources */,
+				E3A6423539B4359AF45D7D72 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -537,6 +563,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2172F358634591DCAA68C516 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E3A6423539B4359AF45D7D72 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-uQuKit/Pods-uQuKit-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0127A97A1B2CD0B60037BF4C /* Sources */ = {
@@ -779,6 +838,7 @@
 		};
 		0127A9C61B2CD0D20037BF4C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED919E9DE2823DB27A7B98C0 /* Pods-uQuKit.debug.xcconfig */;
 			buildSettings = {
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -802,6 +862,7 @@
 		};
 		0127A9C71B2CD0D20037BF4C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C7C95EEB3CF052A1CE79DA40 /* Pods-uQuKit.release.xcconfig */;
 			buildSettings = {
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -926,6 +987,7 @@
 				0127A9A31B2CD0B60037BF4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0127A9A41B2CD0B60037BF4C /* Build configuration list for PBXNativeTarget "uQuTests" */ = {
 			isa = XCConfigurationList;
@@ -934,6 +996,7 @@
 				0127A9A61B2CD0B60037BF4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0127A9C51B2CD0D20037BF4C /* Build configuration list for PBXNativeTarget "uQuKit" */ = {
 			isa = XCConfigurationList;
@@ -942,6 +1005,7 @@
 				0127A9C71B2CD0D20037BF4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0127A9C91B2CD0D20037BF4C /* Build configuration list for PBXNativeTarget "uQuKitTests" */ = {
 			isa = XCConfigurationList;
@@ -950,6 +1014,7 @@
 				0127A9CB1B2CD0D20037BF4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0127A9EA1B2CD0F10037BF4C /* Build configuration list for PBXNativeTarget "uQu WatchKit App" */ = {
 			isa = XCConfigurationList;
@@ -958,6 +1023,7 @@
 				0127A9EC1B2CD0F10037BF4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0127A9ED1B2CD0F10037BF4C /* Build configuration list for PBXNativeTarget "uQu WatchKit Extension" */ = {
 			isa = XCConfigurationList;
@@ -966,6 +1032,7 @@
 				0127A9EF1B2CD0F10037BF4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

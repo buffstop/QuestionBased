@@ -1,0 +1,69 @@
+PODS:
+  - OpenSSL-Universal (1.0.1.k)
+  - SalesforceMobileSDK-iOS (3.2.1):
+    - SalesforceMobileSDK-iOS/SalesforceCommonUtils (= 3.2.1)
+    - SalesforceMobileSDK-iOS/SalesforceNetwork (= 3.2.1)
+    - SalesforceMobileSDK-iOS/SalesforceOAuth (= 3.2.1)
+    - SalesforceMobileSDK-iOS/SalesforceRestAPI (= 3.2.1)
+    - SalesforceMobileSDK-iOS/SalesforceSDKCommon (= 3.2.1)
+    - SalesforceMobileSDK-iOS/SalesforceSDKCore (= 3.2.1)
+    - SalesforceMobileSDK-iOS/SalesforceSecurity (= 3.2.1)
+    - SalesforceMobileSDK-iOS/SmartSync (= 3.2.1)
+  - SalesforceMobileSDK-iOS/SalesforceCommonUtils (3.2.1)
+  - SalesforceMobileSDK-iOS/SalesforceNetwork (3.2.1):
+    - OpenSSL-Universal (= 1.0.1.k)
+    - SalesforceMobileSDK-iOS/SalesforceCommonUtils
+    - SalesforceMobileSDK-iOS/SalesforceOAuth
+    - SalesforceMobileSDK-iOS/SalesforceSDKCommon
+    - SalesforceMobileSDK-iOS/SalesforceSDKCore
+    - SalesforceMobileSDK-iOS/SalesforceSecurity
+    - SQLCipher (~> 3.1)
+  - SalesforceMobileSDK-iOS/SalesforceOAuth (3.2.1):
+    - SalesforceMobileSDK-iOS/SalesforceCommonUtils
+    - SalesforceMobileSDK-iOS/SalesforceSDKCommon
+    - SalesforceMobileSDK-iOS/SalesforceSecurity
+  - SalesforceMobileSDK-iOS/SalesforceRestAPI (3.2.1):
+    - OpenSSL-Universal (= 1.0.1.k)
+    - SalesforceMobileSDK-iOS/SalesforceCommonUtils
+    - SalesforceMobileSDK-iOS/SalesforceNetwork
+    - SalesforceMobileSDK-iOS/SalesforceOAuth
+    - SalesforceMobileSDK-iOS/SalesforceSDKCommon
+    - SalesforceMobileSDK-iOS/SalesforceSDKCore
+    - SalesforceMobileSDK-iOS/SalesforceSecurity
+    - SQLCipher (~> 3.1)
+  - SalesforceMobileSDK-iOS/SalesforceSDKCommon (3.2.1)
+  - SalesforceMobileSDK-iOS/SalesforceSDKCore (3.2.1):
+    - OpenSSL-Universal (= 1.0.1.k)
+    - SalesforceMobileSDK-iOS/SalesforceCommonUtils
+    - SalesforceMobileSDK-iOS/SalesforceOAuth
+    - SalesforceMobileSDK-iOS/SalesforceSDKCommon
+    - SalesforceMobileSDK-iOS/SalesforceSecurity
+    - SQLCipher (~> 3.1)
+  - SalesforceMobileSDK-iOS/SalesforceSecurity (3.2.1):
+    - SalesforceMobileSDK-iOS/SalesforceCommonUtils
+    - SalesforceMobileSDK-iOS/SalesforceSDKCommon
+  - SalesforceMobileSDK-iOS/SmartSync (3.2.1):
+    - OpenSSL-Universal (= 1.0.1.k)
+    - SalesforceMobileSDK-iOS/SalesforceCommonUtils
+    - SalesforceMobileSDK-iOS/SalesforceNetwork
+    - SalesforceMobileSDK-iOS/SalesforceOAuth
+    - SalesforceMobileSDK-iOS/SalesforceRestAPI
+    - SalesforceMobileSDK-iOS/SalesforceSDKCommon
+    - SalesforceMobileSDK-iOS/SalesforceSDKCore
+    - SalesforceMobileSDK-iOS/SalesforceSecurity
+    - SQLCipher (~> 3.1)
+  - SQLCipher (3.1.0):
+    - SQLCipher/standard (= 3.1.0)
+  - SQLCipher/common (3.1.0)
+  - SQLCipher/standard (3.1.0):
+    - SQLCipher/common
+
+DEPENDENCIES:
+  - SalesforceMobileSDK-iOS
+
+SPEC CHECKSUMS:
+  OpenSSL-Universal: 5b864c8eb334c8e78f44e4b2eb294ee2c1891c23
+  SalesforceMobileSDK-iOS: ed4655c7f3bfc304516b559f4e30b2c2c3460b65
+  SQLCipher: c44fcca49c31483c2489cfb79aa7a69407f3794a
+
+COCOAPODS: 0.37.2
