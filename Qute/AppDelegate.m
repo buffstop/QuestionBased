@@ -11,8 +11,6 @@
 #import "ViewController.h"
 #import <MobileCoreServices/UTCoreTypes.h>
 #import "AppDelegate.h"
-//#import "InitialViewController.h"
-//#import "RestAPIExplorerViewController.h"
 #import <SalesforceSDKCore/SFJsonUtils.h>
 #import <SalesforceSDKCore/SFUserAccountManager.h>
 #import <SalesforceSDKCore/SFPushNotificationManager.h>
