@@ -149,7 +149,7 @@
                           onSuccess:(void(^)(NSArray *result))successBlock
                             onError:(void(^)(NSError *error))errorBlock;
 {
-    NSString *select = [NSString stringWithFormat:@"SELECT Id,latitude__c,longitude__c,OwnerId,question__c FROM Question__c where OwnerId==%@", userId];
+    NSString *select = [NSString stringWithFormat:@"SELECT Id,latitude__c,longitude__c,OwnerId,question__c FROM Question__c where OwnerId = \'%@\'", userId];
     [self GETQueryWithSelectString:select onSuccess:^(NSDictionary *responsDict) {
         NSArray *records = [QUTQuestion objectsFromRepsonseJsonDict:responsDict];
         if (successBlock) {  successBlock(records); }
@@ -160,7 +160,7 @@
                       onSuccess:(void(^)(QUTQuestion * result))successBlock
                         onError:(void(^)(NSError *error))errorBlock;
 {
-    NSString *select = [NSString stringWithFormat:@"SELECT Id,latitude__c,longitude__c,Name,OwnerId,question__c FROM Question__c WHERE Id = %@", answerId];
+    NSString *select = [NSString stringWithFormat:@"SELECT Id,latitude__c,longitude__c,Name,OwnerId,question__c FROM Question__c WHERE Id = \'%@\'", answerId];
     [self GETQueryWithSelectString:select onSuccess:^(NSDictionary *responsDict) {
         QUTQuestion *result = [[QUTQuestion objectsFromRepsonseJsonDict:responsDict] firstObject];
         if (successBlock) { successBlock(result); }

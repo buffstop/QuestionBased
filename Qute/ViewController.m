@@ -41,7 +41,9 @@ typedef NS_ENUM(NSUInteger, QUTSegmentIndex) {
 
 - (void)reloadLocalQuestions
 {
-    //TODO:
+    // get all qs not from my
+    // get user location
+    // filter by distannce 1000m
 }
 
 #pragma mark - UITableViewDataSource
@@ -81,16 +83,33 @@ typedef NS_ENUM(NSUInteger, QUTSegmentIndex) {
 
 - (IBAction)segmentedControlValueHasChanged:(UISegmentedControl *)sender
 {
-    //TODO:
+    switch (sender.selectedSegmentIndex) {
+        case QUTLocalQuestions:
+            [self reloadLocalQuestions];
+            break;
+        case QUTMyQuestions:
+            [self reloadMyQuestions];
+            break;
+        default:
+            break;
+    }
 }
 
 #pragma mark - Life Cycle
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+}
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     [self reloadLocalQuestions];
     [self reloadMyQuestions];
+    
 //    [[SFAPIClient sharedApiClient] test];
 //    [[SFAPIClient sharedApiClient] testCreateQuestion];
 }
