@@ -1,6 +1,7 @@
 PODS:
   - AutoLayoutTextViews (1.2.3)
   - OpenSSL-Universal (1.0.1.k)
+  - S2MToolbox/ShopFinder (0.2.1)
   - SalesforceMobileSDK-iOS (3.2.1):
     - SalesforceMobileSDK-iOS/SalesforceCommonUtils (= 3.2.1)
     - SalesforceMobileSDK-iOS/SalesforceNetwork (= 3.2.1)
@@ -61,11 +62,13 @@ PODS:
 
 DEPENDENCIES:
   - AutoLayoutTextViews (~> 1.0)
+  - S2MToolbox/ShopFinder
   - SalesforceMobileSDK-iOS
 
 SPEC CHECKSUMS:
   AutoLayoutTextViews: 50d76d8938f263794e3344ee6876001f806c7cda
   OpenSSL-Universal: 5b864c8eb334c8e78f44e4b2eb294ee2c1891c23
+  S2MToolbox: 8ac2c67df9dc3ca74e7b71233bd39e13ee686fc7
   SalesforceMobileSDK-iOS: ed4655c7f3bfc304516b559f4e30b2c2c3460b65
   SQLCipher: c44fcca49c31483c2489cfb79aa7a69407f3794a
 
