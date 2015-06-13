@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "85671946FD99F99CADC1B5AF"
+               BlueprintIdentifier = "56185C172103FE6546CA8346"
                BuildableName = "libPods-uQuKit-SalesforceMobileSDK-iOS.a"
                BlueprintName = "Pods-uQuKit-SalesforceMobileSDK-iOS"
                ReferencedContainer = "container:Pods.xcodeproj">

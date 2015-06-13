@@ -29,11 +29,11 @@
 
 - (void)getQuestions
 {
-    [[SFAPIClient sharedApiClient] getAllQuestionsOnSuccess:^(NSArray *result) {
-        
-    } onError:^(NSError *error) {
-        
-    }];
+//    [[SFAPIClient sharedApiClient] getAllQuestionsOnSuccess:^(NSArray *result) {
+//        
+//    } onError:^(NSError *error) {
+//        
+//    }];
 }
 
 - (void)awakeWithContext:(id)context {

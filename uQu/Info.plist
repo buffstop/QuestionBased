@@ -36,5 +36,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>uQu needs to access Location Services to ask questions on a specific place.</string>
+	<key>NSLocationUsageDescription</key>
+	<string>uQu needs to access Location Services to ask questions on a specific place.</string>
 </dict>
 </plist>

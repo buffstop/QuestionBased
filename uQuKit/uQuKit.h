@@ -20,4 +20,3 @@ FOUNDATION_EXPORT const unsigned char uQuKitVersionString[];
 //#import "SFAPIClient.h"
 //#import <SalesforceRestAPI/SFRestAPI.h>
 #import <uQuKit/SFAPIClient.h>
-//#import <SalesforceRestAPI/SFRestAPI.h>

@@ -40,6 +40,9 @@
 		016CC6DF1B2CD48A008CC6C4 /* SFAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 016CC6D11B2CD48A008CC6C4 /* SFAPIClient.m */; };
 		016CC6E01B2CD48A008CC6C4 /* SFRestRequest+QUTAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 016CC6D21B2CD48A008CC6C4 /* SFRestRequest+QUTAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		016CC6E11B2CD48A008CC6C4 /* SFRestRequest+QUTAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 016CC6D31B2CD48A008CC6C4 /* SFRestRequest+QUTAdditions.m */; };
+		016CC6E31B2CDF59008CC6C4 /* Macros.h in Headers */ = {isa = PBXBuildFile; fileRef = 016CC6E21B2CDF59008CC6C4 /* Macros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		016CC6E61B2CE015008CC6C4 /* CreateQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 016CC6E51B2CE015008CC6C4 /* CreateQuestionViewController.m */; };
+		339E18063A3F2AFA7A792A2F /* libPods-uQu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27570755734974408AC24305 /* libPods-uQu.a */; };
 		9680E2EB791EE9BC3CAC27A6 /* libPods-uQuKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56E402030CC8E2A5A02B9A7D /* libPods-uQuKit.a */; };
 /* End PBXBuildFile section */
 
@@ -156,6 +159,13 @@
 		016CC6D11B2CD48A008CC6C4 /* SFAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFAPIClient.m; sourceTree = "<group>"; };
 		016CC6D21B2CD48A008CC6C4 /* SFRestRequest+QUTAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SFRestRequest+QUTAdditions.h"; sourceTree = "<group>"; };
 		016CC6D31B2CD48A008CC6C4 /* SFRestRequest+QUTAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SFRestRequest+QUTAdditions.m"; sourceTree = "<group>"; };
+		016CC6E21B2CDF59008CC6C4 /* Macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
+		016CC6E41B2CE015008CC6C4 /* CreateQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateQuestionViewController.h; sourceTree = "<group>"; };
+		016CC6E51B2CE015008CC6C4 /* CreateQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateQuestionViewController.m; sourceTree = "<group>"; };
+		016CC6E71B2CE154008CC6C4 /* libPods-uQuKit-SalesforceMobileSDK-iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-uQuKit-SalesforceMobileSDK-iOS.a"; path = "Pods/../build/Debug-iphoneos/libPods-uQuKit-SalesforceMobileSDK-iOS.a"; sourceTree = "<group>"; };
+		0CCE1BCA182CBC872A85A98E /* Pods-uQu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uQu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-uQu/Pods-uQu.debug.xcconfig"; sourceTree = "<group>"; };
+		25284F5CBAD7A36FA0C15C0C /* Pods-uQu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uQu.release.xcconfig"; path = "Pods/Target Support Files/Pods-uQu/Pods-uQu.release.xcconfig"; sourceTree = "<group>"; };
+		27570755734974408AC24305 /* libPods-uQu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-uQu.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		56E402030CC8E2A5A02B9A7D /* libPods-uQuKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-uQuKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7C95EEB3CF052A1CE79DA40 /* Pods-uQuKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uQuKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-uQuKit/Pods-uQuKit.release.xcconfig"; sourceTree = "<group>"; };
 		ED919E9DE2823DB27A7B98C0 /* Pods-uQuKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uQuKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-uQuKit/Pods-uQuKit.debug.xcconfig"; sourceTree = "<group>"; };
@@ -167,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0127A9C31B2CD0D20037BF4C /* uQuKit.framework in Frameworks */,
+				339E18063A3F2AFA7A792A2F /* libPods-uQu.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,6 +246,8 @@
 		0127A9801B2CD0B60037BF4C /* uQu */ = {
 			isa = PBXGroup;
 			children = (
+				016CC6E41B2CE015008CC6C4 /* CreateQuestionViewController.h */,
+				016CC6E51B2CE015008CC6C4 /* CreateQuestionViewController.m */,
 				0127A9851B2CD0B60037BF4C /* AppDelegate.h */,
 				0127A9861B2CD0B60037BF4C /* AppDelegate.m */,
 				0127A9881B2CD0B60037BF4C /* ViewController.h */,
@@ -276,6 +289,7 @@
 		0127A9AD1B2CD0D10037BF4C /* uQuKit */ = {
 			isa = PBXGroup;
 			children = (
+				016CC6E21B2CDF59008CC6C4 /* Macros.h */,
 				0127A9B01B2CD0D10037BF4C /* uQuKit.h */,
 				016CC6C61B2CD48A008CC6C4 /* NSDate+QUTAdditions.h */,
 				016CC6C71B2CD48A008CC6C4 /* NSDate+QUTAdditions.m */,
@@ -363,6 +377,8 @@
 			children = (
 				ED919E9DE2823DB27A7B98C0 /* Pods-uQuKit.debug.xcconfig */,
 				C7C95EEB3CF052A1CE79DA40 /* Pods-uQuKit.release.xcconfig */,
+				0CCE1BCA182CBC872A85A98E /* Pods-uQu.debug.xcconfig */,
+				25284F5CBAD7A36FA0C15C0C /* Pods-uQu.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -370,7 +386,9 @@
 		78CB807D4E1AF17182300AEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				016CC6E71B2CE154008CC6C4 /* libPods-uQuKit-SalesforceMobileSDK-iOS.a */,
 				56E402030CC8E2A5A02B9A7D /* libPods-uQuKit.a */,
+				27570755734974408AC24305 /* libPods-uQu.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -385,6 +403,7 @@
 				016CC6D61B2CD48A008CC6C4 /* NSDictionary+QUTADDITIONS.h in Headers */,
 				016CC6DE1B2CD48A008CC6C4 /* SFAPIClient.h in Headers */,
 				016CC6DC1B2CD48A008CC6C4 /* QUTQuestion.h in Headers */,
+				016CC6E31B2CDF59008CC6C4 /* Macros.h in Headers */,
 				016CC6D41B2CD48A008CC6C4 /* NSDate+QUTAdditions.h in Headers */,
 				016CC6DA1B2CD48A008CC6C4 /* QUTBaseModel.h in Headers */,
 				0127A9B11B2CD0D10037BF4C /* uQuKit.h in Headers */,
@@ -400,11 +419,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0127A9A11B2CD0B60037BF4C /* Build configuration list for PBXNativeTarget "uQu" */;
 			buildPhases = (
+				69B397444AF47C2C3473F6C8 /* Check Pods Manifest.lock */,
 				0127A97A1B2CD0B60037BF4C /* Sources */,
 				0127A97B1B2CD0B60037BF4C /* Frameworks */,
 				0127A97C1B2CD0B60037BF4C /* Resources */,
 				0127A9C81B2CD0D20037BF4C /* Embed Frameworks */,
 				0127A9F01B2CD0F10037BF4C /* Embed App Extensions */,
+				9516B840CE5AE2C8195F684D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -629,6 +650,36 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		69B397444AF47C2C3473F6C8 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9516B840CE5AE2C8195F684D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-uQu/Pods-uQu-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		E3A6423539B4359AF45D7D72 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -651,6 +702,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				016CC6E61B2CE015008CC6C4 /* CreateQuestionViewController.m in Sources */,
 				0127A98A1B2CD0B60037BF4C /* ViewController.m in Sources */,
 				0127A9871B2CD0B60037BF4C /* AppDelegate.m in Sources */,
 				0127A9841B2CD0B60037BF4C /* main.m in Sources */,
@@ -840,20 +892,30 @@
 		};
 		0127A9A21B2CD0B60037BF4C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0CCE1BCA182CBC872A85A98E /* Pods-uQu.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = uQu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
 		0127A9A31B2CD0B60037BF4C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25284F5CBAD7A36FA0C15C0C /* Pods-uQu.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = uQu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

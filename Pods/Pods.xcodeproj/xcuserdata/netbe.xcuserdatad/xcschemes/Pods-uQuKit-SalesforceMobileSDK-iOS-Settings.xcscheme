@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "58A132E2ECB69023C3961D46"
+               BlueprintIdentifier = "DEA80E7DF2A152A8D7471A12"
                BuildableName = "Settings.bundle"
                BlueprintName = "Pods-uQuKit-SalesforceMobileSDK-iOS-Settings"
                ReferencedContainer = "container:Pods.xcodeproj">

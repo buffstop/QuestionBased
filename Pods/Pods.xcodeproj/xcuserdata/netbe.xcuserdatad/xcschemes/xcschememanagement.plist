@@ -4,6 +4,41 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-uQu-AutoLayoutTextViews.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-uQu-S2MToolbox.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-uQu-SQLCipher.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-uQu-SalesforceMobileSDK-iOS-SalesforceSDKResources.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-uQu-SalesforceMobileSDK-iOS-Settings.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-uQu-SalesforceMobileSDK-iOS.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-uQu.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-uQuKit-SQLCipher.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,27 +67,62 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>58A132E2ECB69023C3961D46</key>
+		<key>0DA6A93B7D8CF8A8386B25AB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>58AFAFFEF51FE99806C67248</key>
+		<key>1BA621FD05787D7690F53E6E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8067C34900A0C0F4DD4C3967</key>
+		<key>2D115FBAED7EA8D0F70141F0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>85671946FD99F99CADC1B5AF</key>
+		<key>314E5D2E48B5F69E09489F67</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>903A1D56384FA292716ABC70</key>
+		<key>379E91FBF73B346A981A14F9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>41AD1378C64AFB695C35CE94</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>45B57DB7CB98F8408497FD8C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>56185C172103FE6546CA8346</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A5F43D905BBEB99F13F23F73</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D14D19A7D674D812F022334C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DEA80E7DF2A152A8D7471A12</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ED226F684D81B0A0153091E0</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -12,7 +12,6 @@
 #import "QUTQuestion.h"
 #import "NSDictionary+QUTADDITIONS.h"
 
-
 @interface SFAPIClient : NSObject
 
 #pragma mark - Test
@@ -28,6 +27,10 @@
 - (void)testCreateAnswerWithQId:(NSString *)qId;
 
 #pragma mark - API
+#pragma mark User
+
+- (NSString *)getUserName;
+
 #pragma mark Answer
 
 - (void)getAllAnswersOnSuccess:(void(^)(NSArray *result))successBlock
