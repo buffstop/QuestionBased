@@ -17,4 +17,6 @@
 
 + (instancetype)fromJsonDict:(NSDictionary *)jsonDict;
 
+- (NSDictionary *)jsonDict;
+
 @end

@@ -27,4 +27,11 @@
     NSAssert(false, @"Overwrite in subclass");
     return nil;
 }
+
+- (NSDictionary *)jsonDict;
+{
+    NSAssert(false, @"Overwrite in subclass");
+    return nil;
+}
+
 @end

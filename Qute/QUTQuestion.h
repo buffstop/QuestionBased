@@ -16,4 +16,5 @@
 @property (strong, nonatomic) NSNumber *longitude;
 @property (strong, nonatomic) NSString *question;
 @property (strong, nonatomic) NSString *OwnerId;
+@property (strong, nonatomic) NSDate *expireringDate;
 @end

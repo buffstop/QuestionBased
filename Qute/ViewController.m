@@ -9,6 +9,8 @@
 #import "ViewController.h"
 
 #import "SFAPIClient.h"
+#import "QUTQuestion.h"
+#import "NSDate+QUTAdditions.h"
 
 @interface ViewController ()
 
@@ -19,7 +21,10 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [[SFAPIClient sharedApiClient] test];    
+//    [[SFAPIClient sharedApiClient] test];
+    [[SFAPIClient sharedApiClient] testCreateQuestion];
+    
+    
 }
 
 - (void)viewDidLoad {

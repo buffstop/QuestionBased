@@ -10,10 +10,13 @@
 
 #import "QUTAnswer.h"
 #import "QUTQuestion.h"
+#import "NSDictionary+QUTADDITIONS.h"
 
 #import <SalesforceRestAPI/SFRestAPI.h>
 
 @interface SFAPIClient : NSObject
+
+#pragma mark - Test
 
 - (void)test;
 
@@ -21,9 +24,11 @@
 
 - (void)testGetParams;
 
-#pragma mark - Convenience
+- (void)testCreateQuestion;
 
-#pragma mark Answers
+- (void)testCreateAnswerWithQId:(NSString *)qId;
+
+#pragma mark Answer
 
 - (void)getAllAnswersOnSuccess:(void(^)(NSArray *result))successBlock
                        onError:(void(^)(NSError *error))errorBlock;
@@ -32,7 +37,11 @@
                       onSuccess:(void(^)(QUTAnswer * result))successBlock
                         onError:(void(^)(NSError *error))errorBlock;
 
-#pragma mark Questions
+- (void)createAnswerWithParams:(NSDictionary *)params
+                     onSuccess:(void(^)(NSDictionary * responsDict))successBlock
+                       onError:(void(^)(NSError *error))errorBlock;
+
+#pragma mark Question
 
 - (void)getAllQuestionsOnSuccess:(void(^)(NSArray *result))successBlock
                          onError:(void(^)(NSError *error))errorBlock;
@@ -41,46 +50,9 @@
                onSuccess:(void(^)(QUTQuestion * result))successBlock
                  onError:(void(^)(NSError *error))errorBlock;
 
-#pragma mark - Seletcts
-
-- (void)GETQueryWithSelectString:(NSString *)select
+- (void)createQuestionWithParams:(NSDictionary *)params
                        onSuccess:(void(^)(NSDictionary * responsDict))successBlock
                          onError:(void(^)(NSError *error))errorBlock;
-
-- (void)POSTQueryWithSelectString:(NSString *)select
-                        onSuccess:(void(^)(NSDictionary * responsDict))successBlock
-                          onError:(void(^)(NSError *error))errorBlock;
-
-- (void)PUTQueryWithSelectString:(NSString *)select
-                       onSuccess:(void(^)(NSDictionary * responsDict))successBlock
-                         onError:(void(^)(NSError *error))errorBlock;
-
-- (void)DELETEQueryWithSelectString:(NSString *)select
-                          onSuccess:(void(^)(NSDictionary * responsDict))successBlock
-                            onError:(void(^)(NSError *error))errorBlock;
-
-#pragma mark - Params
-
-- (void)GETQueryWithParams:(NSDictionary *)params
-                 onSuccess:(void(^)(NSDictionary * responsDict))successBlock
-                   onError:(void(^)(NSError *error))errorBlock;
-
-- (void)POSTQueryWithParams:(NSDictionary *)params
-                  onSuccess:(void(^)(NSDictionary * responsDict))successBlock
-                    onError:(void(^)(NSError *error))errorBlock;
-
-- (void)PUTQueryWithParams:(NSDictionary *)params
-                 onSuccess:(void(^)(NSDictionary * responsDict))successBlock
-                   onError:(void(^)(NSError *error))errorBlock;
-
-- (void)DELETEQueryWithParams:(NSDictionary *)params
-                    onSuccess:(void(^)(NSDictionary * responsDict))successBlock
-                      onError:(void(^)(NSError *error))errorBlock;
-
-- (void)sendQueryWithSFRestMethod:(SFRestMethod)restMethod
-                           params:(NSDictionary *)params
-                        onSuccess:(void(^)(NSDictionary * responsDict))successBlock
-                          onError:(void(^)(NSError *error))errorBlock;
 
 #pragma mark - Life Cycle
 

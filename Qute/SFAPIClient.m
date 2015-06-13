@@ -55,10 +55,47 @@
     }];
 }
 
-#pragma mark - Convenience
+- (void)testCreateQuestion
+{
+    QUTQuestion *testQ = [QUTQuestion new];
+//    testQ.expiredate = [NSDate qut_in24hours];
+    testQ.latitude = @32;
+    testQ.longitude = @32;
+    testQ.question = @"Why the fuck!";
+    
+    [[SFAPIClient sharedApiClient] createQuestionWithParams:[testQ jsonDict] onSuccess:^(NSDictionary *responsDict) {
+        NSLog(@"%@", responsDict);
+        NSString *qId = responsDict[@"id"];
+        [self testCreateAnswerWithQId:qId];
+    } onError:^(NSError *error) {
+        NSLog(@"%@", error);
+    }];
+}
 
-#pragma mark Answers
+- (void)testCreateAnswerWithQId:(NSString *)qId
+{
+    QUTAnswer *testQ = [QUTAnswer new];
+    testQ.text = @"Yes";
+    testQ.uid = qId;
+    [[SFAPIClient sharedApiClient] createAnswerWithParams:[testQ jsonDict] onSuccess:^(NSDictionary *responsDict) {
+        NSLog(@"%@", responsDict);
+    } onError:^(NSError *error) {
+        NSLog(@"%@", error);
+    }];
+}
 
+#pragma mark - To Use
+
+- (void)createType:(NSString *)type
+            params:(NSDictionary *)params
+         onSuccess:(void(^)(NSDictionary * responsDict))successBlock
+           onError:(void(^)(NSError *error))errorBlock;
+{
+    NSString *path = [NSString stringWithFormat:@"/v33.0/sobjects/%@", type];
+    [self sendQueryWithSFRestMethod:SFRestMethodPOST path:path params:params onSuccess:successBlock onError:errorBlock];
+}
+
+#pragma mark Answer
 - (void)getAllAnswersOnSuccess:(void(^)(NSArray *result))successBlock
                        onError:(void(^)(NSError *error))errorBlock;
 {
@@ -78,6 +115,13 @@
         QUTAnswer *result = [[QUTAnswer objectsFromRepsonseJsonDict:responsDict] firstObject];
         if (successBlock) { successBlock(result); }
     } onError:errorBlock];
+}
+
+- (void)createAnswerWithParams:(NSDictionary *)params
+         onSuccess:(void(^)(NSDictionary * responsDict))successBlock
+           onError:(void(^)(NSError *error))errorBlock
+{
+    [self createType:@"answer__c" params:params onSuccess:successBlock onError:errorBlock];
 }
 
 #pragma mark Questions
@@ -103,11 +147,26 @@
     } onError:errorBlock];
 }
 
+- (void)createQuestionWithParams:(NSDictionary *)params
+                     onSuccess:(void(^)(NSDictionary * responsDict))successBlock
+                       onError:(void(^)(NSError *error))errorBlock
+{
+    [self createType:@"question__c" params:params onSuccess:successBlock onError:errorBlock];
+}
+
+#pragma mark - Other
+
 //TODO: get non expired answers
 
 //TODO: get questions around my location
 
 //TODO: create question
+//- (QUTQuestion *)createQuestionWithExpiredate:(NSDate *)expiredate latitude:(NSNumber *)latitude longitude:(NSNumber *)longitude question:(NSString *)question ownerId:(NSString *)OwnerId
+//{
+//    
+//}
+
+
 
 #pragma mark - Selects
 
@@ -116,33 +175,6 @@
                    onError:(void(^)(NSError *error))errorBlock;
 {
     [self GETQueryWithParams:[self selectParamsForQueryWithSelectString:select]
-                   onSuccess:successBlock
-                     onError:errorBlock];
-}
-
-- (void)POSTQueryWithSelectString:(NSString *)select
-                  onSuccess:(void(^)(NSDictionary * responsDict))successBlock
-                    onError:(void(^)(NSError *error))errorBlock;
-{
-    [self POSTQueryWithParams:[self selectParamsForQueryWithSelectString:select]
-                   onSuccess:successBlock
-                     onError:errorBlock];
-}
-
-- (void)PUTQueryWithSelectString:(NSString *)select
-                 onSuccess:(void(^)(NSDictionary * responsDict))successBlock
-                   onError:(void(^)(NSError *error))errorBlock;
-{
-    [self PUTQueryWithParams:[self selectParamsForQueryWithSelectString:select]
-                   onSuccess:successBlock
-                     onError:errorBlock];
-}
-
-- (void)DELETEQueryWithSelectString:(NSString *)select
-                    onSuccess:(void(^)(NSDictionary * responsDict))successBlock
-                      onError:(void(^)(NSError *error))errorBlock;
-{
-    [self DELETEQueryWithParams:[self selectParamsForQueryWithSelectString:select]
                    onSuccess:successBlock
                      onError:errorBlock];
 }
@@ -156,39 +188,28 @@
         [self sendQueryWithSFRestMethod:SFRestMethodGET params:params onSuccess:successBlock onError:errorBlock];
 }
 
-- (void)POSTQueryWithParams:(NSDictionary *)params
-                  onSuccess:(void(^)(NSDictionary * responsDict))successBlock
-                    onError:(void(^)(NSError *error))errorBlock;
-{
-    [self sendQueryWithSFRestMethod:SFRestMethodPOST params:params onSuccess:successBlock onError:errorBlock];
-}
-
-- (void)PUTQueryWithParams:(NSDictionary *)params
-                 onSuccess:(void(^)(NSDictionary * responsDict))successBlock
-                   onError:(void(^)(NSError *error))errorBlock;
-{
-    [self sendQueryWithSFRestMethod:SFRestMethodPUT params:params onSuccess:successBlock onError:errorBlock];
-}
-
-- (void)DELETEQueryWithParams:(NSDictionary *)params
-                 onSuccess:(void(^)(NSDictionary * responsDict))successBlock
-                   onError:(void(^)(NSError *error))errorBlock;
-{
-    [self sendQueryWithSFRestMethod:SFRestMethodDELETE params:params onSuccess:successBlock onError:errorBlock];
-}
-
 - (void)sendQueryWithSFRestMethod:(SFRestMethod)restMethod
                            params:(NSDictionary *)params
                         onSuccess:(void(^)(NSDictionary * responsDict))successBlock
                           onError:(void(^)(NSError *error))errorBlock;
 {
     NSString *path = @"/v33.0/query";
+    [self sendQueryWithSFRestMethod:restMethod path:path params:params onSuccess:successBlock onError:errorBlock];
+}
+
+- (void)sendQueryWithSFRestMethod:(SFRestMethod)restMethod
+                             path:(NSString *)path
+                           params:(NSDictionary *)params
+                        onSuccess:(void(^)(NSDictionary * responsDict))successBlock
+                          onError:(void(^)(NSError *error))errorBlock;
+{
+    
     
     NSDictionary *queryParams = params;
-//    NSDictionary *queryParams = ([params length] == 0
-//                                 ? nil
-//                                 : (NSDictionary *)[SFJsonUtils objectFromJSONString:params]
-//                                 );
+    //    NSDictionary *queryParams = ([params length] == 0
+    //                                 ? nil
+    //                                 : (NSDictionary *)[SFJsonUtils objectFromJSONString:params]
+    //                                 );
     
     SFRestRequest *request = [SFRestRequest requestWithMethod:restMethod path:path queryParams:queryParams];
     
@@ -239,7 +260,7 @@
         void (^errorHandler)() = self.errorHandlerForRequest[request];
         [self removeHandlerForRequest:request];
         if (errorHandler) {
-            errorHandler([NSError errorWithDomain:@"com.cockie.monster" code:0 userInfo:nil]);
+            errorHandler(error);
         }
     });
 }
