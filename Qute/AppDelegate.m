@@ -8,15 +8,33 @@
 
 #import "AppDelegate.h"
 
+#import "ViewController.h"
+#import <MobileCoreServices/UTCoreTypes.h>
+#import "AppDelegate.h"
+//#import "InitialViewController.h"
+//#import "RestAPIExplorerViewController.h"
+#import <SalesforceSDKCore/SFJsonUtils.h>
+#import <SalesforceSDKCore/SFUserAccountManager.h>
+#import <SalesforceSDKCore/SFPushNotificationManager.h>
+#import <SalesforceSDKCore/SFDefaultUserManagementViewController.h>
+#import <SalesforceSDKCore/SalesforceSDKManager.h>
+
+// Fill these in when creating a new Connected Application on Force.com
+static NSString * const RemoteAccessConsumerKey = @"3MVG9Iu66FKeHhINkB1l7xt7kR8czFcCTUhgoA8Ol2Ltf1eYHOU4SqQRSEitYFDUpqRWcoQ2.dBv_a1Dyu5xa";
+static NSString * const OAuthRedirectURI        = @"testsfdc:///mobilesdk/detect/oauth/done";
+
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
 
-
+#pragma mark - App Life Cycle
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    [self initializeAppViewState];
+    [[SalesforceSDKManager sharedManager] launch];
+    
     return YES;
 }
 
@@ -40,6 +58,103 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - Private methods
+
+- (void)initializeAppViewState
+{
+    self.window.rootViewController = [[ViewController alloc] initWithNibName:nil bundle:nil];
+    [self.window makeKeyAndVisible];
+}
+
+- (void)setupRootViewController
+{
+//    RestAPIExplorerViewController *rootVC = [[RestAPIExplorerViewController alloc] initWithNibName:nil bundle:nil];
+    ViewController *rootVC = [ViewController new];
+    self.window.rootViewController = rootVC;
+}
+
+- (void)resetViewState:(void (^)(void))postResetBlock
+{
+    if ([self.window.rootViewController presentedViewController]) {
+        [self.window.rootViewController dismissViewControllerAnimated:NO completion:^{
+            postResetBlock();
+        }];
+    } else {
+        postResetBlock();
+    }
+}
+
+- (void)handleSdkManagerLogout
+{
+//    [self log:SFLogLevelDebug msg:@"SDK Manager logged out.  Resetting app."];
+    [self resetViewState:^{
+        [self initializeAppViewState];
+        
+        // Multi-user pattern:
+        // - If there are two or more existing accounts after logout, let the user choose the account
+        //   to switch to.
+        // - If there is one existing account, automatically switch to that account.
+        // - If there are no further authenticated accounts, present the login screen.
+        //
+        // Alternatively, you could just go straight to re-initializing your app state, if you know
+        // your app does not support multiple accounts.  The logic below will work either way.
+        NSArray *allAccounts = [SFUserAccountManager sharedInstance].allUserAccounts;
+        if ([allAccounts count] > 1) {
+            SFDefaultUserManagementViewController *userSwitchVc = [[SFDefaultUserManagementViewController alloc] initWithCompletionBlock:^(SFUserManagementAction action) {
+                [self.window.rootViewController dismissViewControllerAnimated:YES completion:NULL];
+            }];
+            [self.window.rootViewController presentViewController:userSwitchVc animated:YES completion:NULL];
+        } else {
+            if ([allAccounts count] == 1) {
+                [SFUserAccountManager sharedInstance].currentUser = ([SFUserAccountManager sharedInstance].allUserAccounts)[0];
+            }
+            [[SalesforceSDKManager sharedManager] launch];
+        }
+    }];
+}
+
+- (void)handleUserSwitch:(SFUserAccount *)fromUser toUser:(SFUserAccount *)toUser
+{
+//    [self log:SFLogLevelInfo format:@"SFUserAccountManager changed from user %@ to %@.  Resetting app.", fromUser.userName, toUser.userName];
+    [self resetViewState:^{
+        [self initializeAppViewState];
+        [[SalesforceSDKManager sharedManager] launch];
+    }];
+}
+
+
+#pragma mark - Life Cycle
+
+- (id)init
+{
+    self = [super init];
+    if (self) {
+//        [SFLogger setLogLevel:SFLogLevelDebug];
+        
+        [SalesforceSDKManager sharedManager].connectedAppId = RemoteAccessConsumerKey;
+        [SalesforceSDKManager sharedManager].connectedAppCallbackUri = OAuthRedirectURI;
+        [SalesforceSDKManager sharedManager].authScopes = @[ @"web", @"api" ];
+        __weak AppDelegate *weakSelf = self;
+        [SalesforceSDKManager sharedManager].postLaunchAction = ^(SFSDKLaunchAction launchActionList) {
+//            [weakSelf log:SFLogLevelInfo format:@"Post-launch: launch actions taken: %@", [SalesforceSDKManager launchActionsStringRepresentation:launchActionList]];
+            [weakSelf setupRootViewController];
+        };
+        [SalesforceSDKManager sharedManager].launchErrorAction = ^(NSError *error, SFSDKLaunchAction launchActionList) {
+//            [weakSelf log:SFLogLevelError format:@"Error during SDK launch: %@", [error localizedDescription]];
+            [weakSelf initializeAppViewState];
+            [[SalesforceSDKManager sharedManager] launch];
+        };
+        [SalesforceSDKManager sharedManager].postLogoutAction = ^{
+            [weakSelf handleSdkManagerLogout];
+        };
+//        [SalesforceSDKManager sharedManager].switchUserAction = ^(SFUserAccount *fromUser, SFUserAccount *toUser) {
+//            [weakSelf handleUserSwitch:fromUser toUser:toUser];
+//        };
+    }
+    
+    return self;
 }
 
 @end
