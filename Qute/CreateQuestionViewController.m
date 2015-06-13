@@ -10,6 +10,8 @@
 #import <S2MToolbox/S2MShopFinderController.h>
 #import <S2MToolbox/S2MCalloutAnnotation.h>
 #import <AutoLayoutTextViews/ALAutoResizingTextView.h>
+#import "QUTQuestion.h"
+
 @import MapKit;
 
 @interface CreateQuestionViewController ()<MKMapViewDelegate,UITextViewDelegate, S2MShopFinderSearchDelegate, S2MShopFinderMapSpecialsDelegate, UIAlertViewDelegate>
@@ -25,7 +27,7 @@
 
 -(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {
-    self.sendButton.enabled = self.selectedLocationAnnotation != nil && !IsEmpty(self.questionTextView.text);
+//    self.sendButton.enabled = self.selectedLocationAnnotation != nil && !IsEmpty(self.questionTextView.text);
     if([text isEqualToString:@"\n"]) 
     {
         [textView resignFirstResponder];
@@ -47,13 +49,13 @@
 {
     [super viewDidLoad];
     self.title = @"New Question";
-    self.sendButton.enabled = self.selectedLocationAnnotation != nil && !IsEmpty(self.questionTextView.text);
+//    self.sendButton.enabled = self.selectedLocationAnnotation != nil && !IsEmpty(self.questionTextView.text);
     UITapGestureRecognizer* gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard:)];
     [self.view addGestureRecognizer:gesture];
     self.locationController = [[S2MShopFinderController alloc] init];
     self.locationController.searchDelegate = self;
     self.locationController.mapSpecialsDelegate = self;
-    
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -64,9 +66,14 @@
 
 - (IBAction)sendQuestion:(id)sender 
 {
+    QUTQuestion* question = [QUTQuestion new];
+    question.question = self.questionTextView.text;
+    question.latitude = @(52.50591);
+    question.longitude = @(13.29872);
+
     // TODO: send question
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [[[UIAlertView alloc] initWithTitle:@"uQu" message:@"Your question has been submitted!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
+        [[[UIAlertView alloc] initWithTitle:@"uQu" message:@"Your question has been submitted!" delegate:self  cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
     });
 }
 
@@ -172,7 +179,7 @@
 -(void)mapView:(MKMapView *)mapView calloutViewWasTappedForAnnotation:(id<MKAnnotation>)annotation
 {
     self.selectedLocationAnnotation = annotation;
-    self.sendButton.enabled = self.selectedLocationAnnotation != nil && !IsEmpty(self.questionTextView.text);
+//    self.sendButton.enabled = self.selectedLocationAnnotation != nil && !IsEmpty(self.questionTextView.text);
     [self.locationController dismissViewControllerAnimated:YES completion:^{
        
     }];
