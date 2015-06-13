@@ -31,8 +31,8 @@ static NSString * const OAuthRedirectURI        = @"testsfdc:///mobilesdk/detect
 
 #pragma mark - App Life Cycle
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    [self initializeAppViewState];
+//    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+//    [self initializeAppViewState];
     [[SalesforceSDKManager sharedManager] launch];
     
     return YES;
