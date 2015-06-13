@@ -123,6 +123,23 @@
 			name = Category;
 			sourceTree = "<group>";
 		};
+		49B20FBA1B2CC849001B249C /* API */ = {
+			isa = PBXGroup;
+			children = (
+				0142F08E1B2C9A8D00D881B2 /* SFRestRequest+QUTAdditions.h */,
+				0142F08F1B2C9A8D00D881B2 /* SFRestRequest+QUTAdditions.m */,
+				49B20FB31B2CC60F001B249C /* SFAPIClient.h */,
+				49B20FB41B2CC60F001B249C /* SFAPIClient.m */,
+				0142F0861B2C9A8D00D881B2 /* QUTAnswer.h */,
+				0142F0871B2C9A8D00D881B2 /* QUTAnswer.m */,
+				0142F0881B2C9A8D00D881B2 /* QUTBaseModel.h */,
+				0142F0891B2C9A8D00D881B2 /* QUTBaseModel.m */,
+				0142F08A1B2C9A8D00D881B2 /* QUTQuestion.h */,
+				0142F08B1B2C9A8D00D881B2 /* QUTQuestion.m */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
 		49FFF6C71B2B9C2400B0EAD8 = {
 			isa = PBXGroup;
 			children = (
@@ -146,18 +163,9 @@
 		49FFF6D21B2B9C2400B0EAD8 /* Qute */ = {
 			isa = PBXGroup;
 			children = (
-				49B20FB31B2CC60F001B249C /* SFAPIClient.h */,
-				49B20FB41B2CC60F001B249C /* SFAPIClient.m */,
-				0142F0861B2C9A8D00D881B2 /* QUTAnswer.h */,
-				0142F0871B2C9A8D00D881B2 /* QUTAnswer.m */,
-				0142F0881B2C9A8D00D881B2 /* QUTBaseModel.h */,
-				0142F0891B2C9A8D00D881B2 /* QUTBaseModel.m */,
-				0142F08A1B2C9A8D00D881B2 /* QUTQuestion.h */,
-				0142F08B1B2C9A8D00D881B2 /* QUTQuestion.m */,
-				0142F08E1B2C9A8D00D881B2 /* SFRestRequest+QUTAdditions.h */,
-				0142F08F1B2C9A8D00D881B2 /* SFRestRequest+QUTAdditions.m */,
 				49FFF6D71B2B9C2400B0EAD8 /* AppDelegate.h */,
 				49FFF6D81B2B9C2400B0EAD8 /* AppDelegate.m */,
+				49B20FBA1B2CC849001B249C /* API */,
 				49B20FAC1B2CB276001B249C /* Category */,
 				49B20FA21B2C8848001B249C /* Model */,
 				49FFF6DA1B2B9C2400B0EAD8 /* ViewController.h */,
