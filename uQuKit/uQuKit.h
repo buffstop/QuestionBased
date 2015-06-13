@@ -15,5 +15,9 @@ FOUNDATION_EXPORT double uQuKitVersionNumber;
 FOUNDATION_EXPORT const unsigned char uQuKitVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <uQuKit/PublicHeader.h>
+//#import "SFAPIClient.h"
 
-
+//#import "SFAPIClient.h"
+//#import <SalesforceRestAPI/SFRestAPI.h>
+#import <uQuKit/SFAPIClient.h>
+//#import <SalesforceRestAPI/SFRestAPI.h>

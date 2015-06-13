@@ -7,19 +7,40 @@
 //
 
 #import "InterfaceController.h"
+@import uQuKit;
 
 
 @interface InterfaceController()
-
+@property (weak, nonatomic) IBOutlet WKInterfaceLabel *questionLabel;
+@property (nonatomic, assign)BOOL updating;
 @end
 
 
 @implementation InterfaceController
 
+- (IBAction)selectNo {
+    
+}
+- (IBAction)selectYes {
+}
+
+- (IBAction)dismiss {
+}
+
+- (void)getQuestions
+{
+    [[SFAPIClient sharedApiClient] getAllQuestionsOnSuccess:^(NSArray *result) {
+        
+    } onError:^(NSError *error) {
+        
+    }];
+}
+
 - (void)awakeWithContext:(id)context {
     [super awakeWithContext:context];
-
+    
     // Configure interface objects here.
+    [self getQuestions];
 }
 
 - (void)willActivate {
@@ -33,6 +54,3 @@
 }
 
 @end
-
-
-

@@ -12,7 +12,6 @@
 #import "QUTQuestion.h"
 #import "NSDictionary+QUTADDITIONS.h"
 
-#import <SalesforceRestAPI/SFRestAPI.h>
 
 @interface SFAPIClient : NSObject
 
