@@ -28,6 +28,7 @@
 
 - (void)testCreateAnswerWithQId:(NSString *)qId;
 
+#pragma mark - API
 #pragma mark Answer
 
 - (void)getAllAnswersOnSuccess:(void(^)(NSArray *result))successBlock
@@ -37,6 +38,9 @@
                       onSuccess:(void(^)(QUTAnswer * result))successBlock
                         onError:(void(^)(NSError *error))errorBlock;
 
+/*
+ Make sure you set the Questions ID, to know what it is the answer for.
+ */
 - (void)createAnswerWithParams:(NSDictionary *)params
                      onSuccess:(void(^)(NSDictionary * responsDict))successBlock
                        onError:(void(^)(NSError *error))errorBlock;
@@ -49,7 +53,16 @@
 - (void)getQuestioWithId:(NSString *)answerId
                onSuccess:(void(^)(QUTQuestion * result))successBlock
                  onError:(void(^)(NSError *error))errorBlock;
-
+/*
+ Return dict looks like this:
+{
+    errors =     (
+    );
+    id = a012000001nu5ktAAA;
+    success = 1;
+}
+ You need the ID for creating an answer to the created question.
+*/
 - (void)createQuestionWithParams:(NSDictionary *)params
                        onSuccess:(void(^)(NSDictionary * responsDict))successBlock
                          onError:(void(^)(NSError *error))errorBlock;
