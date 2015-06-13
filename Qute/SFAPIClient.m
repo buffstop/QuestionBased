@@ -48,10 +48,8 @@
 
 #pragma mark - Convenience
 
-//TODO: get questions for my location
-
 #pragma mark Answers
-//TODO: get non expired answers
+
 - (void)getAllAnswersOnSuccess:(void(^)(NSDictionary * responsDict))successBlock
                        onError:(void(^)(NSError *error))errorBlock;
 {
@@ -68,6 +66,25 @@
 }
 
 #pragma mark Questions
+
+- (void)getAllQuestionsOnSuccess:(void(^)(NSDictionary * responsDict))successBlock
+                       onError:(void(^)(NSError *error))errorBlock;
+{
+    NSString *select = @"SELECT Id,latitude__c,longitude__c,OwnerId,question__c FROM Question__c";
+    [self GETQueryWithSelectString:select onSuccess:successBlock onError:errorBlock];
+}
+
+- (void)getQuestioWithId:(NSString *)answerId
+                      onSuccess:(void(^)(NSDictionary * responsDict))successBlock
+                        onError:(void(^)(NSError *error))errorBlock;
+{
+    NSString *select = [NSString stringWithFormat:@"SELECT Id,latitude__c,longitude__c,Name,OwnerId,question__c FROM Question__c WHERE Id = %@", answerId];
+    [self GETQueryWithSelectString:select onSuccess:successBlock onError:errorBlock];
+}
+
+//TODO: get non expired answers
+
+//TODO: get questions around my location
 
 //TODO: create question
 

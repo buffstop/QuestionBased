@@ -13,6 +13,9 @@
 		49879BDE1B2C6D6100CEECBF /* SFRestRequest+QUTAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 49879BDD1B2C6D6100CEECBF /* SFRestRequest+QUTAdditions.m */; };
 		49879BE11B2C85A200CEECBF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49879BE01B2C85A200CEECBF /* AppDelegate.m */; };
 		49879BE21B2C85E500CEECBF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FFF6DB1B2B9C2400B0EAD8 /* ViewController.m */; };
+		49B20FA51B2C886D001B249C /* QUTAnswer.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B20FA41B2C886D001B249C /* QUTAnswer.m */; };
+		49B20FA81B2C887E001B249C /* QUTQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B20FA71B2C887E001B249C /* QUTQuestion.m */; };
+		49B20FAB1B2C8895001B249C /* QUTBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B20FAA1B2C8895001B249C /* QUTBaseModel.m */; };
 		49FFF6D61B2B9C2400B0EAD8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FFF6D51B2B9C2400B0EAD8 /* main.m */; };
 		49FFF6DF1B2B9C2400B0EAD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49FFF6DD1B2B9C2400B0EAD8 /* Main.storyboard */; };
 		49FFF6E11B2B9C2400B0EAD8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49FFF6E01B2B9C2400B0EAD8 /* Images.xcassets */; };
@@ -42,6 +45,12 @@
 		49879BDD1B2C6D6100CEECBF /* SFRestRequest+QUTAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SFRestRequest+QUTAdditions.m"; sourceTree = "<group>"; };
 		49879BDF1B2C85A200CEECBF /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		49879BE01B2C85A200CEECBF /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		49B20FA31B2C886D001B249C /* QUTAnswer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QUTAnswer.h; sourceTree = "<group>"; };
+		49B20FA41B2C886D001B249C /* QUTAnswer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QUTAnswer.m; sourceTree = "<group>"; };
+		49B20FA61B2C887E001B249C /* QUTQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QUTQuestion.h; sourceTree = "<group>"; };
+		49B20FA71B2C887E001B249C /* QUTQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QUTQuestion.m; sourceTree = "<group>"; };
+		49B20FA91B2C8895001B249C /* QUTBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QUTBaseModel.h; sourceTree = "<group>"; };
+		49B20FAA1B2C8895001B249C /* QUTBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QUTBaseModel.m; sourceTree = "<group>"; };
 		49FFF6D01B2B9C2400B0EAD8 /* Qute.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Qute.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49FFF6D41B2B9C2400B0EAD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49FFF6D51B2B9C2400B0EAD8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -78,6 +87,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		49B20FA21B2C8848001B249C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				49B20FA31B2C886D001B249C /* QUTAnswer.h */,
+				49B20FA41B2C886D001B249C /* QUTAnswer.m */,
+				49B20FA61B2C887E001B249C /* QUTQuestion.h */,
+				49B20FA71B2C887E001B249C /* QUTQuestion.m */,
+				49B20FA91B2C8895001B249C /* QUTBaseModel.h */,
+				49B20FAA1B2C8895001B249C /* QUTBaseModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		49FFF6C71B2B9C2400B0EAD8 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +123,7 @@
 		49FFF6D21B2B9C2400B0EAD8 /* Qute */ = {
 			isa = PBXGroup;
 			children = (
+				49B20FA21B2C8848001B249C /* Model */,
 				49879BDF1B2C85A200CEECBF /* AppDelegate.h */,
 				49879BE01B2C85A200CEECBF /* AppDelegate.m */,
 				49FFF6DA1B2B9C2400B0EAD8 /* ViewController.h */,
@@ -301,8 +324,11 @@
 			files = (
 				49879BDB1B2C59A200CEECBF /* SFAPIClient.m in Sources */,
 				49FFF6D61B2B9C2400B0EAD8 /* main.m in Sources */,
+				49B20FA81B2C887E001B249C /* QUTQuestion.m in Sources */,
+				49B20FAB1B2C8895001B249C /* QUTBaseModel.m in Sources */,
 				49879BDE1B2C6D6100CEECBF /* SFRestRequest+QUTAdditions.m in Sources */,
 				011E40E11B2C520100727A74 /* CreateQuestionViewController.m in Sources */,
+				49B20FA51B2C886D001B249C /* QUTAnswer.m in Sources */,
 				49879BE21B2C85E500CEECBF /* ViewController.m in Sources */,
 				49879BE11B2C85A200CEECBF /* AppDelegate.m in Sources */,
 			);
