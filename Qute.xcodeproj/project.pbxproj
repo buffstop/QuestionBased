@@ -17,6 +17,7 @@
 		49B20FB71B2CC6C2001B249C /* QUTQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 0142F08B1B2C9A8D00D881B2 /* QUTQuestion.m */; };
 		49B20FB81B2CC6FB001B249C /* QUTBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0142F0891B2C9A8D00D881B2 /* QUTBaseModel.m */; };
 		49B20FB91B2CC71D001B249C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FFF6D51B2B9C2400B0EAD8 /* main.m */; };
+		49EB6CCF1B2CEE6C00CEB99A /* QUTLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EB6CCE1B2CEE6C00CEB99A /* QUTLocationManager.m */; };
 		49FFF6D91B2B9C2400B0EAD8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FFF6D81B2B9C2400B0EAD8 /* AppDelegate.m */; };
 		49FFF6DC1B2B9C2400B0EAD8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FFF6DB1B2B9C2400B0EAD8 /* ViewController.m */; };
 		49FFF6DF1B2B9C2400B0EAD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49FFF6DD1B2B9C2400B0EAD8 /* Main.storyboard */; };
@@ -61,6 +62,8 @@
 		49B20FB11B2CB5CB001B249C /* NSDate+QUTAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+QUTAdditions.m"; sourceTree = "<group>"; };
 		49B20FB31B2CC60F001B249C /* SFAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFAPIClient.h; sourceTree = "<group>"; };
 		49B20FB41B2CC60F001B249C /* SFAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFAPIClient.m; sourceTree = "<group>"; };
+		49EB6CCD1B2CEE6C00CEB99A /* QUTLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QUTLocationManager.h; sourceTree = "<group>"; };
+		49EB6CCE1B2CEE6C00CEB99A /* QUTLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QUTLocationManager.m; sourceTree = "<group>"; };
 		49FFF6D01B2B9C2400B0EAD8 /* Qute.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Qute.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49FFF6D41B2B9C2400B0EAD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49FFF6D51B2B9C2400B0EAD8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -177,6 +180,8 @@
 				011E40DF1B2C520100727A74 /* CreateQuestionViewController.h */,
 				011E40E01B2C520100727A74 /* CreateQuestionViewController.m */,
 				011E40E41B2C58CD00727A74 /* Macros.h */,
+				49EB6CCD1B2CEE6C00CEB99A /* QUTLocationManager.h */,
+				49EB6CCE1B2CEE6C00CEB99A /* QUTLocationManager.m */,
 			);
 			path = Qute;
 			sourceTree = "<group>";
@@ -361,6 +366,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49B20FB51B2CC60F001B249C /* SFAPIClient.m in Sources */,
+				49EB6CCF1B2CEE6C00CEB99A /* QUTLocationManager.m in Sources */,
 				49B20FB21B2CB5CB001B249C /* NSDate+QUTAdditions.m in Sources */,
 				49B20FB81B2CC6FB001B249C /* QUTBaseModel.m in Sources */,
 				49B20FB61B2CC64F001B249C /* SFRestRequest+QUTAdditions.m in Sources */,
