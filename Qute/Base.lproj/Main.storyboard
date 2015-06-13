@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zO2-fQ-rbp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zO2-fQ-rbp">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -79,78 +79,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="Enter your question" translatesAutoresizingMaskIntoConstraints="NO" id="Etj-r3-Its">
-                                <rect key="frame" x="16" y="64" width="568" height="150"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="zR2-Ks-K1A"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="52"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <connections>
-                                    <outlet property="delegate" destination="Tmq-AC-JRs" id="OiL-3b-yg6"/>
-                                </connections>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T5j-Oy-fWn">
-                                <rect key="frame" x="16" y="224" width="568" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BC7-uc-m3O">
-                                <rect key="frame" x="16" y="565" width="568" height="30"/>
-                                <state key="normal" title="Send">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Hf-5u-d21">
+                                <rect key="frame" x="16" y="515" width="568" height="30"/>
+                                <state key="normal" title="Choose location">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                            </button>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="aOC-fb-nHf">
-                                <rect key="frame" x="10" y="255" width="580" height="300"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="Oku-f2-dzo"/>
-                                </constraints>
                                 <connections>
-                                    <outlet property="delegate" destination="Tmq-AC-JRs" id="6V3-4I-wJg"/>
+                                    <action selector="chooseLocation:" destination="Tmq-AC-JRs" eventType="touchUpInside" id="ngk-8G-eEn"/>
                                 </connections>
-                            </mapView>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ggH-Fu-hw1" customClass="ALAutoResizingTextView">
+                                <rect key="frame" x="0.0" y="64" width="600" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="Gbo-op-PIK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="minimumHeight">
+                                        <real key="value" value="150"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="maximumHeight">
+                                        <real key="value" value="400"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Enter your question"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="heightConstraint" destination="Gbo-op-PIK" id="c1h-BI-fHP"/>
+                                </connections>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="T5j-Oy-fWn" secondAttribute="trailing" id="1wF-Jt-L7r"/>
-                            <constraint firstItem="jxQ-gl-HZR" firstAttribute="top" secondItem="BC7-uc-m3O" secondAttribute="bottom" constant="5" id="2sW-DA-wj3"/>
-                            <constraint firstAttribute="centerX" secondItem="Etj-r3-Its" secondAttribute="centerX" id="2yP-1H-jKD"/>
-                            <constraint firstItem="aOC-fb-nHf" firstAttribute="leading" secondItem="ZRb-6Z-aae" secondAttribute="leading" constant="10" id="5H9-tN-Pal"/>
-                            <constraint firstItem="BC7-uc-m3O" firstAttribute="top" secondItem="aOC-fb-nHf" secondAttribute="bottom" constant="10" id="HAS-kp-bCM"/>
-                            <constraint firstItem="T5j-Oy-fWn" firstAttribute="top" secondItem="Etj-r3-Its" secondAttribute="bottom" constant="10" id="KCS-zh-6OF"/>
-                            <constraint firstItem="BC7-uc-m3O" firstAttribute="trailing" secondItem="ZRb-6Z-aae" secondAttribute="trailingMargin" id="Nds-I4-WhA"/>
-                            <constraint firstAttribute="trailing" secondItem="aOC-fb-nHf" secondAttribute="trailing" constant="10" id="OLV-LW-Nsk"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="aOC-fb-nHf" secondAttribute="trailing" constant="-10" id="PLa-qG-uMP"/>
-                            <constraint firstAttribute="centerX" secondItem="aOC-fb-nHf" secondAttribute="centerX" id="QxI-1j-Bzm"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Etj-r3-Its" secondAttribute="trailing" id="Rbj-cX-a8d"/>
-                            <constraint firstItem="aOC-fb-nHf" firstAttribute="top" secondItem="T5j-Oy-fWn" secondAttribute="bottom" constant="10" id="a0I-NI-WAu"/>
-                            <constraint firstItem="Etj-r3-Its" firstAttribute="top" secondItem="3zy-0O-yHK" secondAttribute="bottom" id="cOL-li-HJm"/>
-                            <constraint firstItem="BC7-uc-m3O" firstAttribute="leading" secondItem="ZRb-6Z-aae" secondAttribute="leadingMargin" id="cqY-Mo-6zH"/>
-                            <constraint firstItem="aOC-fb-nHf" firstAttribute="trailing" secondItem="ZRb-6Z-aae" secondAttribute="trailingMargin" constant="10" id="mm3-c7-2TD"/>
-                            <constraint firstItem="T5j-Oy-fWn" firstAttribute="leading" secondItem="ZRb-6Z-aae" secondAttribute="leadingMargin" id="nX3-ct-05H"/>
-                            <constraint firstItem="aOC-fb-nHf" firstAttribute="leading" secondItem="ZRb-6Z-aae" secondAttribute="leadingMargin" constant="10" id="noI-VC-pf6"/>
-                            <constraint firstItem="Etj-r3-Its" firstAttribute="leading" secondItem="ZRb-6Z-aae" secondAttribute="leadingMargin" id="yAG-7y-4ei"/>
+                            <constraint firstItem="ggH-Fu-hw1" firstAttribute="top" secondItem="3zy-0O-yHK" secondAttribute="bottom" id="6cq-KT-wrm"/>
+                            <constraint firstItem="jxQ-gl-HZR" firstAttribute="top" secondItem="3Hf-5u-d21" secondAttribute="bottom" constant="55" id="A4x-kC-pMS"/>
+                            <constraint firstItem="3Hf-5u-d21" firstAttribute="trailing" secondItem="ZRb-6Z-aae" secondAttribute="trailingMargin" id="S8Z-O6-EPC"/>
+                            <constraint firstItem="3Hf-5u-d21" firstAttribute="leading" secondItem="ZRb-6Z-aae" secondAttribute="leadingMargin" id="fWz-qM-l4c"/>
+                            <constraint firstItem="ggH-Fu-hw1" firstAttribute="width" secondItem="ZRb-6Z-aae" secondAttribute="width" id="n2b-Q2-W9j"/>
+                            <constraint firstAttribute="centerX" secondItem="ggH-Fu-hw1" secondAttribute="centerX" id="p8M-ec-5Gh"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="PLa-qG-uMP"/>
-                                <exclude reference="mm3-c7-2TD"/>
-                                <exclude reference="noI-VC-pf6"/>
-                            </mask>
-                        </variation>
                     </view>
-                    <connections>
-                        <outlet property="map" destination="aOC-fb-nHf" id="0L7-qV-DzP"/>
-                        <outlet property="questionTextView" destination="Etj-r3-Its" id="kNC-ds-IuR"/>
-                        <outlet property="sendButton" destination="BC7-uc-m3O" id="60E-NH-TuT"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SOS-Eb-z0b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="797" y="-308"/>
+            <point key="canvasLocation" x="597" y="-316"/>
         </scene>
         <!--Answer View Controller-->
         <scene sceneID="PS7-a7-eBx">

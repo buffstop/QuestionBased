@@ -10,6 +10,7 @@
 @import MapKit;
 
 @interface CreateQuestionViewController ()<MKMapViewDelegate,UITextViewDelegate>
+- (IBAction)chooseLocation:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextView *questionTextView;
 @property (weak, nonatomic) IBOutlet MKMapView *map;
 @property (weak, nonatomic) IBOutlet UIButton *sendButton;
@@ -65,4 +66,7 @@
 }
 */
 
+- (IBAction)chooseLocation:(id)sender {
+    
+}
 @end

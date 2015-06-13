@@ -6,6 +6,12 @@
 // project.
 
 
+// AutoLayoutTextViews
+#define COCOAPODS_POD_AVAILABLE_AutoLayoutTextViews
+#define COCOAPODS_VERSION_MAJOR_AutoLayoutTextViews 1
+#define COCOAPODS_VERSION_MINOR_AutoLayoutTextViews 2
+#define COCOAPODS_VERSION_PATCH_AutoLayoutTextViews 3
+
 // OpenSSL-Universal
 #define COCOAPODS_POD_AVAILABLE_OpenSSL_Universal
 // This library does not follow semantic-versioning,
