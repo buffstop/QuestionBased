@@ -26,6 +26,20 @@
 		0127A9E61B2CD0F10037BF4C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0127A9E51B2CD0F10037BF4C /* Images.xcassets */; };
 		0127A9E91B2CD0F10037BF4C /* uQu WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0127A9D01B2CD0F10037BF4C /* uQu WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0127A9F11B2CD1050037BF4C /* uQuKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0127A9AC1B2CD0D10037BF4C /* uQuKit.framework */; };
+		016CC6D41B2CD48A008CC6C4 /* NSDate+QUTAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 016CC6C61B2CD48A008CC6C4 /* NSDate+QUTAdditions.h */; };
+		016CC6D51B2CD48A008CC6C4 /* NSDate+QUTAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 016CC6C71B2CD48A008CC6C4 /* NSDate+QUTAdditions.m */; };
+		016CC6D61B2CD48A008CC6C4 /* NSDictionary+QUTADDITIONS.h in Headers */ = {isa = PBXBuildFile; fileRef = 016CC6C81B2CD48A008CC6C4 /* NSDictionary+QUTADDITIONS.h */; };
+		016CC6D71B2CD48A008CC6C4 /* NSDictionary+QUTADDITIONS.m in Sources */ = {isa = PBXBuildFile; fileRef = 016CC6C91B2CD48A008CC6C4 /* NSDictionary+QUTADDITIONS.m */; };
+		016CC6D81B2CD48A008CC6C4 /* QUTAnswer.h in Headers */ = {isa = PBXBuildFile; fileRef = 016CC6CA1B2CD48A008CC6C4 /* QUTAnswer.h */; };
+		016CC6D91B2CD48A008CC6C4 /* QUTAnswer.m in Sources */ = {isa = PBXBuildFile; fileRef = 016CC6CB1B2CD48A008CC6C4 /* QUTAnswer.m */; };
+		016CC6DA1B2CD48A008CC6C4 /* QUTBaseModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 016CC6CC1B2CD48A008CC6C4 /* QUTBaseModel.h */; };
+		016CC6DB1B2CD48A008CC6C4 /* QUTBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 016CC6CD1B2CD48A008CC6C4 /* QUTBaseModel.m */; };
+		016CC6DC1B2CD48A008CC6C4 /* QUTQuestion.h in Headers */ = {isa = PBXBuildFile; fileRef = 016CC6CE1B2CD48A008CC6C4 /* QUTQuestion.h */; };
+		016CC6DD1B2CD48A008CC6C4 /* QUTQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 016CC6CF1B2CD48A008CC6C4 /* QUTQuestion.m */; };
+		016CC6DE1B2CD48A008CC6C4 /* SFAPIClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 016CC6D01B2CD48A008CC6C4 /* SFAPIClient.h */; };
+		016CC6DF1B2CD48A008CC6C4 /* SFAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 016CC6D11B2CD48A008CC6C4 /* SFAPIClient.m */; };
+		016CC6E01B2CD48A008CC6C4 /* SFRestRequest+QUTAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 016CC6D21B2CD48A008CC6C4 /* SFRestRequest+QUTAdditions.h */; };
+		016CC6E11B2CD48A008CC6C4 /* SFRestRequest+QUTAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 016CC6D31B2CD48A008CC6C4 /* SFRestRequest+QUTAdditions.m */; };
 		9680E2EB791EE9BC3CAC27A6 /* libPods-uQuKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56E402030CC8E2A5A02B9A7D /* libPods-uQuKit.a */; };
 /* End PBXBuildFile section */
 
@@ -128,6 +142,20 @@
 		0127A9E11B2CD0F10037BF4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0127A9E31B2CD0F10037BF4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		0127A9E51B2CD0F10037BF4C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		016CC6C61B2CD48A008CC6C4 /* NSDate+QUTAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+QUTAdditions.h"; sourceTree = "<group>"; };
+		016CC6C71B2CD48A008CC6C4 /* NSDate+QUTAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+QUTAdditions.m"; sourceTree = "<group>"; };
+		016CC6C81B2CD48A008CC6C4 /* NSDictionary+QUTADDITIONS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+QUTADDITIONS.h"; sourceTree = "<group>"; };
+		016CC6C91B2CD48A008CC6C4 /* NSDictionary+QUTADDITIONS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+QUTADDITIONS.m"; sourceTree = "<group>"; };
+		016CC6CA1B2CD48A008CC6C4 /* QUTAnswer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QUTAnswer.h; sourceTree = "<group>"; };
+		016CC6CB1B2CD48A008CC6C4 /* QUTAnswer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QUTAnswer.m; sourceTree = "<group>"; };
+		016CC6CC1B2CD48A008CC6C4 /* QUTBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QUTBaseModel.h; sourceTree = "<group>"; };
+		016CC6CD1B2CD48A008CC6C4 /* QUTBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QUTBaseModel.m; sourceTree = "<group>"; };
+		016CC6CE1B2CD48A008CC6C4 /* QUTQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QUTQuestion.h; sourceTree = "<group>"; };
+		016CC6CF1B2CD48A008CC6C4 /* QUTQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QUTQuestion.m; sourceTree = "<group>"; };
+		016CC6D01B2CD48A008CC6C4 /* SFAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFAPIClient.h; sourceTree = "<group>"; };
+		016CC6D11B2CD48A008CC6C4 /* SFAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFAPIClient.m; sourceTree = "<group>"; };
+		016CC6D21B2CD48A008CC6C4 /* SFRestRequest+QUTAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SFRestRequest+QUTAdditions.h"; sourceTree = "<group>"; };
+		016CC6D31B2CD48A008CC6C4 /* SFRestRequest+QUTAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SFRestRequest+QUTAdditions.m"; sourceTree = "<group>"; };
 		56E402030CC8E2A5A02B9A7D /* libPods-uQuKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-uQuKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7C95EEB3CF052A1CE79DA40 /* Pods-uQuKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uQuKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-uQuKit/Pods-uQuKit.release.xcconfig"; sourceTree = "<group>"; };
 		ED919E9DE2823DB27A7B98C0 /* Pods-uQuKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uQuKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-uQuKit/Pods-uQuKit.debug.xcconfig"; sourceTree = "<group>"; };
@@ -249,6 +277,20 @@
 			isa = PBXGroup;
 			children = (
 				0127A9B01B2CD0D10037BF4C /* uQuKit.h */,
+				016CC6C61B2CD48A008CC6C4 /* NSDate+QUTAdditions.h */,
+				016CC6C71B2CD48A008CC6C4 /* NSDate+QUTAdditions.m */,
+				016CC6C81B2CD48A008CC6C4 /* NSDictionary+QUTADDITIONS.h */,
+				016CC6C91B2CD48A008CC6C4 /* NSDictionary+QUTADDITIONS.m */,
+				016CC6CA1B2CD48A008CC6C4 /* QUTAnswer.h */,
+				016CC6CB1B2CD48A008CC6C4 /* QUTAnswer.m */,
+				016CC6CC1B2CD48A008CC6C4 /* QUTBaseModel.h */,
+				016CC6CD1B2CD48A008CC6C4 /* QUTBaseModel.m */,
+				016CC6CE1B2CD48A008CC6C4 /* QUTQuestion.h */,
+				016CC6CF1B2CD48A008CC6C4 /* QUTQuestion.m */,
+				016CC6D01B2CD48A008CC6C4 /* SFAPIClient.h */,
+				016CC6D11B2CD48A008CC6C4 /* SFAPIClient.m */,
+				016CC6D21B2CD48A008CC6C4 /* SFRestRequest+QUTAdditions.h */,
+				016CC6D31B2CD48A008CC6C4 /* SFRestRequest+QUTAdditions.m */,
 				0127A9AE1B2CD0D10037BF4C /* Supporting Files */,
 			);
 			path = uQuKit;
@@ -340,7 +382,14 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				016CC6D61B2CD48A008CC6C4 /* NSDictionary+QUTADDITIONS.h in Headers */,
+				016CC6DE1B2CD48A008CC6C4 /* SFAPIClient.h in Headers */,
+				016CC6DC1B2CD48A008CC6C4 /* QUTQuestion.h in Headers */,
+				016CC6D41B2CD48A008CC6C4 /* NSDate+QUTAdditions.h in Headers */,
+				016CC6DA1B2CD48A008CC6C4 /* QUTBaseModel.h in Headers */,
 				0127A9B11B2CD0D10037BF4C /* uQuKit.h in Headers */,
+				016CC6E01B2CD48A008CC6C4 /* SFRestRequest+QUTAdditions.h in Headers */,
+				016CC6D81B2CD48A008CC6C4 /* QUTAnswer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -620,6 +669,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				016CC6DF1B2CD48A008CC6C4 /* SFAPIClient.m in Sources */,
+				016CC6D51B2CD48A008CC6C4 /* NSDate+QUTAdditions.m in Sources */,
+				016CC6D91B2CD48A008CC6C4 /* QUTAnswer.m in Sources */,
+				016CC6D71B2CD48A008CC6C4 /* NSDictionary+QUTADDITIONS.m in Sources */,
+				016CC6DD1B2CD48A008CC6C4 /* QUTQuestion.m in Sources */,
+				016CC6DB1B2CD48A008CC6C4 /* QUTBaseModel.m in Sources */,
+				016CC6E11B2CD48A008CC6C4 /* SFRestRequest+QUTAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
