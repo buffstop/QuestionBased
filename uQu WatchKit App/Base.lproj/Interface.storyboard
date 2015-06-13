@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="7701"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--uQu-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController">
+                <controller title="uQu" id="AgC-eL-Hgc" customClass="InterfaceController">
                     <items>
                         <label width="136" alignment="left" text="Is this a good application?" numberOfLines="0" id="Fpm-MT-P2r"/>
                         <button width="1" alignment="left" title="Yes" id="omI-th-ZIr">
@@ -27,12 +27,35 @@
                             </connections>
                         </button>
                     </items>
+                    <menu key="menu" id="JJE-eh-gF5">
+                        <items>
+                            <menuItem title="New Question" icon="add" id="fA5-Jd-ilq">
+                                <connections>
+                                    <action selector="newQuestion" destination="AgC-eL-Hgc" id="1HA-8T-4wR"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="All Questions" id="My2-vV-DgW"/>
+                        </items>
+                    </menu>
                     <connections>
                         <outlet property="questionLabel" destination="Fpm-MT-P2r" id="xyC-CT-uIN"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="344"/>
+            <point key="canvasLocation" x="317" y="321.25"/>
+        </scene>
+        <!--New-->
+        <scene sceneID="LEW-sr-zdd">
+            <objects>
+                <controller identifier="watch.newquestion" title="New" id="eld-0c-miJ" customClass="NewQuestionInterfaceController">
+                    <items>
+                        <label width="136" alignment="left" text="Enter new question" numberOfLines="0" id="hFF-Os-0hM"/>
+                        <button width="1" alignment="left" title="Location" id="muV-ye-FkH"/>
+                        <button width="1" alignment="left" title="Submit" id="os9-ov-6en"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="492" y="314"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">

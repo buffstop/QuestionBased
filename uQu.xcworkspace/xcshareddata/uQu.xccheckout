@@ -5,13 +5,13 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>4B5CA5A7-9692-4F38-B6C7-003040C20BD1</string>
+	<string>B0671ADF-BDC9-4E03-9E0A-BFD15F7CF93D</string>
 	<key>IDESourceControlProjectName</key>
 	<string>uQu</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>580DB63C33DCE312650C8F3E4945D1D9F1507F31</key>
-		<string>https://github.com/buffstop/Qute.git</string>
+		<string>github.com:buffstop/Qute.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>uQu.xcworkspace</string>
@@ -21,7 +21,7 @@
 		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/buffstop/Qute.git</string>
+	<string>github.com:buffstop/Qute.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
@@ -34,7 +34,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>580DB63C33DCE312650C8F3E4945D1D9F1507F31</string>
 			<key>IDESourceControlWCCName</key>
-			<string>Qute</string>
+			<string>uQu</string>
 		</dict>
 	</array>
 </dict>

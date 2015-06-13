@@ -7,8 +7,7 @@
 //
 
 #import "InterfaceController.h"
-@import uQuKit;
-
+#import <WatchKit/WKInterfaceController.h>
 
 @interface InterfaceController()
 @property (weak, nonatomic) IBOutlet WKInterfaceLabel *questionLabel;
@@ -17,6 +16,14 @@
 
 
 @implementation InterfaceController
+- (IBAction)newQuestion 
+{
+    [self presentTextInputControllerWithSuggestions:@[] allowedInputMode:WKTextInputModePlain completion:^(NSArray *results) {
+        NSString * question = results.firstObject;
+        [self presentControllerWithName:@"watch.newquestion" context:question];
+        [self.questionLabel setText:question];
+    }];
+}
 
 - (IBAction)selectNo {
     
@@ -25,10 +32,19 @@
 }
 
 - (IBAction)dismiss {
+//    SFAPIClient sharedApiClient
 }
 
 - (void)getQuestions
 {
+    [WKInterfaceController openParentApplication:@{@"request": @"refreshData"} reply:^(NSDictionary *replyInfo, NSError *error) {
+        // TODO: process reply data
+        NSLog(@"Reply: \(replyInfo)");
+
+    }];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.questionLabel setText:@"question yeah?"];
+    });
 //    [[SFAPIClient sharedApiClient] getAllQuestionsOnSuccess:^(NSArray *result) {
 //        
 //    } onError:^(NSError *error) {

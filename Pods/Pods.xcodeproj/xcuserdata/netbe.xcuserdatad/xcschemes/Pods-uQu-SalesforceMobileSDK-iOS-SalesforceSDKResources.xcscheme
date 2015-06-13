@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D14D19A7D674D812F022334C"
+               BlueprintIdentifier = "31D0291AA6BB02F7A0E1A0F0"
                BuildableName = "SalesforceSDKResources.bundle"
                BlueprintName = "Pods-uQu-SalesforceMobileSDK-iOS-SalesforceSDKResources"
                ReferencedContainer = "container:Pods.xcodeproj">
