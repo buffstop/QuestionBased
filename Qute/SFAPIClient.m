@@ -15,7 +15,7 @@
 #import <SalesforceSDKCore/SFAuthenticationManager.h>
 #import <SalesforceSDKCore/SFDefaultUserManagementViewController.h>
 
-@interface SFAPIClient ()
+@interface SFAPIClient () <SFRestDelegate>
 @property (strong, nonatomic) NSMutableDictionary *successHandlerForRequest;
 @property (strong, nonatomic) NSMutableDictionary *errorHandlerForRequest;
 @end
@@ -37,6 +37,27 @@
                    onError:(void(^)(NSError *error))errorBlock;
 {
     [self sendQueryWithSFRestMethod:SFRestMethodGET params:params onSuccess:successBlock onError:errorBlock];
+}
+
+- (void)POSTQueryWithParams:(NSDictionary *)params
+                  onSuccess:(void(^)())successBlock
+                    onError:(void(^)(NSError *error))errorBlock;
+{
+    [self sendQueryWithSFRestMethod:SFRestMethodPOST params:params onSuccess:successBlock onError:errorBlock];
+}
+
+- (void)PUTQueryWithParams:(NSDictionary *)params
+                 onSuccess:(void(^)())successBlock
+                   onError:(void(^)(NSError *error))errorBlock;
+{
+    [self sendQueryWithSFRestMethod:SFRestMethodPUT params:params onSuccess:successBlock onError:errorBlock];
+}
+
+- (void)DELETEQueryWithParams:(NSDictionary *)params
+                 onSuccess:(void(^)())successBlock
+                   onError:(void(^)(NSError *error))errorBlock;
+{
+    [self sendQueryWithSFRestMethod:SFRestMethodDELETE params:params onSuccess:successBlock onError:errorBlock];
 }
 
 - (void)sendQueryWithSFRestMethod:(SFRestMethod)restMethod
@@ -71,7 +92,8 @@
 
 #pragma mark - SFRestDelegate
 
-- (void)request:(SFRestRequest *)request didLoadResponse:(id)dataResponse {
+- (void)request:(SFRestRequest *)request didLoadResponse:(id)dataResponse
+{
     dispatch_async(dispatch_get_main_queue(), ^{
         void (^successHandler)() = self.successHandlerForRequest[request];
         [self removeHandlerForRequest:request];
@@ -81,7 +103,8 @@
     });
 }
 
-- (void)request:(SFRestRequest*)request didFailLoadWithError:(NSError*)error {
+- (void)request:(SFRestRequest*)request didFailLoadWithError:(NSError*)error
+{
     dispatch_async(dispatch_get_main_queue(), ^{
         void (^errorHandler)() = self.errorHandlerForRequest[request];
         [self removeHandlerForRequest:request];
@@ -91,7 +114,8 @@
     });
 }
 
-- (void)requestDidCancelLoad:(SFRestRequest *)request {
+- (void)requestDidCancelLoad:(SFRestRequest *)request
+{
     dispatch_async(dispatch_get_main_queue(), ^{
         void (^errorHandler)() = self.errorHandlerForRequest[request];
         [self removeHandlerForRequest:request];
@@ -101,7 +125,8 @@
     });
 }
 
-- (void)requestDidTimeout:(SFRestRequest *)request {
+- (void)requestDidTimeout:(SFRestRequest *)request
+{
     dispatch_async(dispatch_get_main_queue(), ^{
         void (^errorHandler)() = self.errorHandlerForRequest[request];
         [self removeHandlerForRequest:request];
@@ -111,5 +136,16 @@
     });
 }
 
+#pragma mark - Life Cycle
+
++ (id)sharedApiClient
+{
+    static SFAPIClient *sharedApiClient = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedApiClient = [self new];
+    });
+    return sharedApiClient;
+}
 
 @end
