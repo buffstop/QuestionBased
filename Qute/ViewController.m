@@ -13,7 +13,8 @@
 #import "NSDate+QUTAdditions.h"
 
 @interface ViewController ()
-
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControll;
 @end
 
 @implementation ViewController
@@ -24,17 +25,9 @@
 //    [[SFAPIClient sharedApiClient] test];
 //    [[SFAPIClient sharedApiClient] testCreateQuestion];
 }
-
-- (void)viewDidLoad 
+- (IBAction)segmentedControlValueHasChanged:(UISegmentedControl *)sender
 {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    //TODO:
 }
 
 @end

@@ -22,6 +22,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *sendButton;
 @property(nonatomic, strong)S2MShopFinderController* locationController;
 @property(nonatomic, strong)id<MKAnnotation> selectedLocationAnnotation;
+@property (strong, nonatomic) NSArray *myQuestions;
+@property (strong, nonatomic) NSArray *localQuestions;
 @end
 
 @implementation CreateQuestionViewController
@@ -75,8 +77,8 @@
     [[SFAPIClient sharedApiClient] createQuestionWithParams:[question jsonDict] onSuccess:^(NSDictionary *responsDict) {
         [[[UIAlertView alloc] initWithTitle:@"uQu" message:@"Your question has been submitted!" delegate:self  cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
     } onError:^(NSError *error) {
-        [NSString stringWithFormat:@"%@", error];
-        [[[UIAlertView alloc] initWithTitle:@"Error" message:@"An Error Occured." delegate:self  cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
+        NSString *message = [NSString stringWithFormat:@"An Error Occured. %@", error];
+        [[[UIAlertView alloc] initWithTitle:@"Error" message:message delegate:self  cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
     }];
 }
 
