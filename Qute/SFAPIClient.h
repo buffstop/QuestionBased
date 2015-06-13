@@ -15,27 +15,28 @@
 - (void)testGet;
 
 - (void)GETQueryWithParams:(NSDictionary *)params
-                 onSuccess:(void(^)())successBlock
+                 onSuccess:(void(^)(NSDictionary * responsDict))successBlock
                    onError:(void(^)(NSError *error))errorBlock;
 
 - (void)POSTQueryWithParams:(NSDictionary *)params
-                  onSuccess:(void(^)())successBlock
+                  onSuccess:(void(^)(NSDictionary * responsDict))successBlock
                     onError:(void(^)(NSError *error))errorBlock;
 
 - (void)PUTQueryWithParams:(NSDictionary *)params
-                 onSuccess:(void(^)())successBlock
+                 onSuccess:(void(^)(NSDictionary * responsDict))successBlock
                    onError:(void(^)(NSError *error))errorBlock;
 
 - (void)DELETEQueryWithParams:(NSDictionary *)params
-                    onSuccess:(void(^)())successBlock
+                    onSuccess:(void(^)(NSDictionary * responsDict))successBlock
                       onError:(void(^)(NSError *error))errorBlock;
 
 - (void)sendQueryWithSFRestMethod:(SFRestMethod)restMethod
                            params:(NSDictionary *)params
-                        onSuccess:(void(^)())successBlock
+                        onSuccess:(void(^)(NSDictionary * responsDict))successBlock
                           onError:(void(^)(NSError *error))errorBlock;
 
 #pragma mark - Life Cycle
 
 + (id)sharedApiClient;
+
 @end

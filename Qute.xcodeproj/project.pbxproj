@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		49879BDB1B2C59A200CEECBF /* SFAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 49879BDA1B2C59A200CEECBF /* SFAPIClient.m */; };
+		49879BDE1B2C6D6100CEECBF /* SFRestRequest+QUTAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 49879BDD1B2C6D6100CEECBF /* SFRestRequest+QUTAdditions.m */; };
 		49FFF6D61B2B9C2400B0EAD8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FFF6D51B2B9C2400B0EAD8 /* main.m */; };
 		49FFF6D91B2B9C2400B0EAD8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FFF6D81B2B9C2400B0EAD8 /* AppDelegate.m */; };
 		49FFF6DC1B2B9C2400B0EAD8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FFF6DB1B2B9C2400B0EAD8 /* ViewController.m */; };
@@ -31,6 +32,8 @@
 /* Begin PBXFileReference section */
 		49879BD91B2C59A200CEECBF /* SFAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFAPIClient.h; sourceTree = "<group>"; };
 		49879BDA1B2C59A200CEECBF /* SFAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFAPIClient.m; sourceTree = "<group>"; };
+		49879BDC1B2C6D6100CEECBF /* SFRestRequest+QUTAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SFRestRequest+QUTAdditions.h"; sourceTree = "<group>"; };
+		49879BDD1B2C6D6100CEECBF /* SFRestRequest+QUTAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SFRestRequest+QUTAdditions.m"; sourceTree = "<group>"; };
 		49FFF6D01B2B9C2400B0EAD8 /* Qute.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Qute.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49FFF6D41B2B9C2400B0EAD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49FFF6D51B2B9C2400B0EAD8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -101,6 +104,8 @@
 				49FFF6D31B2B9C2400B0EAD8 /* Supporting Files */,
 				49879BD91B2C59A200CEECBF /* SFAPIClient.h */,
 				49879BDA1B2C59A200CEECBF /* SFAPIClient.m */,
+				49879BDC1B2C6D6100CEECBF /* SFRestRequest+QUTAdditions.h */,
+				49879BDD1B2C6D6100CEECBF /* SFRestRequest+QUTAdditions.m */,
 			);
 			path = Qute;
 			sourceTree = "<group>";
@@ -287,6 +292,7 @@
 				49FFF6D91B2B9C2400B0EAD8 /* AppDelegate.m in Sources */,
 				49879BDB1B2C59A200CEECBF /* SFAPIClient.m in Sources */,
 				49FFF6D61B2B9C2400B0EAD8 /* main.m in Sources */,
+				49879BDE1B2C6D6100CEECBF /* SFRestRequest+QUTAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
