@@ -6,12 +6,24 @@
 // project.
 
 
+// AutoLayoutTextViews
+#define COCOAPODS_POD_AVAILABLE_AutoLayoutTextViews
+#define COCOAPODS_VERSION_MAJOR_AutoLayoutTextViews 1
+#define COCOAPODS_VERSION_MINOR_AutoLayoutTextViews 2
+#define COCOAPODS_VERSION_PATCH_AutoLayoutTextViews 3
+
 // OpenSSL-Universal
 #define COCOAPODS_POD_AVAILABLE_OpenSSL_Universal
 // This library does not follow semantic-versioning,
 // so we were not able to define version macros.
 // Please contact the author.
 // Version: 1.0.1.k.
+
+// S2MToolbox/ShopFinder
+#define COCOAPODS_POD_AVAILABLE_S2MToolbox_ShopFinder
+#define COCOAPODS_VERSION_MAJOR_S2MToolbox_ShopFinder 0
+#define COCOAPODS_VERSION_MINOR_S2MToolbox_ShopFinder 2
+#define COCOAPODS_VERSION_PATCH_S2MToolbox_ShopFinder 1
 
 // SQLCipher
 #define COCOAPODS_POD_AVAILABLE_SQLCipher
