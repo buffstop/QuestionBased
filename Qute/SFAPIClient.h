@@ -31,7 +31,7 @@
 #pragma mark - API
 #pragma mark User
 
-- (NSString *)getUserName;
+- (NSString *)getUserID;
 
 #pragma mark Answer
 
@@ -53,6 +53,10 @@
 
 - (void)getAllQuestionsOnSuccess:(void(^)(NSArray *result))successBlock
                          onError:(void(^)(NSError *error))errorBlock;
+
+- (void)getAllQuestionsOfUserWithID:(NSString *)userId
+                          onSuccess:(void(^)(NSArray *result))successBlock
+                            onError:(void(^)(NSError *error))errorBlock;
 
 - (void)getQuestioWithId:(NSString *)answerId
                onSuccess:(void(^)(QUTQuestion * result))successBlock

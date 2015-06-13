@@ -29,14 +29,19 @@ typedef NS_ENUM(NSUInteger, QUTSegmentIndex) {
 
 - (void)reloadMyQuestions
 {
-    NSString *userName = [[SFAPIClient sharedApiClient] getUserName];
-    [[SFAPIClient sharedApiClient] getAllQuestionsOnSuccess:^(NSArray *result) {
+    NSString *userId = [[SFAPIClient sharedApiClient] getUserID];
+    [[SFAPIClient sharedApiClient] getAllQuestionsOfUserWithID:userId onSuccess:^(NSArray *result) {
         self.myQuestions = result;
         [self.tableView reloadData];
     } onError:^(NSError *error) {
         NSString *message = [NSString stringWithFormat:@"An Error Occured. %@", error];
         [[[UIAlertView alloc] initWithTitle:@"Error" message:message delegate:self  cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
     }];
+}
+
+- (void)reloadLocalQuestions
+{
+    //TODO:
 }
 
 #pragma mark - UITableViewDataSource
@@ -55,10 +60,20 @@ typedef NS_ENUM(NSUInteger, QUTSegmentIndex) {
     }
 }
 
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#(NSString *)#>]
-//}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"question cell"];
+    QUTQuestion *q = nil;
+    if (self.segmentedControll.selectedSegmentIndex == QUTMyQuestions) {
+        q = self.myQuestions[indexPath.row];
+    } else {
+        q = self.localQuestions[indexPath.row];
+    }
+    
+    cell.textLabel.text = q.question;
+    
+    return cell;
+}
 
 #pragma mark - UITableViewDelegate
 
@@ -74,6 +89,8 @@ typedef NS_ENUM(NSUInteger, QUTSegmentIndex) {
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    [self reloadLocalQuestions];
+    [self reloadMyQuestions];
 //    [[SFAPIClient sharedApiClient] test];
 //    [[SFAPIClient sharedApiClient] testCreateQuestion];
 }

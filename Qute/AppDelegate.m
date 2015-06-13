@@ -29,11 +29,8 @@ static NSString * const OAuthRedirectURI        = @"testsfdc:///mobilesdk/detect
 
 #pragma mark - App Life Cycle
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-//    [[SalesforceSDKManager sharedManager] launch];
-    
-//    [NSUserDefaults ins]
-    
-    
+    [[SalesforceSDKManager sharedManager] launch];
+
     return YES;
 }
 //
@@ -108,7 +105,7 @@ static NSString * const OAuthRedirectURI        = @"testsfdc:///mobilesdk/detect
 {
     [self resetViewState:^{
         [self initializeAppViewState];
-//        [[SalesforceSDKManager sharedManager] launch];
+        [[SalesforceSDKManager sharedManager] launch];
     }];
 }
 
@@ -119,22 +116,22 @@ static NSString * const OAuthRedirectURI        = @"testsfdc:///mobilesdk/detect
 {
     self = [super init];
     if (self) {
-//        [SalesforceSDKManager sharedManager].connectedAppId = RemoteAccessConsumerKey;
-//        [SalesforceSDKManager sharedManager].connectedAppCallbackUri = OAuthRedirectURI;
-//        [SalesforceSDKManager sharedManager].authScopes = @[ @"web", @"api" ];
-//        __weak AppDelegate *weakSelf = self;
-//        [SalesforceSDKManager sharedManager].postLaunchAction = ^(SFSDKLaunchAction launchActionList) {
-//            // do nothing :-)
+        [SalesforceSDKManager sharedManager].connectedAppId = RemoteAccessConsumerKey;
+        [SalesforceSDKManager sharedManager].connectedAppCallbackUri = OAuthRedirectURI;
+        [SalesforceSDKManager sharedManager].authScopes = @[ @"web", @"api" ];
+        __weak AppDelegate *weakSelf = self;
+        [SalesforceSDKManager sharedManager].postLaunchAction = ^(SFSDKLaunchAction launchActionList) {
+            // do nothing :-)
+        };
+        [SalesforceSDKManager sharedManager].launchErrorAction = ^(NSError *error, SFSDKLaunchAction launchActionList) {
+            [[SalesforceSDKManager sharedManager] launch];
+        };
+        [SalesforceSDKManager sharedManager].postLogoutAction = ^{
+            [weakSelf handleSdkManagerLogout];
+        };
+//        [SalesforceSDKManager sharedManager].switchUserAction = ^(SFUserAccount *fromUser, SFUserAccount *toUser) {
+//            [weakSelf handleUserSwitch:fromUser toUser:toUser];
 //        };
-//        [SalesforceSDKManager sharedManager].launchErrorAction = ^(NSError *error, SFSDKLaunchAction launchActionList) {
-//            [[SalesforceSDKManager sharedManager] launch];
-//        };
-//        [SalesforceSDKManager sharedManager].postLogoutAction = ^{
-//            [weakSelf handleSdkManagerLogout];
-//        };
-////        [SalesforceSDKManager sharedManager].switchUserAction = ^(SFUserAccount *fromUser, SFUserAccount *toUser) {
-////            [weakSelf handleUserSwitch:fromUser toUser:toUser];
-////        };
     }
     
     return self;
