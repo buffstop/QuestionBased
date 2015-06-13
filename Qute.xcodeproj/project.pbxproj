@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		011E40E11B2C520100727A74 /* CreateQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011E40E01B2C520100727A74 /* CreateQuestionViewController.m */; };
 		011E40E31B2C56E400727A74 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 011E40E21B2C56E400727A74 /* MapKit.framework */; };
+		0142F0851B2C83AB00D881B2 /* Berlin.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 0142F0841B2C83AB00D881B2 /* Berlin.gpx */; };
 		49FFF6D61B2B9C2400B0EAD8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FFF6D51B2B9C2400B0EAD8 /* main.m */; };
 		49FFF6D91B2B9C2400B0EAD8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FFF6D81B2B9C2400B0EAD8 /* AppDelegate.m */; };
 		49FFF6DC1B2B9C2400B0EAD8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FFF6DB1B2B9C2400B0EAD8 /* ViewController.m */; };
@@ -34,6 +35,7 @@
 		011E40E01B2C520100727A74 /* CreateQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateQuestionViewController.m; sourceTree = "<group>"; };
 		011E40E21B2C56E400727A74 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		011E40E41B2C58CD00727A74 /* Macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
+		0142F0841B2C83AB00D881B2 /* Berlin.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Berlin.gpx; path = ../../../Downloads/Berlin.gpx; sourceTree = "<group>"; };
 		49FFF6D01B2B9C2400B0EAD8 /* Qute.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Qute.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49FFF6D41B2B9C2400B0EAD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49FFF6D51B2B9C2400B0EAD8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 		49FFF6D31B2B9C2400B0EAD8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0142F0841B2C83AB00D881B2 /* Berlin.gpx */,
 				49FFF6D41B2B9C2400B0EAD8 /* Info.plist */,
 				49FFF6D51B2B9C2400B0EAD8 /* main.m */,
 			);
@@ -239,6 +242,7 @@
 				49FFF6DF1B2B9C2400B0EAD8 /* Main.storyboard in Resources */,
 				49FFF6E41B2B9C2400B0EAD8 /* LaunchScreen.xib in Resources */,
 				49FFF6E11B2B9C2400B0EAD8 /* Images.xcassets in Resources */,
+				0142F0851B2C83AB00D881B2 /* Berlin.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

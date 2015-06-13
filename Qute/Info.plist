@@ -20,8 +20,14 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationUsageDescription</key>
+	<string>uQu needs to access Location Services to ask questions on a specific place.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>uQu needs to access Location Services to ask questions on a specific place.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

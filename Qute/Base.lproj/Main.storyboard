@@ -80,7 +80,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Hf-5u-d21">
-                                <rect key="frame" x="16" y="515" width="568" height="30"/>
+                                <rect key="frame" x="16" y="500" width="568" height="30"/>
                                 <state key="normal" title="Choose location">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -94,8 +94,8 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="Gbo-op-PIK"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="40"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="minimumHeight">
                                         <real key="value" value="150"/>
@@ -104,22 +104,48 @@
                                         <real key="value" value="400"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Enter your question"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <outlet property="delegate" destination="Tmq-AC-JRs" id="A6h-YE-jK9"/>
                                     <outlet property="heightConstraint" destination="Gbo-op-PIK" id="c1h-BI-fHP"/>
                                 </connections>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZLy-qz-YCS">
+                                <rect key="frame" x="16" y="550" width="568" height="30"/>
+                                <state key="normal" title="Ask Question">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendQuestion:" destination="Tmq-AC-JRs" eventType="touchUpInside" id="Hee-0P-xMb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ggH-Fu-hw1" firstAttribute="top" secondItem="3zy-0O-yHK" secondAttribute="bottom" id="6cq-KT-wrm"/>
-                            <constraint firstItem="jxQ-gl-HZR" firstAttribute="top" secondItem="3Hf-5u-d21" secondAttribute="bottom" constant="55" id="A4x-kC-pMS"/>
+                            <constraint firstItem="ZLy-qz-YCS" firstAttribute="top" secondItem="3Hf-5u-d21" secondAttribute="bottom" constant="20" id="Pxn-yX-zEz"/>
+                            <constraint firstItem="ZLy-qz-YCS" firstAttribute="leading" secondItem="ZRb-6Z-aae" secondAttribute="leadingMargin" id="RoL-RX-USg"/>
                             <constraint firstItem="3Hf-5u-d21" firstAttribute="trailing" secondItem="ZRb-6Z-aae" secondAttribute="trailingMargin" id="S8Z-O6-EPC"/>
+                            <constraint firstItem="ZLy-qz-YCS" firstAttribute="trailing" secondItem="ZRb-6Z-aae" secondAttribute="trailingMargin" id="XhU-N0-qo6"/>
+                            <constraint firstItem="jxQ-gl-HZR" firstAttribute="top" secondItem="ZLy-qz-YCS" secondAttribute="bottom" constant="20" id="ZXk-TP-teI"/>
                             <constraint firstItem="3Hf-5u-d21" firstAttribute="leading" secondItem="ZRb-6Z-aae" secondAttribute="leadingMargin" id="fWz-qM-l4c"/>
+                            <constraint firstItem="jxQ-gl-HZR" firstAttribute="top" secondItem="ZLy-qz-YCS" secondAttribute="bottom" constant="20" id="iLB-kC-gOP"/>
                             <constraint firstItem="ggH-Fu-hw1" firstAttribute="width" secondItem="ZRb-6Z-aae" secondAttribute="width" id="n2b-Q2-W9j"/>
                             <constraint firstAttribute="centerX" secondItem="ggH-Fu-hw1" secondAttribute="centerX" id="p8M-ec-5Gh"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ZXk-TP-teI"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="questionTextView" destination="ggH-Fu-hw1" id="4VJ-8v-yVZ"/>
+                        <outlet property="sendButton" destination="ZLy-qz-YCS" id="ihG-cC-dq7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SOS-Eb-z0b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

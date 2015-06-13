@@ -8,33 +8,30 @@
 
 #import "CreateQuestionViewController.h"
 #import <S2MToolbox/S2MShopFinderController.h>
-
+#import <AutoLayoutTextViews/ALAutoResizingTextView.h>
 @import MapKit;
 
-@interface CreateQuestionViewController ()<MKMapViewDelegate,UITextViewDelegate, S2MShopFinderSearchDelegate>
+@interface CreateQuestionViewController ()<MKMapViewDelegate,UITextViewDelegate, S2MShopFinderSearchDelegate, S2MShopFinderMapSpecialsDelegate, UIAlertViewDelegate>
 - (IBAction)chooseLocation:(id)sender;
-@property (weak, nonatomic) IBOutlet UITextView *questionTextView;
+@property (weak, nonatomic) IBOutlet ALAutoResizingTextView *questionTextView;
 @property (weak, nonatomic) IBOutlet MKMapView *map;
 @property (weak, nonatomic) IBOutlet UIButton *sendButton;
-@property(nonatomic, copy)NSString* placeholder;
 @property(nonatomic, strong)S2MShopFinderController* locationController;
+@property(nonatomic, strong)id<MKAnnotation> selectedLocationAnnotation;
 @end
 
 @implementation CreateQuestionViewController
 
-- (BOOL)textViewShouldBeginEditing:(UITextView *)textView
+-(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {
-    if ([textView.text isEqualToString:self.placeholder]) {
-        textView.text = nil;
+    self.sendButton.enabled = self.selectedLocationAnnotation != nil && !IsEmpty(self.questionTextView.text);
+    if([text isEqualToString:@"\n"]) 
+    {
+        [textView resignFirstResponder];
+        return NO;
     }
     return YES;
-}
-- (BOOL)textViewShouldEndEditing:(UITextView *)textView
-{
-    if (IsEmpty(textView.text)) {
-        textView.text = self.placeholder;
-    }
-    return YES;
+    
 }
 
 - (void)dismissKeyboard:(UITapGestureRecognizer*)gesture
@@ -48,12 +45,13 @@
 - (void)viewDidLoad 
 {
     [super viewDidLoad];
-    self.placeholder = @"Enter your question";
-
+    self.title = @"New Question";
+    self.sendButton.enabled = self.selectedLocationAnnotation != nil && !IsEmpty(self.questionTextView.text);
     UITapGestureRecognizer* gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard:)];
     [self.view addGestureRecognizer:gesture];
     self.locationController = [[S2MShopFinderController alloc] init];
     self.locationController.searchDelegate = self;
+    self.locationController.mapSpecialsDelegate = self;
     
 }
 
@@ -62,20 +60,26 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)sendQuestion:(id)sender 
+{
+    // TODO: send question
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [[[UIAlertView alloc] initWithTitle:@"uQu" message:@"Your question has been submitted!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
+    });
 }
-*/
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 - (IBAction)chooseLocation:(id)sender 
 {
+    self.locationController.searchMode = S2MShopFinderSearchModeKeyword;
+
     [self presentViewController:self.locationController animated:YES completion:^{
-        
+        [self.locationController startLocatingIgnoreSelection:YES];
     }];
 }
 
@@ -85,20 +89,17 @@
 {
     MKLocalSearchRequest *request = [[MKLocalSearchRequest alloc] init];
     request.naturalLanguageQuery = term;
-    
+    self.locationController.searchBar.text = term;
     MKLocalSearch *search = [[MKLocalSearch alloc] initWithRequest:request];
     [search startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error) {
-        
-        //second search
-        MKMapItem *firstHit = [response.mapItems firstObject];
-        
-        MKCoordinateRegion region = MKCoordinateRegionMake(firstHit.placemark.coordinate, MKCoordinateSpanMake(0.1, 0.1));
-        
-        [self shopFinder:shopFinder searchRegion:region withResults:^(NSArray *results) {
-            if (resultBlock) {
-                resultBlock(results);
-            }
-        }];
+                
+        NSMutableArray *results = [NSMutableArray arrayWithCapacity:response.mapItems.count];
+        for (MKMapItem *item in response.mapItems) {
+            [results addObject:item.placemark];
+        }
+        if (resultBlock) {
+            resultBlock(results);
+        }
     }];
 }
 
@@ -108,11 +109,19 @@
     [self shopFinder:shopFinder searchRegion:region withResults:resultBlock];
 }
 
+
+
+/**
+ *  Search with region like scrolling or user location
+ *
+ *  @param shopFinder
+ *  @param region
+ *  @param resultBlock
+ */
 -(void)shopFinder:(S2MShopFinderController *)shopFinder searchRegion:(MKCoordinateRegion)region withResults:(void (^)(NSArray *))resultBlock
 {
     //let's say we search for tankstelle
     MKLocalSearchRequest *request = [[MKLocalSearchRequest alloc] init];
-//    request.naturalLanguageQuery = @"Tankstelle";
     request.region = region;
     
     MKLocalSearch *search = [[MKLocalSearch alloc]initWithRequest:request];
@@ -127,5 +136,45 @@
         }
     }];
 }
+
+#pragma mark S2MShopFinderMapSpecialsDelegate
+/**
+ *  called by the mapview to display a special callout
+ *
+ *  @param mapView    mapView used for displaying
+ *  @param annotation annotation that callout should be displayed for
+ *
+ *  @return View for Callout Annotation
+ */
+
+-(MKAnnotationView *)mapView:(MKMapView *)mapView calloutViewForAnnotation:(id<MKAnnotation>)annotation
+{
+    static NSString *identifier = @"uQu";
+    MKAnnotationView* view = [mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
+    if (!view) {
+        view = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
+        view.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        view.enabled = YES;
+        view.canShowCallout = YES;
+
+    }
+
+    return view;
+}
+/**
+ *  called when the special callout was tapped
+ *
+ *  @param mapView    mapView used for displaying
+ *  @param annotation annotation for the selected callout
+ */
+-(void)mapView:(MKMapView *)mapView calloutViewWasTappedForAnnotation:(id<MKAnnotation>)annotation
+{
+    self.selectedLocationAnnotation = annotation;
+    self.sendButton.enabled = self.selectedLocationAnnotation != nil && !IsEmpty(self.questionTextView.text);
+    [self.locationController dismissViewControllerAnimated:YES completion:^{
+       
+    }];
+}
+
 
 @end
