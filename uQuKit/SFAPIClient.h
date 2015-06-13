@@ -12,6 +12,8 @@
 #import "QUTQuestion.h"
 #import "NSDictionary+QUTADDITIONS.h"
 
+#import <SalesforceRestAPI/SFRestAPI.h>
+
 @interface SFAPIClient : NSObject
 
 #pragma mark - Test
@@ -51,6 +53,9 @@
 
 - (void)getAllQuestionsOnSuccess:(void(^)(NSArray *result))successBlock
                          onError:(void(^)(NSError *error))errorBlock;
+
+- (void)getAllQuestionsOfCurrentUserOnSuccess:(void(^)(NSArray *result))successBlock
+                            onError:(void(^)(NSError *error))errorBlock;
 
 - (void)getAllQuestionsOfUserWithID:(NSString *)userId
                           onSuccess:(void(^)(NSArray *result))successBlock
