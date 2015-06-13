@@ -85,7 +85,7 @@
 
 #pragma mark - Block Management
 
-- (void)addHandlerForRequest:(SFRestRequest *)request successHandler:(void(^)())successBlock
+- (void)addHandlerForRequest:(SFRestRequest *)request successHandler:(void(^)(NSDictionary * responsDict))successBlock
                      errorHandler:(void(^)(NSError *error))errorBlock
 {
     self.successHandlerForRequest[request] = successBlock;
@@ -152,7 +152,7 @@
     self = [super init];
     if (self) {
         self.successHandlerForRequest = [NSMutableDictionary new];
-        self.successHandlerForRequest = [NSMutableDictionary new];
+        self.errorHandlerForRequest = [NSMutableDictionary new];
     }
     return self;
 }
