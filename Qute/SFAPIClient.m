@@ -48,11 +48,28 @@
 
 #pragma mark - Convenience
 
-//- (void)getAllQuestions
-//{
-//    NSString *select = @"select id, name from Answer__c"
-//}
+//TODO: get questions for my location
 
+#pragma mark Answers
+//TODO: get non expired answers
+- (void)getAllAnswersOnSuccess:(void(^)(NSDictionary * responsDict))successBlock
+                       onError:(void(^)(NSError *error))errorBlock;
+{
+    NSString *select = @"SELECT Id,OwnerId,questionid__c,text__c FROM Answer__c";
+    [self GETQueryWithSelectString:select onSuccess:successBlock onError:errorBlock];
+}
+
+- (void)getAnswerWithQuestionId:(NSString *)questionId
+              onSuccess:(void(^)(NSDictionary * responsDict))successBlock
+                onError:(void(^)(NSError *error))errorBlock;
+{
+    NSString *select = [NSString stringWithFormat:@"SELECT Id,OwnerId,questionid__c,text__c FROM Answer__c WHERE questionid__c = %@", questionId];
+    [self GETQueryWithSelectString:select onSuccess:successBlock onError:errorBlock];
+}
+
+#pragma mark Questions
+
+//TODO: create question
 
 #pragma mark - Selects
 
