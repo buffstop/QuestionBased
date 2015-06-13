@@ -12,7 +12,29 @@
 
 @interface SFAPIClient : NSObject
 
-- (void)testGet;
+- (void)testGetSelect;
+
+- (void)testGetParams;
+
+#pragma mark - Seletcts
+
+- (void)GETQueryWithSelectString:(NSString *)select
+                       onSuccess:(void(^)(NSDictionary * responsDict))successBlock
+                         onError:(void(^)(NSError *error))errorBlock;
+
+- (void)POSTQueryWithSelectString:(NSString *)select
+                        onSuccess:(void(^)(NSDictionary * responsDict))successBlock
+                          onError:(void(^)(NSError *error))errorBlock;
+
+- (void)PUTQueryWithSelectString:(NSString *)select
+                       onSuccess:(void(^)(NSDictionary * responsDict))successBlock
+                         onError:(void(^)(NSError *error))errorBlock;
+
+- (void)DELETEQueryWithSelectString:(NSString *)select
+                          onSuccess:(void(^)(NSDictionary * responsDict))successBlock
+                            onError:(void(^)(NSError *error))errorBlock;
+
+#pragma mark - Params
 
 - (void)GETQueryWithParams:(NSDictionary *)params
                  onSuccess:(void(^)(NSDictionary * responsDict))successBlock

@@ -24,7 +24,19 @@
 
 @implementation SFAPIClient
 
-- (void)testGet
+#pragma mark - Test
+
+- (void)testGetSelect
+{
+    NSDictionary *params = [self selectParamsForQueryWithSelectString:@"select id, name from Answer__c"];
+    [self GETQueryWithParams:params onSuccess:^(NSDictionary *responsDict) {
+        NSLog(@"Success: %@", responsDict);
+    } onError:^(NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+}
+
+- (void)testGetParams
 {
     NSDictionary *params = @{@"q":@"select id, name from Answer__c"};
     [self GETQueryWithParams:params onSuccess:^(NSDictionary *responsDict) {
@@ -34,11 +46,59 @@
     }];
 }
 
-- (void)GETQueryWithParams:(NSDictionary *)params
+#pragma mark - Convenience
+
+//- (void)getAllQuestions
+//{
+//    NSString *select = @"select id, name from Answer__c"
+//}
+
+
+#pragma mark - Selects
+
+- (void)GETQueryWithSelectString:(NSString *)select
                  onSuccess:(void(^)(NSDictionary * responsDict))successBlock
                    onError:(void(^)(NSError *error))errorBlock;
 {
-    [self sendQueryWithSFRestMethod:SFRestMethodGET params:params onSuccess:successBlock onError:errorBlock];
+    [self GETQueryWithParams:[self selectParamsForQueryWithSelectString:select]
+                   onSuccess:successBlock
+                     onError:errorBlock];
+}
+
+- (void)POSTQueryWithSelectString:(NSString *)select
+                  onSuccess:(void(^)(NSDictionary * responsDict))successBlock
+                    onError:(void(^)(NSError *error))errorBlock;
+{
+    [self POSTQueryWithParams:[self selectParamsForQueryWithSelectString:select]
+                   onSuccess:successBlock
+                     onError:errorBlock];
+}
+
+- (void)PUTQueryWithSelectString:(NSString *)select
+                 onSuccess:(void(^)(NSDictionary * responsDict))successBlock
+                   onError:(void(^)(NSError *error))errorBlock;
+{
+    [self PUTQueryWithParams:[self selectParamsForQueryWithSelectString:select]
+                   onSuccess:successBlock
+                     onError:errorBlock];
+}
+
+- (void)DELETEQueryWithSelectString:(NSString *)select
+                    onSuccess:(void(^)(NSDictionary * responsDict))successBlock
+                      onError:(void(^)(NSError *error))errorBlock;
+{
+    [self DELETEQueryWithParams:[self selectParamsForQueryWithSelectString:select]
+                   onSuccess:successBlock
+                     onError:errorBlock];
+}
+
+#pragma mark - Queries with Params
+
+- (void)GETQueryWithParams:(NSDictionary *)params
+                       onSuccess:(void(^)(NSDictionary * responsDict))successBlock
+                         onError:(void(^)(NSError *error))errorBlock;
+{
+        [self sendQueryWithSFRestMethod:SFRestMethodGET params:params onSuccess:successBlock onError:errorBlock];
 }
 
 - (void)POSTQueryWithParams:(NSDictionary *)params
@@ -69,7 +129,6 @@
 {
     NSString *path = @"/v33.0/query";
     
-    
     NSDictionary *queryParams = params;
 //    NSDictionary *queryParams = ([params length] == 0
 //                                 ? nil
@@ -81,6 +140,13 @@
     [self addHandlerForRequest:request successHandler:successBlock errorHandler:errorBlock];
     
     [[SFRestAPI sharedInstance] send:request delegate:self];
+}
+
+#pragma mark - Params
+
+- (NSDictionary *)selectParamsForQueryWithSelectString:(NSString *)select
+{
+    return @{@"q":select};
 }
 
 #pragma mark - Block Management
