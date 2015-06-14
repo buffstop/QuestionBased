@@ -13,7 +13,12 @@
 + (instancetype)fromJsonDict:(NSDictionary *)jsonDict
 {
     QUTQuestion *createe = [QUTQuestion new];
-    createe.createDate = 
+    if (jsonDict[@"CreatedDate"]) {
+        NSDateFormatter *df = [[NSDateFormatter alloc] init];
+        [df setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSSZ"];
+        createe.createDate = [df dateFromString:jsonDict[@"CreatedDate"]];
+    }
+    
     createe.uid = jsonDict[@"Id"];
     createe.OwnerId = jsonDict[@"OwnerId"];
     createe.name = jsonDict[@"Name"];
@@ -28,18 +33,18 @@
 - (NSDictionary *)jsonDict
 {
     NSMutableDictionary *jsonDict = [NSMutableDictionary new];
-//    if (self.uid) {
-//        jsonDict[@"id"] = self.uid;
-//    }    
-//    
-//    if (self.OwnerId) {
-//        jsonDict[@"OwnerId"] = self.OwnerId;
-//    }
-//    
+    if (self.uid) {
+        jsonDict[@"Id"] = self.uid;
+    }    
+    
+    if (self.OwnerId) {
+        jsonDict[@"OwnerId"] = self.OwnerId;
+    }
+    
 //    if (self.name) {
 //        jsonDict[@"Name"] = self.name;
 //    }
-//    
+    
 //    jsonDict[@"latitude__c"] = self.latitude;
 //    jsonDict[@"longitude__c"] = self.longitude;
     jsonDict[@"question__c"] = self.question;

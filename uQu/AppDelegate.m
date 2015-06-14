@@ -16,6 +16,9 @@
 #import <SalesforceSDKCore/SFPushNotificationManager.h>
 #import <SalesforceSDKCore/SFDefaultUserManagementViewController.h>
 #import <SalesforceSDKCore/SalesforceSDKManager.h>
+#import "SFAPIClient.h"
+#import "QUTQuestion.h"
+#import "QUTAnswer.h"
 
 // Fill these in when creating a new Connected Application on Force.com
 static NSString * const RemoteAccessConsumerKey = @"3MVG9Iu66FKeHhINkB1l7xt7kR8czFcCTUhgoA8Ol2Ltf1eYHOU4SqQRSEitYFDUpqRWcoQ2.dBv_a1Dyu5xa";
@@ -30,8 +33,56 @@ static NSString * const OAuthRedirectURI        = @"testsfdc:///mobilesdk/detect
 #pragma mark - App Life Cycle
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [[SalesforceSDKManager sharedManager] launch];
+//        NSMutableDictionary* questions = [NSMutableDictionary new];
+//    [[SFAPIClient sharedApiClient] getAllQuestionsOnSuccess:^(NSArray *result) {
+//        for (QUTQuestion* question in result) {
+//            questions[question.question] = question.jsonDict;
+//        }
+//        
+//    } onError:^(NSError *error) {
+//        questions[@"No question found!"] = @{};       
+//    }];
 
     return YES;
+}
+
+- (void)application:(UIApplication *)application handleWatchKitExtensionRequest:(NSDictionary *)userInfo reply:(void (^)(NSDictionary *))reply
+{
+    if ([userInfo[@"request"] isEqualToString:@"questions"]) {
+        NSMutableDictionary* questions = [NSMutableDictionary new];
+        
+        [[SFAPIClient sharedApiClient] getAllQuestionsOnSuccess:^(NSArray *result) {
+            for (QUTQuestion* question in result) {
+                NSLog(@"json question %@", question.jsonDict);
+                questions[question.question] = question.jsonDict;
+            }
+            if (reply) {
+                reply(questions);
+            }
+            
+        } onError:^(NSError *error) {
+            questions[@"No question found!"] = @{};       
+            if (reply) {
+                reply(questions);
+            }
+        }];
+    }else if ([userInfo[@"request"] isEqualToString:@"sendanswer"]){
+        NSString* questionId = userInfo[@"questionId"];
+        QUTAnswer* answer = [QUTAnswer new];
+        answer.questionid = questionId;
+        answer.text = userInfo[@"answer"];
+        [[SFAPIClient sharedApiClient] createAnswerWithParams:answer.jsonDict onSuccess:^(NSDictionary *responsDict) {
+          
+            if (reply) {
+                reply(@{@"result": @1});
+            }
+            
+        } onError:^(NSError *error) {
+            if (reply) {
+                reply(@{@"result": @0});
+            }
+        }];
+    }
 }
 //
 //- (void)applicationWillResignActive:(UIApplication *)application {

@@ -17,18 +17,34 @@ NSString *QUTNotificationNewQuestions = @"QUTNotificationNewQuestions";
 @interface QUTPollingManager ()
 @property (strong, nonatomic) NSTimer *timer;
 
-@property (strong, nonatomic) NSArray *previousResult;
+@property (strong, nonatomic) NSArray *previousAnswers;
 @end
 
 @implementation QUTPollingManager
 
 - (void)poll
 {
-//    [[SFAPIClient sharedApiClient] getAllAnswersOnSuccess:^(NSArray *result) {
-//        <#code#>
-//    } onError:^(NSError *error) {
-//        NSLog(@"Uups: %@", error);
-//    }];
+    [[SFAPIClient sharedApiClient] getAllAnswersOnSuccess:^(NSArray *result) {
+        //sort array by date
+        NSSortDescriptor *dateDescriptor = [NSSortDescriptor
+                                            sortDescriptorWithKey:@"createDate"
+                                            ascending:YES];
+        NSArray *sortDescriptors = [NSArray arrayWithObject:dateDescriptor];
+        NSMutableArray *sortedArray = [[result
+                                     sortedArrayUsingDescriptors:sortDescriptors] mutableCopy];
+        if (sortedArray.count > self.previousAnswers.count) {
+            NSInteger newCount = sortedArray.count - self.previousAnswers.count;
+            NSMutableArray *newAnswers = [NSMutableArray new];
+            for (NSInteger i = 0; i < newCount; ++i) {
+                [newAnswers addObject:[sortedArray lastObject]];
+                [sortedArray removeObject:[sortedArray lastObject]];
+            }
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:QUTNotificationNewAnswers object:<#(id)#>];
+        }
+    } onError:^(NSError *error) {
+        NSLog(@"Uups: %@", error);
+    }];
 }
 
 #pragma mark - Life Cycle

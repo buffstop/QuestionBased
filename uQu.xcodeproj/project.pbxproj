@@ -31,6 +31,8 @@
 		016CC6F11B2CEBE3008CC6C4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 016CC6F01B2CEBE3008CC6C4 /* MapKit.framework */; };
 		016CC6F41B2CF37F008CC6C4 /* NewQuestionInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 016CC6F31B2CF37F008CC6C4 /* NewQuestionInterfaceController.m */; };
 		4902A5311B2D8A8500F1026E /* QUTPollingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4902A5301B2D8A8500F1026E /* QUTPollingManager.m */; };
+		01F967811B2D17BD0059C199 /* WKQuestionRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F967801B2D17BD0059C199 /* WKQuestionRow.m */; };
+		01F967841B2D82E60059C199 /* QuestionInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F967831B2D82E60059C199 /* QuestionInterfaceController.m */; };
 		493D4C501B2CF73500084D2D /* QUTLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 493D4C4F1B2CF73500084D2D /* QUTLocationManager.m */; };
 		BC1C0E4FD3E425FC9E2441E6 /* libPods-uQu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27570755734974408AC24305 /* libPods-uQu.a */; };
 /* End PBXBuildFile section */
@@ -129,6 +131,10 @@
 		016CC6F01B2CEBE3008CC6C4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		016CC6F21B2CF37F008CC6C4 /* NewQuestionInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewQuestionInterfaceController.h; sourceTree = "<group>"; };
 		016CC6F31B2CF37F008CC6C4 /* NewQuestionInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewQuestionInterfaceController.m; sourceTree = "<group>"; };
+		01F9677F1B2D17BD0059C199 /* WKQuestionRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKQuestionRow.h; sourceTree = "<group>"; };
+		01F967801B2D17BD0059C199 /* WKQuestionRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKQuestionRow.m; sourceTree = "<group>"; };
+		01F967821B2D82E60059C199 /* QuestionInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionInterfaceController.h; sourceTree = "<group>"; };
+		01F967831B2D82E60059C199 /* QuestionInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionInterfaceController.m; sourceTree = "<group>"; };
 		0CCE1BCA182CBC872A85A98E /* Pods-uQu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uQu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-uQu/Pods-uQu.debug.xcconfig"; sourceTree = "<group>"; };
 		25284F5CBAD7A36FA0C15C0C /* Pods-uQu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uQu.release.xcconfig"; path = "Pods/Target Support Files/Pods-uQu/Pods-uQu.release.xcconfig"; sourceTree = "<group>"; };
 		27570755734974408AC24305 /* libPods-uQu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-uQu.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -282,12 +288,16 @@
 		0127A9D11B2CD0F10037BF4C /* uQu WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				01F9677F1B2D17BD0059C199 /* WKQuestionRow.h */,
+				01F967801B2D17BD0059C199 /* WKQuestionRow.m */,
 				016CC6F21B2CF37F008CC6C4 /* NewQuestionInterfaceController.h */,
 				016CC6F31B2CF37F008CC6C4 /* NewQuestionInterfaceController.m */,
 				0127A9D41B2CD0F10037BF4C /* InterfaceController.h */,
 				0127A9D51B2CD0F10037BF4C /* InterfaceController.m */,
 				0127A9D71B2CD0F10037BF4C /* Images.xcassets */,
 				0127A9D21B2CD0F10037BF4C /* Supporting Files */,
+				01F967821B2D82E60059C199 /* QuestionInterfaceController.h */,
+				01F967831B2D82E60059C199 /* QuestionInterfaceController.m */,
 			);
 			path = "uQu WatchKit Extension";
 			sourceTree = "<group>";
@@ -576,6 +586,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				016CC6F41B2CF37F008CC6C4 /* NewQuestionInterfaceController.m in Sources */,
+				01F967841B2D82E60059C199 /* QuestionInterfaceController.m in Sources */,
+				01F967811B2D17BD0059C199 /* WKQuestionRow.m in Sources */,
 				0127A9D61B2CD0F10037BF4C /* InterfaceController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

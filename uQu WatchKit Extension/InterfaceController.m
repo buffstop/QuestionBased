@@ -8,10 +8,12 @@
 
 #import "InterfaceController.h"
 #import <WatchKit/WKInterfaceController.h>
-
+#import "WKQuestionRow.h"
 @interface InterfaceController()
 @property (weak, nonatomic) IBOutlet WKInterfaceLabel *questionLabel;
+@property (weak, nonatomic) IBOutlet WKInterfaceTable *table;
 @property (nonatomic, assign)BOOL updating;
+@property (nonatomic, strong)NSDictionary* questions;
 @end
 
 
@@ -28,31 +30,33 @@
     }];
 }
 
-- (IBAction)selectNo {
-    
-}
-- (IBAction)selectYes {
-}
-
-- (IBAction)dismiss {
-//    SFAPIClient sharedApiClient
-}
 
 - (void)getQuestions
 {
-    [WKInterfaceController openParentApplication:@{@"request": @"refreshData"} reply:^(NSDictionary *replyInfo, NSError *error) {
+    [self.table setNumberOfRows:1 withRowType:@"watch.question.row"];
+    
+    WKQuestionRow* row = [self.table rowControllerAtIndex:0];
+    [row.label setText:@"Loading Question"];
+    [WKInterfaceController openParentApplication:@{@"request": @"questions"} reply:^(NSDictionary *replyInfo, NSError *error) {
         // TODO: process reply data
-        NSLog(@"Reply: \(replyInfo)");
-
+        __block NSInteger i = 0;
+        self.questions = replyInfo;
+        [self.table setNumberOfRows:replyInfo.allKeys.count withRowType:@"watch.question.row"];       
+        [replyInfo enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+            WKQuestionRow* row = [self.table rowControllerAtIndex:i];        
+            [row.label setText:key];
+            i++;
+        }];
     }];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.questionLabel setText:@"question yeah?"];
-    });
-//    [[SFAPIClient sharedApiClient] getAllQuestionsOnSuccess:^(NSArray *result) {
-//        
-//    } onError:^(NSError *error) {
-//        
-//    }];
+}
+
+- (id)contextForSegueWithIdentifier:(NSString *)segueIdentifier inTable:(WKInterfaceTable *)table rowIndex:(NSInteger)rowIndex
+{
+    if([segueIdentifier isEqualToString:@"question.segue"]){
+        NSString* key = self.questions.allKeys[rowIndex];
+        return self.questions[key];
+    }
+    return nil;
 }
 
 - (void)awakeWithContext:(id)context {

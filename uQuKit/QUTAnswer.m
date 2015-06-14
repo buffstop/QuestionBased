@@ -13,6 +13,12 @@
 + (instancetype)fromJsonDict:(NSDictionary *)jsonDict
 {
     QUTAnswer *createe = [QUTAnswer new];
+    if (jsonDict[@"CreatedDate"]) {
+        NSDateFormatter *df = [[NSDateFormatter alloc] init];
+        [df setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSSZ"];
+        createe.createDate = [df dateFromString:jsonDict[@"CreatedDate"]];
+    }
+
     createe.uid = jsonDict[@"id"];
     createe.name = jsonDict[@"Name"];
     createe.questionid = jsonDict[@"questionid__c"];

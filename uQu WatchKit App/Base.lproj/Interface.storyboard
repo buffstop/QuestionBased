@@ -5,19 +5,23 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="7701"/>
     </dependencies>
     <scenes>
-        <!--uQu-->
+        <!--Questions-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller title="uQu" id="AgC-eL-Hgc" customClass="InterfaceController">
+                <controller title="Questions" id="AgC-eL-Hgc" customClass="InterfaceController">
                     <items>
                         <table alignment="left" id="AWz-jm-mSk">
                             <items>
-                                <tableRow id="bJq-O7-nCV">
+                                <tableRow identifier="watch.question.row" id="bJq-O7-nCV" customClass="WKQuestionRow">
                                     <group key="rootItem" width="1" height="0.0" alignment="left" id="r2Q-PE-DLY">
                                         <items>
-                                            <label width="136" height="23" alignment="left" verticalAlignment="center" text="Label" numberOfLines="0" id="QWx-6h-LLA"/>
+                                            <label width="1" alignment="left" verticalAlignment="center" text="Is this a good application?" numberOfLines="0" id="QWx-6h-LLA"/>
                                         </items>
                                     </group>
+                                    <connections>
+                                        <outlet property="label" destination="QWx-6h-LLA" id="wP1-My-OGc"/>
+                                        <segue destination="E1q-DL-dTz" kind="push" identifier="question.segue" id="LsE-nx-B4l"/>
+                                    </connections>
                                 </tableRow>
                             </items>
                         </table>
@@ -32,14 +36,17 @@
                             <menuItem title="All Questions" id="My2-vV-DgW"/>
                         </items>
                     </menu>
+                    <connections>
+                        <outlet property="table" destination="AWz-jm-mSk" id="68r-D1-ebq"/>
+                    </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="263" y="290"/>
+            <point key="canvasLocation" x="-52" y="154"/>
         </scene>
-        <!--Interface Controller-->
+        <!--question-->
         <scene sceneID="hqE-HU-FP3">
             <objects>
-                <controller id="E1q-DL-dTz">
+                <controller identifier="question" id="E1q-DL-dTz" customClass="QuestionInterfaceController">
                     <items>
                         <label width="136" alignment="left" text="Is this a good application?" numberOfLines="0" id="GYQ-v4-YPl"/>
                         <button width="1" alignment="left" title="Yes" id="HIs-VA-HpQ">
@@ -58,14 +65,17 @@
                             </connections>
                         </button>
                     </items>
+                    <connections>
+                        <outlet property="questionLabel" destination="GYQ-v4-YPl" id="bsz-Ct-gFN"/>
+                    </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="436" y="284"/>
+            <point key="canvasLocation" x="229" y="141.5"/>
         </scene>
-        <!--New-->
+        <!--New Q-->
         <scene sceneID="LEW-sr-zdd">
             <objects>
-                <controller identifier="watch.newquestion" title="New" id="eld-0c-miJ" customClass="NewQuestionInterfaceController">
+                <controller identifier="watch.newquestion" title="New Q" id="eld-0c-miJ" customClass="NewQuestionInterfaceController">
                     <items>
                         <label width="136" alignment="left" text="Enter new question" numberOfLines="0" id="hFF-Os-0hM"/>
                         <map height="100" alignment="left" id="xjT-oh-WYw"/>
@@ -78,30 +88,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="661" y="306.5"/>
-        </scene>
-        <!--Static Notification Interface Controller-->
-        <scene sceneID="AEw-b0-oYE">
-            <objects>
-                <notificationController id="YCC-NB-fut">
-                    <items>
-                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
-                    </items>
-                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
-                    <connections>
-                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
-                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
-                    </connections>
-                </notificationController>
-            </objects>
-            <point key="canvasLocation" x="220" y="643"/>
-        </scene>
-        <!--Notification Controller-->
-        <scene sceneID="ZPc-GJ-vnh">
-            <objects>
-                <controller id="4sK-HA-Art" customClass="NotificationController"/>
-            </objects>
-            <point key="canvasLocation" x="468" y="643"/>
+            <point key="canvasLocation" x="155" y="461.5"/>
         </scene>
     </scenes>
 </document>

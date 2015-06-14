@@ -109,7 +109,7 @@
 - (void)getAllAnswersOnSuccess:(void(^)(NSArray *result))successBlock
                        onError:(void(^)(NSError *error))errorBlock;
 {
-    NSString *select = @"SELECT Id,OwnerId,questionid__c,text__c FROM Answer__c";
+    NSString *select = @"SELECT Id,createdDate,OwnerId,questionid__c,text__c FROM Answer__c";
     [self GETQueryWithSelectString:select onSuccess:^(NSDictionary *responsDict) {
         NSArray *records = [QUTAnswer objectsFromRepsonseJsonDict:responsDict];
         if (successBlock) {  successBlock(records); }
@@ -120,7 +120,7 @@
               onSuccess:(void(^)(QUTAnswer * result))successBlock
                 onError:(void(^)(NSError *error))errorBlock;
 {
-    NSString *select = [NSString stringWithFormat:@"SELECT Id,OwnerId,questionid__c,text__c FROM Answer__c WHERE questionid__c = %@", questionId];
+    NSString *select = [NSString stringWithFormat:@"SELECT Id,createdDate,OwnerId,questionid__c,text__c FROM Answer__c WHERE questionid__c = %@", questionId];
     [self GETQueryWithSelectString:select onSuccess:^(NSDictionary *responsDict) {
         QUTAnswer *result = [[QUTAnswer objectsFromRepsonseJsonDict:responsDict] firstObject];
         if (successBlock) { successBlock(result); }
@@ -139,9 +139,10 @@
 - (void)getAllQuestionsOnSuccess:(void(^)(NSArray *result))successBlock
                          onError:(void(^)(NSError *error))errorBlock;
 {
-    NSString *select = @"SELECT Id,latitude__c,longitude__c,OwnerId,question__c FROM Question__c";
+    NSString *select = @"SELECT Id,createdDate,latitude__c,longitude__c,OwnerId,question__c FROM Question__c";
     [self GETQueryWithSelectString:select onSuccess:^(NSDictionary *responsDict) {
         NSArray *records = [QUTQuestion objectsFromRepsonseJsonDict:responsDict];
+        NSLog(@"records: %@", records.firstObject);
         if (successBlock) {  successBlock(records); }
     } onError:errorBlock];
 }
@@ -175,7 +176,7 @@
 //        } onError:errorBlock];
 //    } onError:errorBlock];
     
-        NSString *select = [NSString stringWithFormat:@"SELECT Id,latitude__c,longitude__c,OwnerId,question__c FROM Question__c where OwnerId != \'%@\'", [[SFAPIClient sharedApiClient] getUserID]];
+        NSString *select = [NSString stringWithFormat:@"SELECT Id,createdDate, latitude__c,longitude__c,OwnerId,question__c FROM Question__c where OwnerId != \'%@\'", [[SFAPIClient sharedApiClient] getUserID]];
         [self GETQueryWithSelectString:select onSuccess:^(NSDictionary *responsDict) {
             NSArray *records = [QUTQuestion objectsFromRepsonseJsonDict:responsDict];
             if (successBlock) {  successBlock(records); }
@@ -187,7 +188,7 @@
                           onSuccess:(void(^)(NSArray *result))successBlock
                             onError:(void(^)(NSError *error))errorBlock;
 {
-    NSString *select = [NSString stringWithFormat:@"SELECT Id,latitude__c,longitude__c,OwnerId,question__c FROM Question__c where OwnerId = \'%@\'", userId];
+    NSString *select = [NSString stringWithFormat:@"SELECT Id,createdDate,latitude__c,longitude__c,OwnerId,question__c FROM Question__c where OwnerId = \'%@\'", userId];
     [self GETQueryWithSelectString:select onSuccess:^(NSDictionary *responsDict) {
         NSArray *records = [QUTQuestion objectsFromRepsonseJsonDict:responsDict];
         if (successBlock) {  successBlock(records); }
@@ -198,7 +199,7 @@
                       onSuccess:(void(^)(QUTQuestion * result))successBlock
                         onError:(void(^)(NSError *error))errorBlock;
 {
-    NSString *select = [NSString stringWithFormat:@"SELECT Id,latitude__c,longitude__c,Name,OwnerId,question__c FROM Question__c WHERE Id = \'%@\'", answerId];
+    NSString *select = [NSString stringWithFormat:@"SELECT Id,createdDate,latitude__c,longitude__c,Name,OwnerId,question__c FROM Question__c WHERE Id = \'%@\'", answerId];
     [self GETQueryWithSelectString:select onSuccess:^(NSDictionary *responsDict) {
         QUTQuestion *result = [[QUTQuestion objectsFromRepsonseJsonDict:responsDict] firstObject];
         if (successBlock) { successBlock(result); }
