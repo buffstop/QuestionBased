@@ -55,7 +55,10 @@
                          onError:(void(^)(NSError *error))errorBlock;
 
 - (void)getAllQuestionsOfCurrentUserOnSuccess:(void(^)(NSArray *result))successBlock
-                            onError:(void(^)(NSError *error))errorBlock;
+                                      onError:(void(^)(NSError *error))errorBlock;
+
+- (void)getNearbyQuestionsOnSuccess:(void(^)(NSArray *result))successBlock
+                                      onError:(void(^)(NSError *error))errorBlock;
 
 - (void)getAllQuestionsOfUserWithID:(NSString *)userId
                           onSuccess:(void(^)(NSArray *result))successBlock

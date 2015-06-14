@@ -8,8 +8,6 @@
 
 #import "QUTLocationManager.h"
 
-@import CoreLocation;
-
 @interface QUTLocationManager () <CLLocationManagerDelegate>
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (nonatomic) NSInteger accuracy;

@@ -8,6 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+
+@import CoreLocation;
+
 @interface QUTLocationManager : NSObject
+
+- (void)getUserLocationOnSuccess:(void(^)(CLLocation *userPosition))successBlock
+                         onError:(void(^)(NSError *error))errorBlock;
+
++ (instancetype)sharedManager;
 
 @end

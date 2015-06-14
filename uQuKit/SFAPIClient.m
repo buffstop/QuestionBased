@@ -9,6 +9,7 @@
 #import "SFAPIClient.h"
 
 #import "SFRestRequest+QUTAdditions.h"
+#import "QUTLocationManager.h"
 
 #import <SalesforceSDKCore/SFJsonUtils.h>
 #import <SalesforceRestAPI/SFRestAPI.h>
@@ -151,6 +152,26 @@
     [self getAllQuestionsOfUserWithID:[[SFAPIClient sharedApiClient] getUserID]
                             onSuccess:successBlock
                               onError:errorBlock];
+}
+
+- (void)getNearbyQuestionsOnSuccess:(void(^)(NSArray *result))successBlock
+                            onError:(void(^)(NSError *error))errorBlock;
+{
+    [[QUTLocationManager sharedManager] getUserLocationOnSuccess:^(CLLocation *userPosition) {        
+        NSString *select = [NSString stringWithFormat:@"SELECT Id,latitude__c,longitude__c,OwnerId,question__c FROM Question__c where OwnerId != \'%@\'", [[SFAPIClient sharedApiClient] getUserID]];
+        [self GETQueryWithSelectString:select onSuccess:^(NSDictionary *responsDict) {
+            NSArray *records = [QUTQuestion objectsFromRepsonseJsonDict:responsDict];
+            CLCircularRegion *circle = [[CLCircularRegion alloc] initWithCenter:userPosition.coordinate radius:1000 identifier:nil];
+            NSMutableArray *nearby = [NSMutableArray new];
+            for (QUTQuestion *curQ in records) {
+                CLLocationCoordinate2D curCoordinate = CLLocationCoordinate2DMake(curQ.latitude.doubleValue, curQ.longitude.doubleValue);
+                if ([circle containsCoordinate:curCoordinate]) {
+                    [nearby addObject:curQ];
+                }
+            }
+            if (successBlock) {  successBlock(nearby); }
+        } onError:errorBlock];
+    } onError:errorBlock];
 }
 
 - (void)getAllQuestionsOfUserWithID:(NSString *)userId

@@ -40,9 +40,13 @@ typedef NS_ENUM(NSUInteger, QUTSegmentIndex) {
 
 - (void)reloadLocalQuestions
 {
-    // get all qs not from my
-    // get user location
-    // filter by distannce 1000m
+    [[SFAPIClient sharedApiClient] getNearbyQuestionsOnSuccess:^(NSArray *result) {
+        self.localQuestions = result;
+        [self.tableView reloadData];
+    } onError:^(NSError *error) {
+        NSString *message = [NSString stringWithFormat:@"An Error Occured. %@", error];
+        [[[UIAlertView alloc] initWithTitle:@"Error" message:message delegate:self  cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
+    }];
 }
 
 #pragma mark - UITableViewDataSource
@@ -109,8 +113,8 @@ typedef NS_ENUM(NSUInteger, QUTSegmentIndex) {
     [self reloadLocalQuestions];
     [self reloadMyQuestions];
     
-//    [[SFAPIClient sharedApiClient] test];
-//    [[SFAPIClient sharedApiClient] testCreateQuestion];
+    //    [[SFAPIClient sharedApiClient] test];
+    //    [[SFAPIClient sharedApiClient] testCreateQuestion];
 }
 
 @end
