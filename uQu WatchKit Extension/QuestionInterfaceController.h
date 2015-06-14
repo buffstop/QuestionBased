@@ -11,5 +11,6 @@
 
 @interface QuestionInterfaceController : WKInterfaceController
 @property (weak, nonatomic) IBOutlet WKInterfaceLabel *questionLabel;
-
+@property (weak, nonatomic) IBOutlet WKInterfaceButton* yes;
+@property (weak, nonatomic) IBOutlet WKInterfaceButton* no;
 @end

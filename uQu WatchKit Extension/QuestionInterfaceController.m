@@ -55,8 +55,14 @@
     [WKInterfaceController openParentApplication:response reply:^(NSDictionary *replyInfo, NSError *error) {
         if([replyInfo[@"result"]  isEqual: @1]){
             // success
+            [self.questionLabel setText:@"Thanks for your answer"];
+            [self.yes setHidden:YES];
+            [self.no setHidden:YES];
         }else{
-            
+            [self.questionLabel setText:@"Error, please retry"];            
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [self.questionLabel setText:self.question];
+            });
         }
     }];
 

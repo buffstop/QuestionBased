@@ -41,7 +41,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="263" y="290"/>
+            <point key="canvasLocation" x="-52" y="154"/>
         </scene>
         <!--question-->
         <scene sceneID="hqE-HU-FP3">
@@ -70,7 +70,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="483" y="296.25"/>
+            <point key="canvasLocation" x="229" y="141.5"/>
         </scene>
         <!--New Q-->
         <scene sceneID="LEW-sr-zdd">
@@ -88,7 +88,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="263" y="567.5"/>
+            <point key="canvasLocation" x="155" y="461.5"/>
         </scene>
     </scenes>
 </document>
