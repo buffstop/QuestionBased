@@ -55,17 +55,17 @@ NSString *QUTNotificationNewQuestions = @"QUTNotificationNewQuestions";
 - (void)pullAnswers
 {
     [[SFAPIClient sharedApiClient] getAllAnswersOnSuccess:^(NSArray *result) {
-        
-        
-        
-        
-        
         if (result.count > self.previousQuestions.count) {
             self.previousQuestions = result;
             QUTAnswer *answer = [result lastObject];
-            NSString *answerText = answer.text;
-            UIAlertView *alert =[[UIAlertView alloc]initWithTitle:@"Answer" message:answerText delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-            [alert show];
+            
+            [[SFAPIClient sharedApiClient] getQuestioWithId:answer.questionid onSuccess:^(QUTQuestion *result) {
+                NSString *message = [NSString stringWithFormat:@"%@\n%@", result.question, answer.text];
+                UIAlertView *alert =[[UIAlertView alloc]initWithTitle:@"Answer" message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                [alert show];
+            } onError:^(NSError *error) {
+                NSLog(@"Uups: %@", error);
+            }];
         }
     } onError:^(NSError *error) {
         NSLog(@"Uups: %@", error);
@@ -78,8 +78,7 @@ NSString *QUTNotificationNewQuestions = @"QUTNotificationNewQuestions";
 {
     self = [super init];
     if (self) {
-        self.timer = [NSTimer timerWithTimeInterval:3.5 target:self selector:@selector(pullAnswers) userInfo:nil repeats:YES];
-        [self.timer fire];
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(pullAnswers) userInfo:nil repeats:YES];
     }
     return self;
 }
