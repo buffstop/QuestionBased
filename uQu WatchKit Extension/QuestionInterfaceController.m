@@ -56,8 +56,8 @@
         if([replyInfo[@"result"]  isEqual: @1]){
             // success
             [self.questionLabel setText:@"Thanks for your answer"];
-            [self.yes setHidden:YES];
-            [self.no setHidden:YES];
+            [self.yes setEnabled:NO];
+            [self.no setEnabled:NO];
         }else{
             [self.questionLabel setText:@"Error, please retry"];            
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
