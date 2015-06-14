@@ -40,6 +40,7 @@ typedef NS_ENUM(NSUInteger, QUTSegmentIndex) {
 
 - (void)reloadLocalQuestions
 {
+    [self.tableView reloadData];
     [[SFAPIClient sharedApiClient] getNearbyQuestionsOnSuccess:^(NSArray *result) {
         self.localQuestions = result;
         [self.tableView reloadData];
