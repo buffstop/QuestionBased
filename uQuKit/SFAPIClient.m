@@ -112,6 +112,13 @@
     NSString *select = @"SELECT Id,createdDate,OwnerId,questionid__c,text__c FROM Answer__c";
     [self GETQueryWithSelectString:select onSuccess:^(NSDictionary *responsDict) {
         NSArray *records = [QUTAnswer objectsFromRepsonseJsonDict:responsDict];
+        
+        NSSortDescriptor *dateDescriptor = [NSSortDescriptor
+                                            sortDescriptorWithKey:@"createDate"
+                                            ascending:YES];
+        NSArray *sortDescriptors = [NSArray arrayWithObject:dateDescriptor];
+        records = [records sortedArrayUsingDescriptors:sortDescriptors];
+        
         if (successBlock) {  successBlock(records); }
     } onError:errorBlock];
 }
@@ -142,6 +149,13 @@
     NSString *select = @"SELECT Id,createdDate,latitude__c,longitude__c,OwnerId,question__c FROM Question__c";
     [self GETQueryWithSelectString:select onSuccess:^(NSDictionary *responsDict) {
         NSArray *records = [QUTQuestion objectsFromRepsonseJsonDict:responsDict];
+        
+        NSSortDescriptor *dateDescriptor = [NSSortDescriptor
+                                            sortDescriptorWithKey:@"createDate"
+                                            ascending:YES];
+        NSArray *sortDescriptors = [NSArray arrayWithObject:dateDescriptor];
+        records = [records sortedArrayUsingDescriptors:sortDescriptors];
+        
         NSLog(@"records: %@", records.firstObject);
         if (successBlock) {  successBlock(records); }
     } onError:errorBlock];
@@ -179,6 +193,13 @@
         NSString *select = [NSString stringWithFormat:@"SELECT Id,createdDate, latitude__c,longitude__c,OwnerId,question__c FROM Question__c where OwnerId != \'%@\'", [[SFAPIClient sharedApiClient] getUserID]];
         [self GETQueryWithSelectString:select onSuccess:^(NSDictionary *responsDict) {
             NSArray *records = [QUTQuestion objectsFromRepsonseJsonDict:responsDict];
+            
+            NSSortDescriptor *dateDescriptor = [NSSortDescriptor
+                                                sortDescriptorWithKey:@"createDate"
+                                                ascending:YES];
+            NSArray *sortDescriptors = [NSArray arrayWithObject:dateDescriptor];
+            records = [records sortedArrayUsingDescriptors:sortDescriptors];
+            
             if (successBlock) {  successBlock(records); }
         } onError:errorBlock];
 
@@ -191,6 +212,13 @@
     NSString *select = [NSString stringWithFormat:@"SELECT Id,createdDate,latitude__c,longitude__c,OwnerId,question__c FROM Question__c where OwnerId = \'%@\'", userId];
     [self GETQueryWithSelectString:select onSuccess:^(NSDictionary *responsDict) {
         NSArray *records = [QUTQuestion objectsFromRepsonseJsonDict:responsDict];
+        
+        NSSortDescriptor *dateDescriptor = [NSSortDescriptor
+                                            sortDescriptorWithKey:@"createDate"
+                                            ascending:YES];
+        NSArray *sortDescriptors = [NSArray arrayWithObject:dateDescriptor];
+        records = [records sortedArrayUsingDescriptors:sortDescriptors];
+        
         if (successBlock) {  successBlock(records); }
     } onError:errorBlock];
 }

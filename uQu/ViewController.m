@@ -106,6 +106,7 @@ typedef NS_ENUM(NSUInteger, QUTSegmentIndex) {
     [super viewDidLoad];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.segmentedControll.selectedSegmentIndex = 1;
 }
 
 - (void)viewDidAppear:(BOOL)animated

@@ -9,9 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-//extern NSString *QUTNotificationNewAnswers;
-//extern NSString *QUTNotificationNewQuestions;
+extern NSString *QUTNotificationNewAnswers;
+extern NSString *QUTNotificationNewQuestions;
 
 @interface QUTPollingManager : NSObject
+
++ (instancetype)sharedPoller;
 
 @end
