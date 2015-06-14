@@ -20,7 +20,6 @@
 - (void)getUserLocationOnSuccess:(void(^)(CLLocation *userPosition))successBlock
                          onError:(void(^)(NSError *error))errorBlock;
 {
-    
     [self.locationManager startUpdatingLocation];
 }
 

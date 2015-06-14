@@ -30,6 +30,7 @@
 		016CC6EF1B2CEB55008CC6C4 /* SFRestRequest+QUTAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 016CC6D31B2CD48A008CC6C4 /* SFRestRequest+QUTAdditions.m */; };
 		016CC6F11B2CEBE3008CC6C4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 016CC6F01B2CEBE3008CC6C4 /* MapKit.framework */; };
 		016CC6F41B2CF37F008CC6C4 /* NewQuestionInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 016CC6F31B2CF37F008CC6C4 /* NewQuestionInterfaceController.m */; };
+		4902A5311B2D8A8500F1026E /* QUTPollingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4902A5301B2D8A8500F1026E /* QUTPollingManager.m */; };
 		493D4C501B2CF73500084D2D /* QUTLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 493D4C4F1B2CF73500084D2D /* QUTLocationManager.m */; };
 		BC1C0E4FD3E425FC9E2441E6 /* libPods-uQu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27570755734974408AC24305 /* libPods-uQu.a */; };
 /* End PBXBuildFile section */
@@ -131,6 +132,8 @@
 		0CCE1BCA182CBC872A85A98E /* Pods-uQu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uQu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-uQu/Pods-uQu.debug.xcconfig"; sourceTree = "<group>"; };
 		25284F5CBAD7A36FA0C15C0C /* Pods-uQu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uQu.release.xcconfig"; path = "Pods/Target Support Files/Pods-uQu/Pods-uQu.release.xcconfig"; sourceTree = "<group>"; };
 		27570755734974408AC24305 /* libPods-uQu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-uQu.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4902A52F1B2D8A8500F1026E /* QUTPollingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QUTPollingManager.h; sourceTree = "<group>"; };
+		4902A5301B2D8A8500F1026E /* QUTPollingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QUTPollingManager.m; sourceTree = "<group>"; };
 		493D4C4E1B2CF73500084D2D /* QUTLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QUTLocationManager.h; sourceTree = "<group>"; };
 		493D4C4F1B2CF73500084D2D /* QUTLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QUTLocationManager.m; sourceTree = "<group>"; };
 		56E402030CC8E2A5A02B9A7D /* libPods-uQuKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-uQuKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -204,6 +207,8 @@
 				0127A98E1B2CD0B60037BF4C /* Images.xcassets */,
 				0127A9901B2CD0B60037BF4C /* LaunchScreen.xib */,
 				0127A9811B2CD0B60037BF4C /* Supporting Files */,
+				4902A52F1B2D8A8500F1026E /* QUTPollingManager.h */,
+				4902A5301B2D8A8500F1026E /* QUTPollingManager.m */,
 			);
 			path = uQu;
 			sourceTree = "<group>";
@@ -553,6 +558,7 @@
 				0127A9841B2CD0B60037BF4C /* main.m in Sources */,
 				016CC6ED1B2CEB55008CC6C4 /* QUTQuestion.m in Sources */,
 				016CC6EE1B2CEB55008CC6C4 /* SFAPIClient.m in Sources */,
+				4902A5311B2D8A8500F1026E /* QUTPollingManager.m in Sources */,
 				016CC6EC1B2CEB55008CC6C4 /* QUTBaseModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

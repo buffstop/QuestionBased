@@ -13,6 +13,7 @@
 + (instancetype)fromJsonDict:(NSDictionary *)jsonDict
 {
     QUTQuestion *createe = [QUTQuestion new];
+    createe.createDate = 
     createe.uid = jsonDict[@"Id"];
     createe.OwnerId = jsonDict[@"OwnerId"];
     createe.name = jsonDict[@"Name"];

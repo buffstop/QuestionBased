@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface QUTBaseModel : NSObject
+@property (strong, nonatomic) NSDate *createDate;
 @property (strong, nonatomic) NSString *createdBy;
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *uid;
