@@ -40,7 +40,7 @@ NSString *QUTNotificationNewQuestions = @"QUTNotificationNewQuestions";
                 [sortedArray removeObject:[sortedArray lastObject]];
             }
             
-            [[NSNotificationCenter defaultCenter] postNotificationName:QUTNotificationNewAnswers object:<#(id)#>];
+//            [[NSNotificationCenter defaultCenter] postNotificationName:QUTNotificationNewAnswers object:<#(id)#>];
         }
     } onError:^(NSError *error) {
         NSLog(@"Uups: %@", error);
