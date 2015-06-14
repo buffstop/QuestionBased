@@ -30,9 +30,10 @@
 		016CC6EF1B2CEB55008CC6C4 /* SFRestRequest+QUTAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 016CC6D31B2CD48A008CC6C4 /* SFRestRequest+QUTAdditions.m */; };
 		016CC6F11B2CEBE3008CC6C4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 016CC6F01B2CEBE3008CC6C4 /* MapKit.framework */; };
 		016CC6F41B2CF37F008CC6C4 /* NewQuestionInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 016CC6F31B2CF37F008CC6C4 /* NewQuestionInterfaceController.m */; };
-		4902A5311B2D8A8500F1026E /* QUTPollingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4902A5301B2D8A8500F1026E /* QUTPollingManager.m */; };
+		01B6F2071B2DA2D500375B46 /* QuestionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B6F2061B2DA2D500375B46 /* QuestionTableViewCell.m */; };
 		01F967811B2D17BD0059C199 /* WKQuestionRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F967801B2D17BD0059C199 /* WKQuestionRow.m */; };
 		01F967841B2D82E60059C199 /* QuestionInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F967831B2D82E60059C199 /* QuestionInterfaceController.m */; };
+		4902A5311B2D8A8500F1026E /* QUTPollingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4902A5301B2D8A8500F1026E /* QUTPollingManager.m */; };
 		493D4C501B2CF73500084D2D /* QUTLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 493D4C4F1B2CF73500084D2D /* QUTLocationManager.m */; };
 		BC1C0E4FD3E425FC9E2441E6 /* libPods-uQu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27570755734974408AC24305 /* libPods-uQu.a */; };
 /* End PBXBuildFile section */
@@ -131,6 +132,8 @@
 		016CC6F01B2CEBE3008CC6C4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		016CC6F21B2CF37F008CC6C4 /* NewQuestionInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewQuestionInterfaceController.h; sourceTree = "<group>"; };
 		016CC6F31B2CF37F008CC6C4 /* NewQuestionInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewQuestionInterfaceController.m; sourceTree = "<group>"; };
+		01B6F2051B2DA2D500375B46 /* QuestionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionTableViewCell.h; sourceTree = "<group>"; };
+		01B6F2061B2DA2D500375B46 /* QuestionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionTableViewCell.m; sourceTree = "<group>"; };
 		01F9677F1B2D17BD0059C199 /* WKQuestionRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKQuestionRow.h; sourceTree = "<group>"; };
 		01F967801B2D17BD0059C199 /* WKQuestionRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKQuestionRow.m; sourceTree = "<group>"; };
 		01F967821B2D82E60059C199 /* QuestionInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionInterfaceController.h; sourceTree = "<group>"; };
@@ -215,6 +218,8 @@
 				0127A9811B2CD0B60037BF4C /* Supporting Files */,
 				4902A52F1B2D8A8500F1026E /* QUTPollingManager.h */,
 				4902A5301B2D8A8500F1026E /* QUTPollingManager.m */,
+				01B6F2051B2DA2D500375B46 /* QuestionTableViewCell.h */,
+				01B6F2061B2DA2D500375B46 /* QuestionTableViewCell.m */,
 			);
 			path = uQu;
 			sourceTree = "<group>";
@@ -568,6 +573,7 @@
 				0127A9841B2CD0B60037BF4C /* main.m in Sources */,
 				016CC6ED1B2CEB55008CC6C4 /* QUTQuestion.m in Sources */,
 				016CC6EE1B2CEB55008CC6C4 /* SFAPIClient.m in Sources */,
+				01B6F2071B2DA2D500375B46 /* QuestionTableViewCell.m in Sources */,
 				4902A5311B2D8A8500F1026E /* QUTPollingManager.m in Sources */,
 				016CC6EC1B2CEB55008CC6C4 /* QUTBaseModel.m in Sources */,
 			);

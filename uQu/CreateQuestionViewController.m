@@ -51,7 +51,9 @@
 - (void)viewDidLoad 
 {
     [super viewDidLoad];
-    self.title = @"New Question";
+    self.title = @"QUESTION";
+    self.navigationItem.backBarButtonItem.tintColor = [UIColor whiteColor];
+
 //    self.sendButton.enabled = self.selectedLocationAnnotation != nil && !IsEmpty(self.questionTextView.text);
     UITapGestureRecognizer* gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard:)];
     [self.view addGestureRecognizer:gesture];

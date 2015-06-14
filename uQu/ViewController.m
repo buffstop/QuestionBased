@@ -11,7 +11,7 @@
 #import "SFAPIClient.h"
 #import "QUTQuestion.h"
 #import "NSDate+QUTAdditions.h"
-
+#import "QuestionTableViewCell.h"
 typedef NS_ENUM(NSUInteger, QUTSegmentIndex) {
     QUTLocalQuestions = 0,
     QUTMyQuestions
@@ -68,7 +68,7 @@ typedef NS_ENUM(NSUInteger, QUTSegmentIndex) {
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"question cell"];
+    QuestionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"question cell"];
     QUTQuestion *q = nil;
     if (self.segmentedControll.selectedSegmentIndex == QUTMyQuestions) {
         q = self.myQuestions[indexPath.row];
@@ -76,7 +76,7 @@ typedef NS_ENUM(NSUInteger, QUTSegmentIndex) {
         q = self.localQuestions[indexPath.row];
     }
     
-    cell.textLabel.text = q.question;
+    cell.title.text = q.question;
     
     return cell;
 }
