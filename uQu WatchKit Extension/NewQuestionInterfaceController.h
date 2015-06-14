@@ -10,5 +10,6 @@
 #import <Foundation/Foundation.h>
 
 @interface NewQuestionInterfaceController : WKInterfaceController
+@property (weak, nonatomic) IBOutlet WKInterfaceMap* myMap;
 @property (weak, nonatomic) IBOutlet WKInterfaceLabel *questionLabel;
 @end

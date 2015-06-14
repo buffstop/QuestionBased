@@ -20,8 +20,11 @@
 {
     [self presentTextInputControllerWithSuggestions:@[] allowedInputMode:WKTextInputModePlain completion:^(NSArray *results) {
         NSString * question = results.firstObject;
-        [self presentControllerWithName:@"watch.newquestion" context:question];
-        [self.questionLabel setText:question];
+        if (question != nil) {
+            [self presentControllerWithName:@"watch.newquestion" context:question];
+            [self.questionLabel setText:question];
+
+        }
     }];
 }
 
