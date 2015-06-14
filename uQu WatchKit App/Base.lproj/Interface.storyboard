@@ -65,6 +65,9 @@
                             </connections>
                         </button>
                     </items>
+                    <connections>
+                        <outlet property="questionLabel" destination="GYQ-v4-YPl" id="bsz-Ct-gFN"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="483" y="296.25"/>

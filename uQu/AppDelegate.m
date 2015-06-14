@@ -53,6 +53,7 @@ static NSString * const OAuthRedirectURI        = @"testsfdc:///mobilesdk/detect
         
         [[SFAPIClient sharedApiClient] getAllQuestionsOnSuccess:^(NSArray *result) {
             for (QUTQuestion* question in result) {
+                NSLog(@"json question %@", question.jsonDict);
                 questions[question.question] = question.jsonDict;
             }
             if (reply) {
@@ -73,12 +74,12 @@ static NSString * const OAuthRedirectURI        = @"testsfdc:///mobilesdk/detect
         [[SFAPIClient sharedApiClient] createAnswerWithParams:answer.jsonDict onSuccess:^(NSDictionary *responsDict) {
           
             if (reply) {
-                reply(@{@"result": @"success"});
+                reply(@{@"result": @1});
             }
             
         } onError:^(NSError *error) {
             if (reply) {
-                reply(@{@"result": @"failed"});
+                reply(@{@"result": @0});
             }
         }];
     }

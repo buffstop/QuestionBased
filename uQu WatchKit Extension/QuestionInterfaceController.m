@@ -19,7 +19,7 @@
     [super awakeWithContext:context];
     // context is question name
     if ([context isKindOfClass:[NSDictionary class]]) {
-        self.questionId = context[@"question__c"];
+        self.questionId = context[@"Id"];
         self.question = context[@"question__c"];
         [self.questionLabel setText:self.question];
     }
@@ -37,10 +37,10 @@
 }
 
 - (IBAction)selectNo {
-    [self sendResult:NO];
+    [self sendResult:@"No"];
 }
 - (IBAction)selectYes {
-    [self sendResult:YES];
+    [self sendResult:@"Yes"];
 }
 
 - (IBAction)dismiss {
@@ -48,11 +48,16 @@
     [self popController];
 }
 
--(void)sendResult:(BOOL)yes{
+-(void)sendResult:(NSString*)answer{
     NSDictionary* response = @{@"request": @"sendanswer",
-                               @"questionid": @1};
+                               @"questionId": self.questionId,
+                               @"answer": answer};
     [WKInterfaceController openParentApplication:response reply:^(NSDictionary *replyInfo, NSError *error) {
-        
+        if([replyInfo[@"result"]  isEqual: @1]){
+            // success
+        }else{
+            
+        }
     }];
 
 }
