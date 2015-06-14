@@ -142,6 +142,7 @@
     NSString *select = @"SELECT Id,latitude__c,longitude__c,OwnerId,question__c FROM Question__c";
     [self GETQueryWithSelectString:select onSuccess:^(NSDictionary *responsDict) {
         NSArray *records = [QUTQuestion objectsFromRepsonseJsonDict:responsDict];
+        NSLog(@"records: %@", records.firstObject);
         if (successBlock) {  successBlock(records); }
     } onError:errorBlock];
 }
