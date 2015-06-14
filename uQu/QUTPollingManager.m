@@ -11,8 +11,8 @@
 #import "QUTAnswer.h"
 #import "QUTQuestion.h"
 
-//NSString *QUTNotificationNewAnswers = @"QUTNotificationNewAnswers";
-//NSString *QUTNotificationNewQuestions = @"QUTNotificationNewQuestions";
+NSString *QUTNotificationNewAnswers = @"QUTNotificationNewAnswers";
+NSString *QUTNotificationNewQuestions = @"QUTNotificationNewQuestions";
 
 @interface QUTPollingManager ()
 @property (strong, nonatomic) NSTimer *timer;
@@ -23,65 +23,54 @@
 
 @implementation QUTPollingManager
 
-- (void)poll
+//- (void)poll
+//{
+//    [[SFAPIClient sharedApiClient] getAllAnswersOnSuccess:^(NSArray *result) {
+//        //sort array by date
+//        NSSortDescriptor *dateDescriptor = [NSSortDescriptor
+//                                            sortDescriptorWithKey:@"createDate"
+//                                            ascending:YES];
+//        NSArray *sortDescriptors = [NSArray arrayWithObject:dateDescriptor];
+//        NSMutableArray *sortedArray = [[result
+//                                     sortedArrayUsingDescriptors:sortDescriptors] mutableCopy];
+//        if (sortedArray.count > self.previousAnswers.count) {
+//            NSInteger newCount = sortedArray.count - self.previousAnswers.count;
+//            NSMutableArray *newAnswers = [NSMutableArray new];
+//            for (NSInteger i = 0; i < newCount; ++i) {
+//                [newAnswers addObject:[sortedArray lastObject]];
+//                [sortedArray removeObject:[sortedArray lastObject]];
+//            }
+////            NSDictionary *infoDict = @{@"answers":newAnswers};
+//            self.previousAnswers = sortedArray;
+//            UILocalNotification *notification = [[UILocalNotification alloc] init];
+//            notification.fireDate = [NSDate date];
+//            notification.alertBody = @"New Answers";
+//            [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+//        }
+//    } onError:^(NSError *error) {
+//        NSLog(@"Uups: %@", error);
+//    }];
+//}
+
+- (void)pullAnswers
 {
     [[SFAPIClient sharedApiClient] getAllAnswersOnSuccess:^(NSArray *result) {
-        //sort array by date
-        NSSortDescriptor *dateDescriptor = [NSSortDescriptor
-                                            sortDescriptorWithKey:@"createDate"
-                                            ascending:YES];
-        NSArray *sortDescriptors = [NSArray arrayWithObject:dateDescriptor];
-        NSMutableArray *sortedArray = [[result
-                                     sortedArrayUsingDescriptors:sortDescriptors] mutableCopy];
-        if (sortedArray.count > self.previousAnswers.count) {
-            NSInteger newCount = sortedArray.count - self.previousAnswers.count;
-            NSMutableArray *newAnswers = [NSMutableArray new];
-            for (NSInteger i = 0; i < newCount; ++i) {
-                [newAnswers addObject:[sortedArray lastObject]];
-                [sortedArray removeObject:[sortedArray lastObject]];
-            }
-//            NSDictionary *infoDict = @{@"answers":newAnswers};
-            self.previousAnswers = sortedArray;
-            UILocalNotification *notification = [[UILocalNotification alloc] init];
-            notification.fireDate = [NSDate date];
-            notification.alertBody = @"New Answers";
-            [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+        
+        
+        
+        
+        
+        if (result.count > self.previousQuestions.count) {
+            self.previousQuestions = result;
+            QUTAnswer *answer = [result lastObject];
+            NSString *answerText = answer.text;
+            UIAlertView *alert =[[UIAlertView alloc]initWithTitle:@"Answer" message:answerText delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
         }
     } onError:^(NSError *error) {
         NSLog(@"Uups: %@", error);
     }];
 }
-
-- (void)pullQuestions
-{
-    [[SFAPIClient sharedApiClient] getNearbyQuestionsOnSuccess:^(NSArray *result) {
-        //sort array by date
-        NSSortDescriptor *dateDescriptor = [NSSortDescriptor
-                                            sortDescriptorWithKey:@"createDate"
-                                            ascending:YES];
-        NSArray *sortDescriptors = [NSArray arrayWithObject:dateDescriptor];
-        NSMutableArray *sortedArray = [[result
-                                        sortedArrayUsingDescriptors:sortDescriptors] mutableCopy];
-        if (sortedArray.count > self.previousQuestions.count) {
-            NSInteger newCount = sortedArray.count - self.previousQuestions.count;
-            NSMutableArray *newAnswers = [NSMutableArray new];
-            for (NSInteger i = 0; i < newCount; ++i) {
-                [newAnswers addObject:[sortedArray lastObject]];
-                [sortedArray removeObject:[sortedArray lastObject]];
-            }
-            //            NSDictionary *infoDict = @{@"answers":newAnswers};
-            self.previousQuestions = sortedArray;
-            UILocalNotification *notification = [[UILocalNotification alloc] init];
-            notification.fireDate = [NSDate date];
-            notification.alertBody = @"New nearby questions";
-            [[UIApplication sharedApplication] scheduleLocalNotification:notification];
-        }
-    } onError:^(NSError *error) {
-        NSLog(@"Uups: %@", error);
-    }];
-}
-
-
 
 #pragma mark - Life Cycle
 
@@ -89,9 +78,19 @@
 {
     self = [super init];
     if (self) {
-        self.timer = [NSTimer timerWithTimeInterval:3.5 target:self selector:@selector(poll) userInfo:nil repeats:YES];
-        [self.timer r]
+        self.timer = [NSTimer timerWithTimeInterval:3.5 target:self selector:@selector(pullAnswers) userInfo:nil repeats:YES];
+        [self.timer fire];
     }
     return self;
+}
+
++ (instancetype)sharedPoller
+{
+    static QUTPollingManager *shared;
+    static dispatch_once_t once;
+    dispatch_once(&once, ^{
+        shared = [QUTPollingManager new];
+    });
+    return shared;
 }
 @end
