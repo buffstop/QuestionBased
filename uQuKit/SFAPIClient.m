@@ -157,21 +157,30 @@
 - (void)getNearbyQuestionsOnSuccess:(void(^)(NSArray *result))successBlock
                             onError:(void(^)(NSError *error))errorBlock;
 {
-    [[QUTLocationManager sharedManager] getUserLocationOnSuccess:^(CLLocation *userPosition) {        
+//    [[QUTLocationManager sharedManager] getUserLocationOnSuccess:^(CLLocation *userPosition) {
+//        NSString *select = [NSString stringWithFormat:@"SELECT Id,latitude__c,longitude__c,OwnerId,question__c FROM Question__c where OwnerId != \'%@\'", [[SFAPIClient sharedApiClient] getUserID]];
+//        [self GETQueryWithSelectString:select onSuccess:^(NSDictionary *responsDict) {
+//            NSArray *records = [QUTQuestion objectsFromRepsonseJsonDict:responsDict];
+//            CLCircularRegion *circle = [[CLCircularRegion alloc] initWithCenter:userPosition.coordinate radius:1000 identifier:nil];
+//            NSMutableArray *nearby = [NSMutableArray new];
+//            for (QUTQuestion *curQ in records) {
+//                if ((curQ.latitude && curQ.longitude) && (![curQ.latitude isKindOfClass:[[NSNull null] class]] && ![curQ.longitude isKindOfClass:[[NSNull null] class]])) {
+//                    CLLocationCoordinate2D curCoordinate = CLLocationCoordinate2DMake(curQ.latitude.doubleValue, curQ.longitude.doubleValue);
+//                    if ([circle containsCoordinate:curCoordinate]) {
+//                        [nearby addObject:curQ];
+//                    }
+//                }
+//            }
+//            if (successBlock) {  successBlock(nearby); }
+//        } onError:errorBlock];
+//    } onError:errorBlock];
+    
         NSString *select = [NSString stringWithFormat:@"SELECT Id,latitude__c,longitude__c,OwnerId,question__c FROM Question__c where OwnerId != \'%@\'", [[SFAPIClient sharedApiClient] getUserID]];
         [self GETQueryWithSelectString:select onSuccess:^(NSDictionary *responsDict) {
             NSArray *records = [QUTQuestion objectsFromRepsonseJsonDict:responsDict];
-            CLCircularRegion *circle = [[CLCircularRegion alloc] initWithCenter:userPosition.coordinate radius:1000 identifier:nil];
-            NSMutableArray *nearby = [NSMutableArray new];
-            for (QUTQuestion *curQ in records) {
-                CLLocationCoordinate2D curCoordinate = CLLocationCoordinate2DMake(curQ.latitude.doubleValue, curQ.longitude.doubleValue);
-                if ([circle containsCoordinate:curCoordinate]) {
-                    [nearby addObject:curQ];
-                }
-            }
-            if (successBlock) {  successBlock(nearby); }
+            if (successBlock) {  successBlock(records); }
         } onError:errorBlock];
-    } onError:errorBlock];
+
 }
 
 - (void)getAllQuestionsOfUserWithID:(NSString *)userId
