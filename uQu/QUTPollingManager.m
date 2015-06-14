@@ -90,7 +90,7 @@
     self = [super init];
     if (self) {
         self.timer = [NSTimer timerWithTimeInterval:3.5 target:self selector:@selector(poll) userInfo:nil repeats:YES];
-        [self.timer r]
+
     }
     return self;
 }
