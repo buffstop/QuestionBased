@@ -39,9 +39,9 @@ NSString *QUTNotificationNewQuestions = @"QUTNotificationNewQuestions";
                 [newAnswers addObject:[sortedArray lastObject]];
                 [sortedArray removeObject:[sortedArray lastObject]];
             }
+            NSDictionary *infoDict = @{@"answers":newAnswers};
             
-            
-//            [[NSNotificationCenter defaultCenter] postNotificationName:QUTNotificationNewAnswers object:<#(id)#>];
+            [[NSNotificationCenter defaultCenter] postNotificationName:QUTNotificationNewAnswers object:infoDict];
         }
     } onError:^(NSError *error) {
         NSLog(@"Uups: %@", error);
