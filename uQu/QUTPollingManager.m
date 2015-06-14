@@ -78,7 +78,7 @@ NSString *QUTNotificationNewQuestions = @"QUTNotificationNewQuestions";
 {
     self = [super init];
     if (self) {
-        self.timer = [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(pullAnswers) userInfo:nil repeats:YES];
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:8 target:self selector:@selector(pullAnswers) userInfo:nil repeats:YES];
     }
     return self;
 }
